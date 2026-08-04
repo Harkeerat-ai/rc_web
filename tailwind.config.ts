@@ -32,8 +32,8 @@ const config: Config = {
           "50%": { transform: "translateY(-20px)" },
         },
         glow: {
-          "0%": { boxShadow: "0 0 5px rgba(212, 160, 48, 0.2)" },
-          "100%": { boxShadow: "0 0 20px rgba(212, 160, 48, 0.6)" },
+          "0%": { boxShadow: "0 0 5px rgba(226, 168, 60, 0.2)" },
+          "100%": { boxShadow: "0 0 20px rgba(226, 168, 60, 0.6)" },
         },
         ember: {
           "0%": { opacity: "1", transform: "translateY(0) scale(1)" },

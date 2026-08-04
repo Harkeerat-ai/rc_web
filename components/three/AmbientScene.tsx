@@ -1,10 +1,10 @@
 "use client";
 
 import { useRef, useMemo } from "react";
-import { useFrame } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
-export default function AmbientScene() {
+function AmbientParticles() {
   const count = 100;
   const meshRef = useRef<THREE.Points>(null);
 
@@ -60,12 +60,24 @@ export default function AmbientScene() {
       </bufferGeometry>
       <pointsMaterial
         size={0.05}
-        color="#D4A030"
+        color="#E2A83C"
         transparent
         opacity={0.6}
         blending={THREE.AdditiveBlending}
         sizeAttenuation
       />
     </points>
+  );
+}
+
+export default function AmbientScene() {
+  return (
+    <Canvas
+      camera={{ position: [0, 0, 6], fov: 50 }}
+      gl={{ antialias: true, alpha: true }}
+      style={{ position: "absolute", inset: 0 }}
+    >
+      <AmbientParticles />
+    </Canvas>
   );
 }

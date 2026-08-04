@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import AnimatedPhoenix from "@/components/phoenix/AnimatedPhoenix";
 
 const HeroScene = dynamic(
   () => import("@/components/three/HeroScene"),
@@ -44,8 +45,10 @@ export default function Hero() {
       className="relative h-screen w-full overflow-hidden"
     >
       <ErrorBoundary>
-        <HeroScene scrollProgress={scrollProgress} />
+        <HeroScene />
       </ErrorBoundary>
+
+      <AnimatedPhoenix />
 
       <motion.div
         animate={{ opacity: 1 - scrollProgress }}

@@ -9,12 +9,12 @@ export default function SceneSetup() {
       <directionalLight
         position={[5, 10, 5]}
         intensity={1.5}
-        color="#D4A030"
+        color="#E2A83C"
       />
       <directionalLight
         position={[-5, -5, -5]}
         intensity={0.5}
-        color="#B91C1C"
+        color="#C0261B"
       />
       <Environment preset="night" />
       <ContactShadows

@@ -4,7 +4,6 @@ import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import SceneSetup from "./SceneSetup";
-import PhoenixModel from "./PhoenixModel";
 
 function FireParticles({ count = 500 }: { count?: number }) {
   const meshRef = useRef<THREE.Points>(null);
@@ -55,7 +54,7 @@ function FireParticles({ count = 500 }: { count?: number }) {
       </bufferGeometry>
       <pointsMaterial
         size={0.08}
-        color="#B91C1C"
+        color="#C0261B"
         transparent
         opacity={0.8}
         blending={THREE.AdditiveBlending}
@@ -65,7 +64,7 @@ function FireParticles({ count = 500 }: { count?: number }) {
   );
 }
 
-export default function HeroScene({ scrollProgress = 0 }: { scrollProgress?: number }) {
+export default function HeroScene() {
   return (
     <Canvas
       camera={{ position: [0, 0, 6], fov: 50 }}
@@ -74,7 +73,6 @@ export default function HeroScene({ scrollProgress = 0 }: { scrollProgress?: num
     >
       <SceneSetup />
       <FireParticles />
-      <PhoenixModel scrollProgress={scrollProgress} />
     </Canvas>
   );
 }
