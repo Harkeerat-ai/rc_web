@@ -14,7 +14,7 @@ export default function SceneSetup() {
       <directionalLight
         position={[-5, -5, -5]}
         intensity={0.5}
-        color="#B7410E"
+        color="#C85A1E"
       />
       <Environment preset="sunset" />
       <ContactShadows

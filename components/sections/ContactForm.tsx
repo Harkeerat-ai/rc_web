@@ -75,7 +75,7 @@ export default function ContactForm() {
   };
 
   const inputClasses = (field: string) =>
-    `w-full bg-white/5 border ${
+    `w-full bg-white/10 border ${
       errors[field] ? "border-rust" : "border-gold/10 focus:border-gold/50"
     } rounded-lg px-4 py-3 text-ivory text-sm placeholder-text-muted/50 outline-none transition-all duration-200`;
 
@@ -314,7 +314,7 @@ export default function ContactForm() {
               <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-gold to-rust rounded-full text-white text-sm font-semibold hover:shadow-[0_0_25px_rgba(212,160,48,0.4)] transition-all duration-300 cursor-pointer"
+                  className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-gold to-rust rounded-full text-white text-sm font-semibold hover:shadow-[0_0_25px_rgba(227,178,80,0.45)] transition-all duration-300 cursor-pointer"
                 >
                   Send Message
                 </button>

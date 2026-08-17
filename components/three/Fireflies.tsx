@@ -81,7 +81,7 @@ function FireflyField() {
         depthWrite={false}
         blending={THREE.AdditiveBlending}
         uniforms={{
-          uColor: { value: new THREE.Color("#E2A83C") },
+          uColor: { value: new THREE.Color("#E8B85C") },
         }}
         vertexShader={`
           attribute float aSize;

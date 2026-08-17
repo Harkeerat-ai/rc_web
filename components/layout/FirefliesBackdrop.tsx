@@ -17,7 +17,7 @@ export default function FirefliesBackdrop() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 20% 0%, rgba(212,160,48,0.14), transparent 70%), radial-gradient(ellipse 55% 45% at 85% 100%, rgba(183,65,14,0.12), transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 20% 0%, rgba(227,178,80,0.22), transparent 70%), radial-gradient(ellipse 55% 45% at 85% 100%, rgba(200,90,30,0.18), transparent 70%)",
         }}
       />
       <Fireflies />

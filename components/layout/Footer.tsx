@@ -37,7 +37,7 @@ export default function Footer() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center text-text-muted hover:text-gold hover:border-gold/50 hover:shadow-[0_0_15px_rgba(212,160,48,0.3)] transition-all duration-300 cursor-pointer"
+                className="w-10 h-10 rounded-full border border-gold/20 flex items-center justify-center text-text-muted hover:text-gold hover:border-gold/50 hover:shadow-[0_0_15px_rgba(227,178,80,0.35)] transition-all duration-300 cursor-pointer"
                 aria-label={link.name}
               >
                 {socialIcons[link.icon]}

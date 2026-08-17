@@ -7,15 +7,15 @@ html {
 }
 
 body {
-  background-color: #14100C;
-  color: #F5EFE1;
+  background-color: #1E1610;
+  color: #FCF7EC;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
 }
 
 ::selection {
-  background-color: rgba(212, 160, 48, 0.3);
-  color: #F5EFE1;
+  background-color: rgba(227, 178, 80, 0.4);
+  color: #FCF7EC;
 }
 
 ::-webkit-scrollbar {
@@ -23,11 +23,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #14100C;
+  background: #1E1610;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4A030;
+  background: #E3B250;
   border-radius: 3px;
 }
 
@@ -35,16 +35,16 @@ body {
   .glass-card {
     background: linear-gradient(
       135deg,
-      rgba(245, 239, 225, 0.08),
-      rgba(245, 239, 225, 0.02)
+      rgba(252, 247, 236, 0.14),
+      rgba(252, 247, 236, 0.05)
     );
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(212, 160, 48, 0.15);
+    border: 1px solid rgba(227, 178, 80, 0.25);
     border-radius: 0.75rem;
     box-shadow:
       0 8px 32px rgba(0, 0, 0, 0.25),
-      inset 0 1px 0 rgba(245, 239, 225, 0.08);
+      inset 0 1px 0 rgba(252, 247, 236, 0.12);
   }
 }
 

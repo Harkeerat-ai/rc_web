@@ -9,15 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#14100C",
-        surface: "#221A13",
-        gold: "#D4A030",
-        rust: "#B7410E",
-        shadowblack: "#14100C",
-        ivory: "#F5EFE1",
-        "text-primary": "#F5EFE1",
-        "text-muted": "#B3A48F",
-        glass: "rgba(212, 160, 48, 0.15)",
+        primary: "#1E1610",
+        surface: "#2E241B",
+        gold: "#E3B250",
+        rust: "#C85A1E",
+        shadowblack: "#1E1610",
+        ivory: "#FCF7EC",
+        "text-primary": "#FCF7EC",
+        "text-muted": "#C9BCA8",
+        glass: "rgba(227, 178, 80, 0.2)",
       },
       fontFamily: {
         heading: ["Space Grotesk", "sans-serif"],
@@ -44,7 +44,7 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "phoenix-gold": "linear-gradient(135deg, #D4A030, #B7410E)",
+        "phoenix-gold": "linear-gradient(135deg, #E3B250, #C85A1E)",
       },
     },
   },
