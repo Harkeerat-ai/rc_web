@@ -50,34 +50,64 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              Rising From the
+              One of the Oldest Clubs
               <br />
               <span className="bg-gradient-to-r from-gold to-crimson bg-clip-text text-transparent">
-                Ashes of Mediocrity
+                in Rotaract Mumbai
               </span>
             </h2>
 
             <div className="space-y-4 text-text-muted leading-relaxed">
               <p>
-                Like the mythical phoenix, the Rotaract Club of Bombay West
-                embodies the spirit of renewal and relentless ambition. We are
-                not just a club — we are a movement of young minds who believe
-                that true leadership is forged through service.
+                The Rotaract Club of Bombay West is the youth wing of the
+                prestigious Rotary Club of Bombay West. We are a non-profit
+                organisation directed towards a large number of social and
+                environmental causes — a platform and an opportunity for
+                youngsters to be a part of something bigger and better.
               </p>
               <p>
-                Founded with the vision to create impactful change in Mumbai,
-                our members rise above challenges to serve communities, build
-                skills, and forge lifelong bonds. Every project, every drive,
-                every initiative is a testament to our commitment to{" "}
+                Our identity dates back to{" "}
                 <span className="text-gold font-semibold">
-                  &quot;Rise Above Yourself.&quot;
+                  {clubStats.yearFounded}
                 </span>
+                , and since the club&apos;s revival in{" "}
+                <span className="text-gold font-semibold">
+                  {clubStats.yearRevived}
+                </span>
+                , this year&apos;s installation marks the{" "}
+                <span className="text-gold font-semibold">
+                  {clubStats.installations}
+                  {clubStats.installations === 1
+                    ? "st"
+                    : clubStats.installations === 2
+                    ? "nd"
+                    : clubStats.installations === 3
+                    ? "rd"
+                    : "th"}
+                </span>{" "}
+                one. Our motto has always been{" "}
+                <span className="text-gold font-semibold">
+                  &quot;Family Beyond Rotaract.&quot;
+                </span>{" "}
+                where everyone, regardless of gender, age, race, ethnicity,
+                religion, nationality, or occupation, is welcomed.
               </p>
               <p>
-                As part of Rotary International District{" "}
-                <span className="text-gold font-semibold">3141</span>, we are
-                proudly guided by the Rotary Club of Bombay West, carrying
-                forward a legacy of ethical leadership and community service.
+                RC Bombay West is ranked{" "}
+                <span className="text-gold font-semibold">
+                  {clubStats.rank}
+                  {clubStats.rank === 1 ? "st" : clubStats.rank === 2 ? "nd" : clubStats.rank === 3 ? "rd" : "th"}
+                </span>{" "}
+                amongst {clubStats.totalClubs}+ clubs, and placed as the{" "}
+                <span className="text-gold font-semibold">
+                  {clubStats.communityRank}
+                  {clubStats.communityRank === 1 ? "st" : clubStats.communityRank === 2 ? "nd" : clubStats.communityRank === 3 ? "rd" : "th"}
+                </span>{" "}
+                best community-based club, across RI District{" "}
+                <span className="text-gold font-semibold">
+                  {clubStats.district}
+                </span>
+                .
               </p>
             </div>
 
@@ -86,7 +116,7 @@ export default function About() {
                 RID
               </div>
               <div>
-                <p className="text-sm font-semibold">RID 3141</p>
+                <p className="text-sm font-semibold">RID {clubStats.district}</p>
                 <p className="text-xs text-text-muted">
                   Rotary International District
                 </p>
@@ -101,31 +131,21 @@ export default function About() {
             className="grid grid-cols-2 gap-4 sm:gap-6"
           >
             <AnimatedCounter
-              value={clubStats.yearsActive}
-              label="Years of Service"
-              suffix="+"
+              value={clubStats.yearFounded}
+              label="Identity Since"
             />
             <AnimatedCounter
-              value={clubStats.projectsCompleted}
-              label="Projects Completed"
-              suffix="+"
+              value={clubStats.yearRevived}
+              label="Revival Year"
             />
             <AnimatedCounter
-              value={clubStats.activeMembers}
-              label="Active Members"
-              suffix="+"
+              value={clubStats.installations}
+              label="Installations"
             />
-            <div className="text-center">
-              <motion.p
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gold to-crimson bg-clip-text text-transparent"
-              >
-                {clubStats.district}
-              </motion.p>
-              <p className="text-text-muted text-sm mt-1">RID District</p>
-            </div>
+            <AnimatedCounter
+              value={clubStats.rank}
+              label={`Rank of ${clubStats.totalClubs}+ Clubs`}
+            />
           </motion.div>
         </div>
       </div>

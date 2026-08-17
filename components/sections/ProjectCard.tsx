@@ -20,11 +20,21 @@ export default function ProjectCard({
       className="group relative bg-surface/50 border border-gold/10 rounded-xl overflow-hidden hover:border-gold/30 transition-all duration-500 cursor-pointer"
     >
       <div className="aspect-video bg-gradient-to-br from-surface to-primary flex items-center justify-center overflow-hidden">
-        <div className="w-full h-full bg-gradient-to-br from-gold/5 to-crimson/5 flex items-center justify-center">
-          <span className="font-heading text-gold/30 text-5xl sm:text-6xl font-bold">
-            {project.title.charAt(0)}
-          </span>
-        </div>
+        {project.image ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={project.image}
+            alt={project.title}
+            loading="lazy"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-gold/5 to-crimson/5 flex items-center justify-center">
+            <span className="font-heading text-gold/30 text-5xl sm:text-6xl font-bold">
+              {project.title.charAt(0)}
+            </span>
+          </div>
+        )}
       </div>
 
       <div className="p-4 sm:p-5">

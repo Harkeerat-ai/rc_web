@@ -44,9 +44,18 @@ export default function ProjectDetailModal({
             className="bg-surface border border-gold/10 rounded-xl max-w-lg w-full max-h-[80vh] overflow-y-auto"
           >
             <div className="aspect-video bg-gradient-to-br from-gold/10 to-crimson/10 flex items-center justify-center">
-              <span className="font-heading text-gold/20 text-8xl font-bold">
-                {project.title.charAt(0)}
-              </span>
+              {project.image ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <span className="font-heading text-gold/20 text-8xl font-bold">
+                  {project.title.charAt(0)}
+                </span>
+              )}
             </div>
 
             <div className="p-6">

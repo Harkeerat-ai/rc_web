@@ -82,8 +82,10 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="font-body text-text-muted text-sm md:text-base mt-6 max-w-md text-center"
         >
-          A dynamic community of young leaders committed to service, growth, and
-          transformation in Mumbai.
+          Join a community of changemakers! At RCBW, we believe in rising
+          above ourselves to create meaningful impact. Explore vibrant events,
+          inspiring projects, and a family beyond Rotaract. Together, we make a
+          difference!
         </motion.p>
 
         <motion.div

@@ -30,7 +30,7 @@ export default function RotaryPage() {
           </h1>
           <p className="text-text-muted max-w-xl text-sm md:text-base">
             Rooted in the values of Rotary International, we are proud members
-            of District 3141.
+            of District 3141 — a leading Rotaract club in Mumbai.
           </p>
         </motion.div>
 
@@ -48,10 +48,12 @@ export default function RotaryPage() {
               Rotary Club of Bombay West
             </h2>
             <p className="text-text-muted leading-relaxed">
-              Our parent club, the Rotary Club of Bombay West, has been a beacon
-              of service and ethical leadership in Mumbai. As their Rotaract
-              counterpart, we carry forward their vision of creating lasting
-              change through community action and youth empowerment.
+              The Rotary Club of Bombay West is a leading Rotary club in Mumbai
+              that supports impactful initiatives in health, education, and
+              community development. It also serves as the parent and partner
+              Rotary club to the Rotaract Club of Bombay West, guiding our
+              vision of creating lasting change through community action and
+              youth empowerment.
             </p>
           </motion.div>
 
@@ -70,8 +72,10 @@ export default function RotaryPage() {
               District 3141
             </h2>
             <p className="text-text-muted leading-relaxed">
-              Rotary International District 3141 encompasses the greater Mumbai
-              region, bringing together clubs dedicated to service above self.
+              The Rotaract Club of Bombay West is a youth-led club under
+              Rotaract District 3141 — the Mumbai District ranging from Palghar
+              to Mulund in Maharashtra. The District works actively in sectors
+              like community service, leadership, and personal development, and
               RCBW is proud to represent the energy and ambition of Rotaract
               within this vibrant district.
             </p>

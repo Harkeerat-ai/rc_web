@@ -31,12 +31,12 @@ export default function ProjectsPage() {
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Our{" "}
             <span className="bg-gradient-to-r from-gold to-crimson bg-clip-text text-transparent">
-              Impact
+              Flagships
             </span>
           </h1>
           <p className="text-text-muted max-w-xl text-sm md:text-base">
-            Every project is a step toward a better community. From education to
-            environment, here&apos;s how we make a difference.
+            From education to sports, culture to community — explore the
+            flagship projects that define our journey of service.
           </p>
         </motion.div>
 
