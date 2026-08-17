@@ -17,7 +17,7 @@ export default function ProjectCard({
       viewport={{ once: true }}
       whileHover={{ scale: 1.02 }}
       onClick={onClick}
-      className="group relative bg-surface/50 border border-gold/10 rounded-xl overflow-hidden hover:border-gold/30 transition-all duration-500 cursor-pointer"
+      className="group relative glass-card overflow-hidden hover:border-gold/30 transition-all duration-500 cursor-pointer"
     >
       <div className="aspect-video bg-gradient-to-br from-surface to-primary flex items-center justify-center overflow-hidden">
         {project.image ? (

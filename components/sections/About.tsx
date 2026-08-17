@@ -18,7 +18,7 @@ function AnimatedCounter({
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div ref={ref} className="text-center">
+    <div ref={ref} className="glass-card text-center p-4 sm:p-6">
       <motion.p
         initial={{ opacity: 0, scale: 0.5 }}
         animate={isInView ? { opacity: 1, scale: 1 } : {}}

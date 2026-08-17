@@ -34,7 +34,7 @@ export default function GalleryStrip() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.08 }}
-            className="flex-none w-80 h-96 rounded-xl overflow-hidden snap-center relative group bg-surface/50 border border-gold/10 shadow-[0_4px_24px_rgba(0,0,0,0.08)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.14)] transition-all duration-300"
+            className="flex-none w-80 h-96 rounded-xl overflow-hidden snap-center relative group glass-card hover:shadow-[0_12px_40px_rgba(0,0,0,0.14)] transition-all duration-300"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img

@@ -1,26 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import ProjectCard from "@/components/sections/ProjectCard";
 import ProjectDetailModal from "@/components/sections/ProjectDetailModal";
 import { projects, type Project } from "@/lib/data";
-
-const AmbientScene = dynamic(
-  () => import("@/components/three/AmbientScene"),
-  { ssr: false }
-);
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <div className="relative min-h-screen pt-24">
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <AmbientScene />
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

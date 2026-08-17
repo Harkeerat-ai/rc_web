@@ -6,7 +6,7 @@ import { newsletters } from "@/lib/data";
 export default function NewsletterPage() {
   return (
     <div className="relative min-h-screen pt-24">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export default function NewsletterPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="group bg-surface/30 border border-gold/10 rounded-xl p-3 sm:p-5 flex items-center justify-between hover:border-gold/30 transition-all duration-300"
+              className="group glass-card p-3 sm:p-5 flex items-center justify-between hover:border-gold/30 transition-all duration-300"
             >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">

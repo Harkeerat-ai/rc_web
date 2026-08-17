@@ -1,20 +1,10 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-
-const AmbientScene = dynamic(
-  () => import("@/components/three/AmbientScene"),
-  { ssr: false }
-);
 
 export default function RotaryPage() {
   return (
     <div className="relative min-h-screen pt-24">
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <AmbientScene />
-      </div>
-
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -39,7 +29,7 @@ export default function RotaryPage() {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-surface/30 border border-gold/10 rounded-xl p-8 backdrop-blur-sm"
+            className="glass-card p-8"
           >
             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gold to-crimson flex items-center justify-center mb-6">
               <span className="text-white font-heading font-bold text-lg">RC</span>
@@ -61,7 +51,7 @@ export default function RotaryPage() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-surface/30 border border-gold/10 rounded-xl p-8 backdrop-blur-sm"
+            className="glass-card p-8"
           >
             <div className="w-16 h-16 rounded-full bg-gradient-to-br from-crimson to-gold flex items-center justify-center mb-6">
               <span className="text-white font-heading font-bold text-lg">

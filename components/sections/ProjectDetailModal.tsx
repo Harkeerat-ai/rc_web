@@ -41,7 +41,7 @@ export default function ProjectDetailModal({
             exit={{ opacity: 0, scale: 0.95, y: 10 }}
             transition={{ duration: 0.2 }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-surface border border-gold/10 rounded-xl max-w-lg w-full max-h-[80vh] overflow-y-auto"
+            className="glass-card max-w-lg w-full max-h-[80vh] overflow-y-auto"
           >
             <div className="aspect-video bg-gradient-to-br from-gold/10 to-crimson/10 flex items-center justify-center">
               {project.image ? (

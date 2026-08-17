@@ -173,7 +173,7 @@ export default function ContactForm() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              className="bg-surface/30 border border-gold/10 rounded-xl p-12 text-center backdrop-blur-sm"
+              className="glass-card p-12 text-center"
             >
               <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-4">
                 <svg
@@ -210,7 +210,7 @@ export default function ContactForm() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               onSubmit={handleSubmit}
-              className="bg-surface/30 border border-gold/10 rounded-xl p-4 sm:p-6 md:p-8 backdrop-blur-sm space-y-4 sm:space-y-5"
+              className="glass-card p-4 sm:p-6 md:p-8 space-y-4 sm:space-y-5"
             >
               <div className="grid md:grid-cols-2 gap-5">
                 <div>

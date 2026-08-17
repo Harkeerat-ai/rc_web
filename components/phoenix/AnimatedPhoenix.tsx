@@ -74,6 +74,20 @@ export default function AnimatedPhoenix() {
         transition: { duration: 3, repeat: Infinity, ease: "easeInOut" },
       };
 
+  const bodyBreath: SVGMotionProps<SVGGElement> = reducedMotion
+    ? {}
+    : {
+        animate: { scale: [1, 1.02, 1] },
+        transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+      };
+
+  const tailGlow: SVGMotionProps<SVGPathElement> = reducedMotion
+    ? {}
+    : {
+        animate: { opacity: [0.4, 0.8, 0.4] },
+        transition: { duration: 2.4, repeat: Infinity, ease: "easeInOut" },
+      };
+
   const embers = reducedMotion
     ? []
     : [
@@ -147,12 +161,37 @@ export default function AnimatedPhoenix() {
               d="M295 235 C 260 175, 220 130, 160 95 C 120 75, 90 70, 62 80 C 82 92, 92 108, 95 125 C 80 118, 68 116, 55 120 C 72 138, 88 148, 105 152 C 95 162, 88 176, 85 192 C 108 190, 130 180, 150 163 C 175 190, 215 220, 295 235 Z"
               fill="url(#phx-wing-far)"
             />
+            <path
+              d="M205 150 C 185 130, 165 116, 140 106 C 150 128, 155 150, 158 172 C 172 162, 190 156, 205 150 Z"
+              fill="#A07820"
+              opacity="0.5"
+            />
+            <path
+              d="M245 185 C 225 168, 208 156, 188 148 C 196 168, 198 190, 198 212 C 214 200, 230 192, 245 185 Z"
+              fill="#7A0B0B"
+              opacity="0.4"
+            />
           </motion.g>
 
           <motion.g style={{ ...wingStyle, transformOrigin: "8% 96%" }} {...rightFlap}>
             <path
               d="M265 225 C 300 170, 355 120, 425 80 C 465 56, 505 45, 545 52 C 520 70, 505 90, 498 110 C 518 102, 535 98, 552 102 C 528 124, 505 138, 480 144 C 492 156, 500 172, 505 190 C 478 184, 452 170, 428 148 C 395 172, 340 205, 265 225 Z"
               fill="url(#phx-wing)"
+            />
+            <path
+              d="M355 145 C 335 120, 320 102, 310 88 C 318 112, 320 138, 318 164 C 330 156, 342 150, 355 145 Z"
+              fill="#F5E7B8"
+              opacity="0.45"
+            />
+            <path
+              d="M400 115 C 382 96, 368 82, 358 72 C 364 96, 365 120, 362 146 C 374 138, 388 126, 400 115 Z"
+              fill="#D9A441"
+              opacity="0.5"
+            />
+            <path
+              d="M300 195 C 282 178, 268 164, 258 152 C 266 174, 268 198, 266 222 C 278 212, 290 204, 300 195 Z"
+              fill="#7A0B0B"
+              opacity="0.4"
             />
           </motion.g>
 
@@ -164,10 +203,16 @@ export default function AnimatedPhoenix() {
             />
           </motion.g>
 
-          <g>
+          <motion.g {...bodyBreath} style={{ transformBox: "fill-box" }}>
             <path
               d="M335 250 C 400 268, 470 300, 540 350 C 570 370, 590 392, 600 418 C 585 410, 565 398, 540 388 C 530 408, 522 428, 518 452 C 505 435, 495 414, 488 392 C 462 402, 432 408, 400 408 C 415 388, 432 366, 452 342 C 420 330, 385 320, 348 314 C 340 290, 336 270, 335 250 Z"
               fill="url(#phx-tail)"
+            />
+            <motion.path
+              {...tailGlow}
+              d="M420 330 C 455 330, 490 344, 520 370 C 540 388, 554 408, 560 430 C 540 420, 518 406, 496 388 C 492 408, 488 430, 486 452 C 470 434, 458 412, 450 386 C 428 392, 405 394, 380 390 C 396 366, 410 346, 420 330 Z"
+              fill="#F97316"
+              opacity="0.55"
             />
             <path
               d="M330 258 C 385 278, 445 312, 505 355 C 530 372, 548 392, 558 414 C 542 406, 522 392, 498 378 C 492 396, 488 416, 486 438 C 472 422, 460 402, 452 380 C 425 392, 395 398, 362 398 C 378 376, 396 352, 418 328 C 388 316, 355 306, 342 300 Z"
@@ -179,7 +224,15 @@ export default function AnimatedPhoenix() {
               fill="#F97316"
               opacity="0.75"
             />
-          </g>
+          </motion.g>
+
+          <motion.path
+            {...tailGlow}
+            d="M600 418 C 618 430, 632 446, 640 466 C 630 462, 618 454, 606 442 C 602 452, 598 464, 596 478 C 592 466, 590 452, 590 438 C 596 432, 600 426, 600 418 Z"
+            fill="#F97316"
+            opacity="0.7"
+            filter="url(#phx-blur)"
+          />
 
           <g>
             <path
