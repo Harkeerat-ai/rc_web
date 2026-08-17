@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import dynamic from "next/dynamic";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import Skeleton from "@/components/ui/Skeleton";
 
 const HeroScene = dynamic(
   () => import("@/components/three/HeroScene"),
@@ -12,7 +13,8 @@ const HeroScene = dynamic(
     loading: () => (
       <div className="w-full h-full bg-gradient-to-b from-primary to-surface flex items-center justify-center">
         <div className="flex flex-col items-center gap-4">
-          <div className="w-10 h-10 border-2 border-gold/30 border-t-gold rounded-full animate-spin" />
+          <Skeleton className="w-40 h-40 rounded-full" />
+          <Skeleton className="w-48 h-3" />
           <p className="text-text-muted text-xs font-body tracking-widest uppercase">
             Rising...
           </p>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Parallax from "@/components/motion/Parallax";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 import { gallery } from "@/lib/data";
 
 export default function GalleryStrip() {
@@ -36,12 +37,12 @@ export default function GalleryStrip() {
             transition={{ duration: 0.6, delay: 0.08 }}
             className="flex-none w-80 h-96 rounded-xl overflow-hidden snap-center relative group glass-card hover:shadow-[0_12px_40px_rgba(0,0,0,0.14)] transition-all duration-300"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <ImageWithSkeleton
               src={item.image}
               alt={item.title}
-              loading="lazy"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              aspect="aspect-[4/5]"
+              skeletonClassName="rounded-none"
+              imgClassName="transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
               <span className="text-white font-heading text-sm font-semibold">

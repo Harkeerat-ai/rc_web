@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
 import type { Project } from "@/lib/data";
 
 export default function ProjectCard({
@@ -21,12 +22,12 @@ export default function ProjectCard({
     >
       <div className="aspect-video bg-gradient-to-br from-surface to-primary flex items-center justify-center overflow-hidden">
         {project.image ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <ImageWithSkeleton
             src={project.image}
             alt={project.title}
-            loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            aspect="aspect-video"
+            skeletonClassName="rounded-none"
+            imgClassName="transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-gold/5 to-rust/5 flex items-center justify-center">

@@ -31,6 +31,37 @@ body {
   border-radius: 3px;
 }
 
+@layer utilities {
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+      100deg,
+      rgba(252, 247, 236, 0.06) 20%,
+      rgba(227, 178, 80, 0.14) 40%,
+      rgba(252, 247, 236, 0.06) 60%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.8s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shimmer {
+      animation: none;
+      background: rgba(252, 247, 236, 0.06);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
+
 @layer components {
   .glass-card {
     background: linear-gradient(
