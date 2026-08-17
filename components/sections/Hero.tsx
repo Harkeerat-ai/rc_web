@@ -73,11 +73,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-heading text-4xl md:text-6xl lg:text-8xl font-bold text-center text-text-primary"
+          className="font-heading text-4xl md:text-6xl lg:text-8xl font-bold text-center text-ivory"
         >
           Rise Above
           <br />
-          <span className="bg-gradient-to-r from-gold to-crimson bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-gold to-rust bg-clip-text text-transparent">
             Yourself
           </span>
         </motion.h1>

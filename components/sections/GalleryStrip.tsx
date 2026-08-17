@@ -16,7 +16,7 @@ export default function GalleryStrip() {
         >
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-3">
             Moments of{" "}
-            <span className="bg-gradient-to-r from-gold to-crimson bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-gold to-rust bg-clip-text text-transparent">
               Impact
             </span>
           </h2>

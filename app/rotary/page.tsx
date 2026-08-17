@@ -14,7 +14,7 @@ export default function RotaryPage() {
         >
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Rotary &{" "}
-            <span className="bg-gradient-to-r from-gold to-crimson bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-gold to-rust bg-clip-text text-transparent">
               District
             </span>
           </h1>
@@ -31,7 +31,7 @@ export default function RotaryPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="glass-card p-8"
           >
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gold to-crimson flex items-center justify-center mb-6">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gold to-rust flex items-center justify-center mb-6">
               <span className="text-white font-heading font-bold text-lg">RC</span>
             </div>
             <h2 className="font-heading text-2xl font-bold mb-4">
@@ -53,7 +53,7 @@ export default function RotaryPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="glass-card p-8"
           >
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-crimson to-gold flex items-center justify-center mb-6">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-rust to-gold flex items-center justify-center mb-6">
               <span className="text-white font-heading font-bold text-lg">
                 RID
               </span>

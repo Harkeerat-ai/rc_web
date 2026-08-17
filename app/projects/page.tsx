@@ -20,7 +20,7 @@ export default function ProjectsPage() {
         >
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Our{" "}
-            <span className="bg-gradient-to-r from-gold to-crimson bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-gold to-rust bg-clip-text text-transparent">
               Flagships
             </span>
           </h1>

@@ -29,7 +29,7 @@ export default function ProjectCard({
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-gold/5 to-crimson/5 flex items-center justify-center">
+          <div className="w-full h-full bg-gradient-to-br from-gold/5 to-rust/5 flex items-center justify-center">
             <span className="font-heading text-gold/30 text-5xl sm:text-6xl font-bold">
               {project.title.charAt(0)}
             </span>
@@ -49,7 +49,7 @@ export default function ProjectCard({
           ))}
         </div>
 
-        <h3 className="font-heading text-sm sm:text-lg font-bold text-text-primary mb-2 group-hover:text-gold transition-colors duration-300">
+        <h3 className="font-heading text-sm sm:text-lg font-bold text-ivory mb-2 group-hover:text-gold transition-colors duration-300">
           {project.title}
         </h3>
 

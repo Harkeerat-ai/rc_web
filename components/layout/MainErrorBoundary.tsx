@@ -35,7 +35,7 @@ export default class MainErrorBoundary extends Component<Props, State> {
           <p className="text-text-muted text-sm max-w-md mb-6">
             An unexpected error occurred. Please try refreshing the page.
           </p>
-          <pre className="text-xs text-crimson/70 max-w-xl overflow-auto mb-6 p-4 bg-surface/50 rounded-lg">
+          <pre className="text-xs text-rust/70 max-w-xl overflow-auto mb-6 p-4 bg-surface/50 rounded-lg">
             {this.state.error?.message}
           </pre>
           <button

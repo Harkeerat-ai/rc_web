@@ -33,7 +33,7 @@ export default function ProjectDetailModal({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#14100C]/70 backdrop-blur-sm"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -43,7 +43,7 @@ export default function ProjectDetailModal({
             onClick={(e) => e.stopPropagation()}
             className="glass-card max-w-lg w-full max-h-[80vh] overflow-y-auto"
           >
-            <div className="aspect-video bg-gradient-to-br from-gold/10 to-crimson/10 flex items-center justify-center">
+            <div className="aspect-video bg-gradient-to-br from-gold/10 to-rust/10 flex items-center justify-center">
               {project.image ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
@@ -71,7 +71,7 @@ export default function ProjectDetailModal({
                       </span>
                     ))}
                   </div>
-                  <h2 className="font-heading text-2xl font-bold text-text-primary">
+                  <h2 className="font-heading text-2xl font-bold text-ivory">
                     {project.title}
                   </h2>
                 </div>

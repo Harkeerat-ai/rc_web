@@ -76,8 +76,8 @@ export default function ContactForm() {
 
   const inputClasses = (field: string) =>
     `w-full bg-white/5 border ${
-      errors[field] ? "border-crimson" : "border-gold/10 focus:border-gold/50"
-    } rounded-lg px-4 py-3 text-text-primary text-sm placeholder-text-muted/50 outline-none transition-all duration-200`;
+      errors[field] ? "border-rust" : "border-gold/10 focus:border-gold/50"
+    } rounded-lg px-4 py-3 text-ivory text-sm placeholder-text-muted/50 outline-none transition-all duration-200`;
 
   return (
     <section id="contact" className="py-24 lg:py-32 px-4">
@@ -90,7 +90,7 @@ export default function ContactForm() {
         >
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Join Us &{" "}
-            <span className="bg-gradient-to-r from-gold to-crimson bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-gold to-rust bg-clip-text text-transparent">
               Connect
             </span>
           </h2>
@@ -215,7 +215,7 @@ export default function ContactForm() {
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-text-muted text-xs mb-2">
-                    Name <span className="text-crimson">*</span>
+                    Name <span className="text-rust">*</span>
                   </label>
                   <input
                     type="text"
@@ -229,7 +229,7 @@ export default function ContactForm() {
                     <motion.p
                       initial={{ opacity: 0, y: -5 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="text-crimson text-xs mt-1"
+                      className="text-rust text-xs mt-1"
                     >
                       {errors.name}
                     </motion.p>
@@ -237,7 +237,7 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <label className="block text-text-muted text-xs mb-2">
-                    Email <span className="text-crimson">*</span>
+                    Email <span className="text-rust">*</span>
                   </label>
                   <input
                     type="email"
@@ -251,7 +251,7 @@ export default function ContactForm() {
                     <motion.p
                       initial={{ opacity: 0, y: -5 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="text-crimson text-xs mt-1"
+                      className="text-rust text-xs mt-1"
                     >
                       {errors.email}
                     </motion.p>
@@ -290,7 +290,7 @@ export default function ContactForm() {
 
               <div>
                 <label className="block text-text-muted text-xs mb-2">
-                  Message <span className="text-crimson">*</span>
+                  Message <span className="text-rust">*</span>
                 </label>
                 <textarea
                   name="message"
@@ -304,7 +304,7 @@ export default function ContactForm() {
                   <motion.p
                     initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-crimson text-xs mt-1"
+                    className="text-rust text-xs mt-1"
                   >
                     {errors.message}
                   </motion.p>
@@ -314,7 +314,7 @@ export default function ContactForm() {
               <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-gold to-crimson rounded-full text-white text-sm font-semibold hover:shadow-[0_0_25px_rgba(212,160,48,0.4)] transition-all duration-300 cursor-pointer"
+                  className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-gold to-rust rounded-full text-white text-sm font-semibold hover:shadow-[0_0_25px_rgba(212,160,48,0.4)] transition-all duration-300 cursor-pointer"
                 >
                   Send Message
                 </button>

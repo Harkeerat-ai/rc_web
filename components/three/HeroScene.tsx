@@ -54,7 +54,7 @@ function FireParticles({ count = 500 }: { count?: number }) {
       </bufferGeometry>
       <pointsMaterial
         size={0.08}
-        color="#C0261B"
+        color="#B7410E"
         transparent
         opacity={0.8}
         blending={THREE.AdditiveBlending}

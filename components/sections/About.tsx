@@ -23,7 +23,7 @@ function AnimatedCounter({
         initial={{ opacity: 0, scale: 0.5 }}
         animate={isInView ? { opacity: 1, scale: 1 } : {}}
         transition={{ duration: 0.5 }}
-        className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gold to-crimson bg-clip-text text-transparent"
+        className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gold to-rust bg-clip-text text-transparent"
       >
         {isInView ? value : 0}
         {suffix}
@@ -54,7 +54,7 @@ export default function About() {
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
                 One of the Oldest Clubs
                 <br />
-                <span className="bg-gradient-to-r from-gold to-crimson bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-gold to-rust bg-clip-text text-transparent">
                   in Rotaract Mumbai
                 </span>
               </h2>
@@ -114,7 +114,7 @@ export default function About() {
               </div>
 
               <div className="mt-8 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gold to-crimson flex items-center justify-center text-white font-bold text-sm">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-gold to-rust flex items-center justify-center text-white font-bold text-sm">
                   RID
                 </div>
                 <div>

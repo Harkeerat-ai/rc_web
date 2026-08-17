@@ -15,7 +15,7 @@ export default function NewsletterPage() {
         >
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Our{" "}
-            <span className="bg-gradient-to-r from-gold to-crimson bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-gold to-rust bg-clip-text text-transparent">
               Publications
             </span>
           </h1>
@@ -51,7 +51,7 @@ export default function NewsletterPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-heading text-sm md:text-base font-semibold text-text-primary group-hover:text-gold transition-colors duration-300">
+                  <h3 className="font-heading text-sm md:text-base font-semibold text-ivory group-hover:text-gold transition-colors duration-300">
                     {newsletter.title}
                   </h3>
                   <p className="text-text-muted text-xs mt-1">

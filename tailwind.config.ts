@@ -9,12 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#0A0B1A",
-        surface: "#1A1B3A",
+        primary: "#14100C",
+        surface: "#221A13",
         gold: "#D4A030",
-        crimson: "#B91C1C",
-        "text-primary": "#F8F9FA",
-        "text-muted": "#94A3B8",
+        rust: "#B7410E",
+        shadowblack: "#14100C",
+        ivory: "#F5EFE1",
+        "text-primary": "#F5EFE1",
+        "text-muted": "#B3A48F",
         glass: "rgba(212, 160, 48, 0.15)",
       },
       fontFamily: {
@@ -42,7 +44,7 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "phoenix-gold": "linear-gradient(135deg, #D4A030, #B91C1C)",
+        "phoenix-gold": "linear-gradient(135deg, #D4A030, #B7410E)",
       },
     },
   },
