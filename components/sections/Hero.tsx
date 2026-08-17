@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import dynamic from "next/dynamic";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import AnimatedPhoenix from "@/components/phoenix/AnimatedPhoenix";
@@ -25,18 +25,17 @@ const HeroScene = dynamic(
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      const progress = Math.max(0, Math.min(1, -rect.top / rect.height));
-      setScrollProgress(progress);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const fireY = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  const phoenixY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const indicatorOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
 
   return (
     <section
@@ -44,14 +43,21 @@ export default function Hero() {
       ref={sectionRef}
       className="relative h-screen w-full overflow-hidden"
     >
-      <ErrorBoundary>
-        <HeroScene />
-      </ErrorBoundary>
-
-      <AnimatedPhoenix />
+      <motion.div style={{ y: fireY }} className="absolute inset-0">
+        <ErrorBoundary>
+          <HeroScene />
+        </ErrorBoundary>
+      </motion.div>
 
       <motion.div
-        animate={{ opacity: 1 - scrollProgress }}
+        style={{ y: phoenixY }}
+        className="absolute inset-0 z-[5] pointer-events-none"
+      >
+        <AnimatedPhoenix />
+      </motion.div>
+
+      <motion.div
+        style={{ y: contentY, opacity: contentOpacity }}
         className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4"
       >
         <motion.p
@@ -117,7 +123,7 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        animate={{ opacity: 1 - scrollProgress * 2 }}
+        style={{ opacity: indicatorOpacity }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <motion.div

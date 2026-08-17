@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Parallax from "@/components/motion/Parallax";
 import { gallery } from "@/lib/data";
 
 export default function GalleryStrip() {
@@ -25,7 +26,7 @@ export default function GalleryStrip() {
         </motion.div>
       </div>
 
-      <div className="flex gap-4 px-4 sm:px-6 lg:px-8 overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar">
+      <Parallax speed={24} className="flex gap-4 px-4 sm:px-6 lg:px-8 overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar">
         {gallery.map((item) => (
           <motion.figure
             key={item.id}
@@ -49,7 +50,7 @@ export default function GalleryStrip() {
             </div>
           </motion.figure>
         ))}
-      </div>
+      </Parallax>
     </section>
   );
 }

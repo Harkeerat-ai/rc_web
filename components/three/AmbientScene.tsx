@@ -2,6 +2,7 @@
 
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
+import { motion, useScroll, useTransform } from "framer-motion";
 import * as THREE from "three";
 
 function AmbientParticles() {
@@ -71,13 +72,18 @@ function AmbientParticles() {
 }
 
 export default function AmbientScene() {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
+
   return (
-    <Canvas
-      camera={{ position: [0, 0, 6], fov: 50 }}
-      gl={{ antialias: true, alpha: true }}
-      style={{ position: "absolute", inset: 0 }}
-    >
-      <AmbientParticles />
-    </Canvas>
+    <motion.div style={{ y, scale: 1.2 }} className="absolute inset-0">
+      <Canvas
+        camera={{ position: [0, 0, 6], fov: 50 }}
+        gl={{ antialias: true, alpha: true }}
+        style={{ position: "absolute", inset: 0 }}
+      >
+        <AmbientParticles />
+      </Canvas>
+    </motion.div>
   );
 }
