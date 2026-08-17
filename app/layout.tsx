@@ -8,6 +8,7 @@ import LayoutWrapper from "@/components/layout/LayoutWrapper";
 import MainErrorBoundary from "@/components/layout/MainErrorBoundary";
 import FirefliesBackdrop from "@/components/layout/FirefliesBackdrop";
 import AnimatedPhoenix from "@/components/phoenix/AnimatedPhoenix";
+import ChatWidget from "@/components/chat/ChatWidget";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -52,6 +53,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <FirefliesBackdrop />
         <AnimatedPhoenix />
+        <ChatWidget />
         <Navbar />
         <MainErrorBoundary>
           <main className="min-h-screen">
