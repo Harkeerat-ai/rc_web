@@ -20,6 +20,12 @@ export interface SocialLink {
   icon: string;
 }
 
+export interface GalleryItem {
+  id: string;
+  title: string;
+  image: string;
+}
+
 export const projects: Project[] = [
   {
     id: "1",
@@ -119,6 +125,51 @@ export const socialLinks: SocialLink[] = [
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/rotaract-club-of-bombay-west-106ba7289/",
     icon: "linkedin",
+  },
+];
+
+export const gallery: GalleryItem[] = [
+  {
+    id: "1",
+    title: "Fashion Extravaganza",
+    image:
+      "https://static.wixstatic.com/media/b0eb65_4d60d1a9f91a447aa1c28c6427bf35bd~mv2.jpg/v1/fill/w_800,h_960,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b0eb65_4d60d1a9f91a447aa1c28c6427bf35bd~mv2.jpg",
+  },
+  {
+    id: "2",
+    title: "Rangeelo Raas 2024",
+    image:
+      "https://static.wixstatic.com/media/b0eb65_0da64321f32249908bfa986630f307e4~mv2.jpg/v1/fill/w_800,h_960,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b0eb65_0da64321f32249908bfa986630f307e4~mv2.jpg",
+  },
+  {
+    id: "3",
+    title: "Feminine Focus",
+    image:
+      "https://static.wixstatic.com/media/b0eb65_62992abd9397490d9ff73b93b924567e~mv2.jpg/v1/fill/w_800,h_960,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b0eb65_62992abd9397490d9ff73b93b924567e~mv2.jpg",
+  },
+  {
+    id: "4",
+    title: "Astra",
+    image:
+      "https://static.wixstatic.com/media/b0eb65_b73bd8386e8e4e5e8247335b3c12e9d4~mv2.jpg/v1/fill/w_800,h_960,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b0eb65_b73bd8386e8e4e5e8247335b3c12e9d4~mv2.jpg",
+  },
+  {
+    id: "5",
+    title: "Bollyween Prom Night",
+    image:
+      "https://static.wixstatic.com/media/b0eb65_fcd0a72ee26b4fbcacae8f2a5838e444~mv2.jpg/v1/fill/w_800,h_960,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b0eb65_fcd0a72ee26b4fbcacae8f2a5838e444~mv2.jpg",
+  },
+  {
+    id: "6",
+    title: "Revive Cricket Tournament",
+    image:
+      "https://static.wixstatic.com/media/b0eb65_ea23b8df62b348e781518351d891de82~mv2.jpg/v1/fill/w_800,h_960,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b0eb65_ea23b8df62b348e781518351d891de82~mv2.jpg",
+  },
+  {
+    id: "7",
+    title: "Diwali Killa Utsav",
+    image:
+      "https://static.wixstatic.com/media/b0eb65_581689c788de4080b248eaf3fac5fbe4~mv2.jpg/v1/fill/w_800,h_960,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b0eb65_581689c788de4080b248eaf3fac5fbe4~mv2.jpg",
   },
 ];
 
