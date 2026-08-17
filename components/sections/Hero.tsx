@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import dynamic from "next/dynamic";
 import ErrorBoundary from "@/components/ErrorBoundary";
-import AnimatedPhoenix from "@/components/phoenix/AnimatedPhoenix";
 
 const HeroScene = dynamic(
   () => import("@/components/three/HeroScene"),
@@ -32,7 +31,6 @@ export default function Hero() {
   });
 
   const fireY = useTransform(scrollYProgress, [0, 1], [0, -40]);
-  const phoenixY = useTransform(scrollYProgress, [0, 1], [0, -80]);
   const contentY = useTransform(scrollYProgress, [0, 1], [0, -120]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const indicatorOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
@@ -47,13 +45,6 @@ export default function Hero() {
         <ErrorBoundary>
           <HeroScene />
         </ErrorBoundary>
-      </motion.div>
-
-      <motion.div
-        style={{ y: phoenixY }}
-        className="absolute inset-0 z-[5] pointer-events-none"
-      >
-        <AnimatedPhoenix />
       </motion.div>
 
       <motion.div

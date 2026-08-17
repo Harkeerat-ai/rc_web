@@ -7,6 +7,7 @@ import ScrollProvider from "@/components/layout/ScrollProvider";
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
 import MainErrorBoundary from "@/components/layout/MainErrorBoundary";
 import FirefliesBackdrop from "@/components/layout/FirefliesBackdrop";
+import AnimatedPhoenix from "@/components/phoenix/AnimatedPhoenix";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -50,6 +51,7 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body className="font-body antialiased">
         <FirefliesBackdrop />
+        <AnimatedPhoenix />
         <Navbar />
         <MainErrorBoundary>
           <main className="min-h-screen">
