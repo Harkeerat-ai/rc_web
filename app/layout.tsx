@@ -25,6 +25,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rc-web-six.vercel.app"),
   title: "Rotaract Club of Bombay West | Rise Above Yourself",
   description:
     "Rotaract Club of Bombay West — A dynamic community of young leaders committed to service, growth, and transformation. Rise above yourself with RCBW, RID 3141.",
@@ -42,6 +43,14 @@ export const metadata: Metadata = {
     description:
       "Rise Above Yourself — Join the Rotaract Club of Bombay West.",
     type: "website",
+    images: [
+      {
+        url: "/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "Rotaract Club of Bombay West — Rise Above Yourself",
+      },
+    ],
   },
 };
 
