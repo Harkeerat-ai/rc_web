@@ -75,7 +75,7 @@ export default function ContactForm() {
   };
 
   const inputClasses = (field: string) =>
-    `w-full bg-white/10 border ${
+    `w-full bg-surface/70 border ${
       errors[field] ? "border-rust" : "border-gold/10 focus:border-gold/50"
     } rounded-lg px-4 py-3 text-ivory text-sm placeholder-text-muted/50 outline-none transition-all duration-200`;
 
