@@ -2,9 +2,11 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Add a light/dark theme toggle, a global club-cheer marquee, and a floating background-music player to the RCBW site, shipped as three independent phases.
+**Goal:** Add a light/dark theme toggle and a global club-cheer marquee to the RCBW site, shipped as two independent phases.
 
-**Architecture:** Phase 1 converts the hardcoded dark palette to CSS-variable-driven tokens (`rgb(var(--color-x) / <alpha-value>)`) so every existing `bg-primary` / `text-ivory` / `border-gold` class automatically adapts to light/dark via `next-themes` (`attribute="class"`, `defaultTheme="system"`). Phase 2 adds a word-by-word rise-then-marquee cheer strip (framer-motion + a Tailwind `marquee` keyframe). Phase 3 adds a self-contained floating music player using a module-level `Audio` singleton so playback survives client-side navigation.
+> **2026-08-18 note:** Phase 3 (floating background music player) was **removed** at the user's request after the chosen track URL proved unreliable in playback. `components/music/MusicPlayer.tsx` and its `MUSIC_URL` constant were deleted; `LazyWidgets` now lazy-loads only the chat widget. The Phase 3 sections (Tasks 9-10, below) are retained only for historical reference and are **not to be implemented**.
+
+**Architecture:** Phase 1 converts the hardcoded dark palette to CSS-variable-driven tokens (`rgb(var(--color-x) / <alpha-value>)`) so every existing `bg-primary` / `text-ivory` / `border-gold` class automatically adapts to light/dark via `next-themes` (`attribute="class"`, `defaultTheme="system"`). Phase 2 adds a word-by-word rise-then-marquee cheer strip (framer-motion + a Tailwind `marquee` keyframe).
 
 **Tech Stack:** Next.js 14 (App Router), React 18, Tailwind CSS 3, framer-motion, `next-themes` (new dependency).
 
@@ -18,11 +20,11 @@
 |---|---|---|
 | `tailwind.config.ts` | CSS-var color tokens, `darkMode: "class"`, `marquee` keyframe/animation | Modify |
 | `app/globals.css` | `:root` (light) + `.dark` variable blocks; variable-driven `body`, `::selection`, scrollbar, `.glass-card`, `.shimmer`, `color-scheme` | Modify |
-| `app/layout.tsx` | Mount `ThemeProvider`; add `suppressHydrationWarning` to `<html>`; mount `CheerMarquee` + `MusicPlayer` | Modify |
+| `app/layout.tsx` | Mount `ThemeProvider`; add `suppressHydrationWarning` to `<html>`; mount `CheerMarquee` | Modify |
 | `components/providers/ThemeProvider.tsx` | Thin client wrapper around `next-themes` provider | Create |
 | `components/layout/Navbar.tsx` | Theme toggle button (sun/moon); swap `bg-[#1E1610]` scrims for `bg-primary` | Modify |
 | `components/layout/CheerMarquee.tsx` | Global cheer strip: word-by-word rise then marquee loop | Create |
-| `components/music/MusicPlayer.tsx` | Floating play/pause/mute/volume player (bottom-left) | Create |
+| `components/layout/LazyWidgets.tsx` | Lazy-load the chat widget after idle (music player removed) | Create |
 | `package.json` | Add `next-themes` | Modify |
 
 ---
@@ -520,6 +522,8 @@ git commit -m "Add global club cheer marquee with word-by-word rise animation"
 
 ## Phase 3 — Background Music
 
+> **REMOVED 2026-08-18** — Do not implement. `MusicPlayer.tsx` and its `MUSIC_URL` constant were deleted at the user's request after the chosen track URL proved unreliable in playback. Sections below are historical reference only.
+
 ### Task 9: Create MusicPlayer component
 
 **Files:**
@@ -730,5 +734,5 @@ Expected: pushed; Vercel deploys the new build.
 
 - Phase 1: CSS vars (Tasks 2-3) ✓ · next-themes infra (Tasks 1, 4, 5) ✓ · navbar toggle + scrim fix (Task 6) ✓ · modal scrim stays dark (unchanged, per spec) ✓ · light-mode hazards (all `text-white` sites sit on gold/rust gradients or black image scrims — verified fine in both themes, no edits needed) ✓
 - Phase 2: global marquee (Tasks 7-8) ✓ · word-by-word rise + pause + loop (marquee keyframe 90%/100% hold) ✓ · reduced-motion static line ✓
-- Phase 3: floating player bottom-left z-[70] (Tasks 9-10) ✓ · streamed URL constant ✓ · play/pause + mute + volume ✓ · survives navigation (module singleton) ✓ · tab-hidden pause ✓
+- Phase 3: **removed 2026-08-18** (see note above) — `MusicPlayer.tsx` deleted, `LazyWidgets` lazy-loads chat only.
 - Sequencing/verification: each phase lint+build+manual, committed separately, push at end ✓

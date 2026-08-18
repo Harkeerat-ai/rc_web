@@ -2,11 +2,11 @@
 
 **Date:** 2026-08-18
 **Status:** Approved (design), pending user spec review
-**Phases:** 1. Light/dark toggle · 2. Club cheer marquee · 3. Background music
+**Phases:** 1. Light/dark toggle · 2. Club cheer marquee
 
 ## Overview
 
-Add three user-facing polish features to the RCBW site, shipped as three independent phases, each verified (lint + build) and committed separately. The biggest architectural lift is Phase 1: the site is currently 100% dark-themed with hardcoded hex colors and no theming infrastructure.
+Add polish features to the RCBW site, shipped as independent phases, each verified (lint + build) and committed separately. The biggest architectural lift is Phase 1: the site is currently 100% dark-themed with hardcoded hex colors and no theming infrastructure.
 
 ## Phase 1 — Light/Dark Toggle
 
@@ -48,21 +48,13 @@ Add three user-facing polish features to the RCBW site, shipped as three indepen
 
 ## Phase 3 — Background Music
 
-### Component
-- New `components/music/MusicPlayer.tsx`, floating button fixed bottom-left (opposite chat widget bottom-right), `z-[70]`.
-- Native `<audio>` streaming a royalty-free track URL:
-  `https://archive.org/download/alex-productions-ambient-music-nature/alex-productions-ambient-music-nature.mp3`
-  (archive.org, "Ambient Nature Music" by Alex-Productions, CC BY 3.0 with credit; URL stored in a constant, easily swappable).
-- Controls: play/pause toggle + mute + small volume slider. First interaction starts playback (autoplay blocked by browsers — subtle "♪" idle button).
-- Playback state persists across client-side navigation (App Router keeps layout mounted). Module-level state/ref keeps playing; localStorage not required for audio.
-- Pauses when the tab is hidden (`visibilitychange`) — optional nicety, include if trivial.
+> **Removed 2026-08-18.** The floating music player (Phase 3) was removed at the user's request after the chosen track URL proved unreliable in playback. `components/music/MusicPlayer.tsx` and its `MUSIC_URL` constant were deleted; `LazyWidgets` now lazy-loads only the chat widget.
 
 ## Sequencing & Verification
 
 1. Phase 1 → `npm run lint` + `npm run build` → commit.
 2. Phase 2 → verify → commit.
-3. Phase 3 → verify → commit.
-4. Push each to `main` after commit (per prior workflow).
+3. Push each to `main` after commit (per prior workflow).
 
 ## Out of Scope
 - No payload-cutting refactors (per user priority: UX polish).
@@ -70,6 +62,6 @@ Add three user-facing polish features to the RCBW site, shipped as three indepen
 - No new routes.
 
 ## Files (expected)
-- New: `components/providers/ThemeProvider.tsx`, `components/layout/CheerMarquee.tsx`, `components/music/MusicPlayer.tsx`
+- New: `components/providers/ThemeProvider.tsx`, `components/layout/CheerMarquee.tsx`
 - Edit: `tailwind.config.ts`, `app/globals.css`, `app/layout.tsx`, `components/layout/Navbar.tsx`, `components/sections/ProjectDetailModal.tsx`, all components using color tokens (Phase 1 sweep)
 - Install: `next-themes`

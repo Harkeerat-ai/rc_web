@@ -8,11 +8,6 @@ const ChatWidget = dynamic(
   { ssr: false, loading: () => null }
 );
 
-const MusicPlayer = dynamic(
-  () => import("@/components/music/MusicPlayer"),
-  { ssr: false, loading: () => null }
-);
-
 export default function LazyWidgets() {
   const [ready, setReady] = useState(false);
 
@@ -45,10 +40,5 @@ export default function LazyWidgets() {
 
   if (!ready) return null;
 
-  return (
-    <>
-      <ChatWidget />
-      <MusicPlayer />
-    </>
-  );
+  return <ChatWidget />;
 }
