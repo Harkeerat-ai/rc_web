@@ -9,6 +9,7 @@ import MainErrorBoundary from "@/components/layout/MainErrorBoundary";
 import FirefliesBackdrop from "@/components/layout/FirefliesBackdrop";
 import AnimatedPhoenix from "@/components/phoenix/AnimatedPhoenix";
 import ChatWidget from "@/components/chat/ChatWidget";
+import ThemeProvider from "@/components/providers/ThemeProvider";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -49,20 +50,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`} suppressHydrationWarning>
       <body className="font-body antialiased">
-        <FirefliesBackdrop />
-        <AnimatedPhoenix />
-        <ChatWidget />
-        <Navbar />
-        <MainErrorBoundary>
-          <main className="min-h-screen">
-            <LayoutWrapper>
-              <ScrollProvider>{children}</ScrollProvider>
-            </LayoutWrapper>
-          </main>
-        </MainErrorBoundary>
-        <Footer />
+        <ThemeProvider>
+          <FirefliesBackdrop />
+          <AnimatedPhoenix />
+          <ChatWidget />
+          <Navbar />
+          <MainErrorBoundary>
+            <main className="min-h-screen">
+              <LayoutWrapper>
+                <ScrollProvider>{children}</ScrollProvider>
+              </LayoutWrapper>
+            </main>
+          </MainErrorBoundary>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

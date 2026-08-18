@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,15 +10,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#1E1610",
-        surface: "#2E241B",
-        gold: "#E3B250",
-        rust: "#C85A1E",
-        shadowblack: "#1E1610",
-        ivory: "#FCF7EC",
-        "text-primary": "#FCF7EC",
-        "text-muted": "#C9BCA8",
-        glass: "rgba(227, 178, 80, 0.2)",
+        primary: "rgb(var(--color-primary) / <alpha-value>)",
+        surface: "rgb(var(--color-surface) / <alpha-value>)",
+        gold: "rgb(var(--color-gold) / <alpha-value>)",
+        rust: "rgb(var(--color-rust) / <alpha-value>)",
+        shadowblack: "rgb(var(--color-primary) / <alpha-value>)",
+        ivory: "rgb(var(--color-ivory) / <alpha-value>)",
+        "text-primary": "rgb(var(--color-ivory) / <alpha-value>)",
+        "text-muted": "rgb(var(--color-text-muted) / <alpha-value>)",
+        glass: "rgb(var(--color-glass) / <alpha-value>)",
       },
       fontFamily: {
         heading: ["Space Grotesk", "sans-serif"],
@@ -27,6 +28,7 @@ const config: Config = {
         float: "float 6s ease-in-out infinite",
         glow: "glow 2s ease-in-out infinite alternate",
         ember: "ember 3s ease-out infinite",
+        marquee: "marquee 22s linear infinite",
       },
       keyframes: {
         float: {
@@ -40,6 +42,11 @@ const config: Config = {
         ember: {
           "0%": { opacity: "1", transform: "translateY(0) scale(1)" },
           "100%": { opacity: "0", transform: "translateY(-100px) scale(0)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "90%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
       backgroundImage: {
