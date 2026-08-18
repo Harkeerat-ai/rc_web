@@ -58,8 +58,12 @@ export default function MusicPlayer() {
   const togglePlay = () => {
     const audio = getAudio();
     if (audio.paused) {
-      audio.play();
-      setPlaying(true);
+      audio
+        .play()
+        .then(() => setPlaying(true))
+        .catch(() => {
+          setPlaying(false);
+        });
     } else {
       audio.pause();
       setPlaying(false);
