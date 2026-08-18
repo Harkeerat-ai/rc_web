@@ -40,6 +40,7 @@ export interface ChatLabels {
   minimize: string;
   open: string;
   offline: string;
+  bubble: string;
 }
 
 const EN_LABELS: ChatLabels = {
@@ -57,6 +58,7 @@ const EN_LABELS: ChatLabels = {
   minimize: "Minimize",
   open: "Open chat",
   offline: "The assistant is offline right now. Try again later.",
+  bubble: "Need help? Ask our assistant",
 };
 
 const LABEL_DEFAULTS: Record<ChatLanguage, Partial<ChatLabels>> = {
@@ -76,6 +78,7 @@ const LABEL_DEFAULTS: Record<ChatLanguage, Partial<ChatLabels>> = {
     minimize: "Minimizar",
     open: "Abrir chat",
     offline: "El asistente no está disponible ahora. Inténtalo más tarde.",
+    bubble: "¿Necesitas ayuda? Pregunta a nuestro asistente",
   },
   ar: {
     welcome: "مرحبًا! أنا مساعد RCBW. اسألني عن النادي أو مشاريعنا أو كيفية الانضمام.",
@@ -92,6 +95,7 @@ const LABEL_DEFAULTS: Record<ChatLanguage, Partial<ChatLabels>> = {
     minimize: "تصغير",
     open: "فتح الدردشة",
     offline: "المساعد غير متاح الآن. حاول لاحقًا.",
+    bubble: "هل تحتاج مساعدة؟ اسأل مساعدنا",
   },
   hi: {
     welcome: "नमस्ते! मैं RCBW सहायक हूँ। क्लब, हमारे प्रोजेक्ट या जुड़ने के बारे में पूछें।",
@@ -108,6 +112,7 @@ const LABEL_DEFAULTS: Record<ChatLanguage, Partial<ChatLabels>> = {
     minimize: "छोटा करें",
     open: "चैट खोलें",
     offline: "सहायक अभी उपलब्ध नहीं है। बाद में प्रयास करें।",
+    bubble: "मदद चाहिए? हमारे सहायक से पूछें",
   },
   mr: {
     welcome: "नमस्कार! मी RCBW सहायक आहे. क्लब, आमच्या प्रकल्प किंवा सामील होण्याबद्दल विचारा.",
@@ -124,6 +129,7 @@ const LABEL_DEFAULTS: Record<ChatLanguage, Partial<ChatLabels>> = {
     minimize: "लहान करा",
     open: "चॅट उघडा",
     offline: "सहाय्यक आत्ता उपलब्ध नाही. नंतर प्रयत्न करा.",
+    bubble: "मदत हवी? आमच्या सहाय्यकाला विचारा",
   },
   ta: {
     welcome: "வணக்கம்! நான் RCBW உதவியாளர். கிளப், எங்கள் திட்டங்கள் அல்லது இணைவது பற்றி கேளுங்கள்.",
@@ -140,6 +146,7 @@ const LABEL_DEFAULTS: Record<ChatLanguage, Partial<ChatLabels>> = {
     minimize: "சுருக்கு",
     open: "அரட்டையைத் திற",
     offline: "உதவியாளர் இப்போது கிடைக்கவில்லை. பின்னர் முயற்சிக்கவும்.",
+    bubble: "உதவி தேவையா? எங்கள் உதவியாளரிடம் கேளுங்கள்",
   },
   gu: {
     welcome: "નમસ્તે! હું RCBW સહાયક છું. ક્લબ, અમારા પ્રોજેક્ટ્સ અથવા જોડાવા વિશે પૂછો.",
@@ -156,6 +163,7 @@ const LABEL_DEFAULTS: Record<ChatLanguage, Partial<ChatLabels>> = {
     minimize: "નાનું કરો",
     open: "ચેટ ખોલો",
     offline: "સહાયક હાલ ઉપલબ્ધ નથી. પછી પ્રયાસ કરો.",
+    bubble: "મદદ જોઈએ? અમારા સહાયકને પૂછો",
   },
   pa: {
     welcome: "ਸਤ ਸ੍ਰੀ ਅਕਾਲ! ਮੈਂ RCBW ਸਹਾਇਕ ਹਾਂ। ਕਲੱਬ, ਸਾਡੇ ਪ੍ਰੋਜੈਕਟ ਜਾਂ ਜੁੜਨ ਬਾਰੇ ਪੁੱਛੋ।",
@@ -172,6 +180,7 @@ const LABEL_DEFAULTS: Record<ChatLanguage, Partial<ChatLabels>> = {
     minimize: "ਛੋਟਾ ਕਰੋ",
     open: "ਚੈਟ ਖੋਲ੍ਹੋ",
     offline: "ਸਹਾਇਕ ਹੁਣ ਉਪਲਬਧ ਨਹੀਂ ਹੈ। ਬਾਅਦ ਵਿੱਚ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+    bubble: "ਮਦਦ ਚਾਹੀਦੀ ਹੈ? ਸਾਡੇ ਸਹਾਇਕ ਨੂੰ ਪੁੱਛੋ",
   },
 };
 

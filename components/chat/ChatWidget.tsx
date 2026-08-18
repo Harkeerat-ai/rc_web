@@ -30,6 +30,14 @@ const FEEDBACK_URL = "/api/chat/feedback";
 export default function ChatWidget() {
   const reducedMotion = useReducedMotion();
   const [open, setOpen] = useState(false);
+  const [bubbleDismissed, setBubbleDismissed] = useState(() => {
+    if (typeof window === "undefined") return false;
+    try {
+      return window.sessionStorage.getItem("rcbw_chat_bubble_seen") === "1";
+    } catch {
+      return false;
+    }
+  });
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<ActiveMessage[]>([]);
   const [lang, setLang] = useState<ChatLanguage>("en");
@@ -337,13 +345,42 @@ export default function ChatWidget() {
   return (
     <div dir="ltr">
       <AnimatePresence>{open && panel}</AnimatePresence>
+      <AnimatePresence>
+        {!open && !bubbleDismissed && configured !== false && (
+          <motion.div
+            key="chat-bubble"
+            initial={{ opacity: 0, x: 12, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: 12, scale: 0.95 }}
+            transition={{ delay: 1.2, duration: 0.35, ease: "easeOut" }}
+            aria-hidden
+            className="pointer-events-none fixed bottom-8 right-24 z-[70] animate-float"
+          >
+            <span className="relative flex items-center gap-2 rounded-full border border-gold/25 bg-surface/95 px-4 py-2 text-xs font-medium text-ivory shadow-[0_4px_16px_rgba(0,0,0,0.25)] backdrop-blur">
+              {labels.bubble}
+              <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-gold shadow-[0_0_8px_rgba(227,178,80,0.9)]" />
+              <span className="absolute -right-1 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rotate-45 border-r border-t border-gold/25 bg-surface/95" />
+            </span>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <motion.button
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1, duration: 0.4 }}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => {
+          if (!open) {
+            setBubbleDismissed(true);
+            try {
+              window.sessionStorage.setItem("rcbw_chat_bubble_seen", "1");
+            } catch {
+              // ignore
+            }
+          }
+          setOpen((v) => !v);
+        }}
         aria-label={open ? labels.minimize : labels.open}
         className="fixed bottom-5 right-5 z-[70] flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-gold to-rust shadow-[0_0_25px_rgba(227,178,80,0.45)] transition-shadow hover:shadow-[0_0_35px_rgba(227,178,80,0.6)] cursor-pointer"
       >
