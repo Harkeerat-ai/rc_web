@@ -22,7 +22,7 @@ function getAudio() {
 export default function MusicPlayer() {
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
-  const [open] = useState(false);
+  const [open, setOpen] = useState(false);
   const [volume, setVolume] = useState(0.5);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -39,8 +39,6 @@ export default function MusicPlayer() {
     } else {
       audio.volume = 0.5;
     }
-    audio.muted = muted;
-    setMuted(audio.muted);
 
     const onVisibility = () => {
       if (document.hidden && audioRef.current && !audioRef.current.paused) {
@@ -117,6 +115,23 @@ export default function MusicPlayer() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <button
+        onClick={() => setOpen((o) => !o)}
+        aria-label={open ? "Hide volume controls" : "Show volume controls"}
+        aria-expanded={open}
+        className="glass-card flex h-12 w-12 items-center justify-center rounded-full text-gold hover:text-ivory transition-colors cursor-pointer"
+      >
+        {open ? (
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        ) : (
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+          </svg>
+        )}
+      </button>
 
       <button
         onClick={togglePlay}
