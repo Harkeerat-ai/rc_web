@@ -34,7 +34,7 @@ export default function CheerMarquee() {
 
   if (reduce) {
     return (
-      <div className="relative z-40 overflow-hidden border-b border-gold/20 bg-primary/60 py-2 backdrop-blur-sm">
+      <div className="relative z-40 mt-16 lg:mt-20 overflow-hidden border-b border-gold/20 bg-primary/60 py-2 backdrop-blur-sm">
         <p className="mx-auto max-w-6xl px-4 text-center font-heading text-xs sm:text-sm uppercase tracking-widest text-transparent bg-gradient-to-r from-gold to-rust bg-clip-text">
           {CHEER}
         </p>
@@ -43,7 +43,7 @@ export default function CheerMarquee() {
   }
 
   return (
-    <div className="relative z-40 overflow-hidden border-b border-gold/20 bg-primary/60 py-2 backdrop-blur-sm">
+    <div className="relative z-40 mt-16 lg:mt-20 overflow-hidden border-b border-gold/20 bg-primary/60 py-2 backdrop-blur-sm">
       <div className="flex w-max animate-marquee will-change-transform">
         <CheerRow />
         <CheerRow />
