@@ -25,7 +25,8 @@ Add three user-facing polish features to the RCBW site, shipped as three indepen
   - `--color-glass` (dark `rgba(227,178,80,0.2)` / light `rgba(200,90,30,0.15)`)
 - Map Tailwind tokens to `rgb(var(--color-x) / <alpha>)` so existing opacity modifiers (`/10`, `/20`) keep working.
 - Update the ~200 color-token usages across components (audited) to keep the same class names where possible; where a token's dark/light meaning differs, the CSS-variable swap handles it.
-- Dark scrim overlays stay dark in BOTH themes: the `bg-[#1E1610]` arbitrary values in `Navbar.tsx` (2×) and `ProjectDetailModal.tsx` (1×) remain as-is (they are dark translucent backdrops behind content and must not flip in light mode).
+- Dark scrim overlays stay dark in BOTH themes: the modal backdrop `bg-[#1E1610]/70` in `ProjectDetailModal.tsx` remains as-is (a true dimming scrim behind content).
+- The navbar is NOT a scrim — it is a surface the links sit on. Its `bg-[#1E1610]/80` (scrolled) and `bg-[#1E1610]/95` (mobile dropdown) in `Navbar.tsx` must become theme-aware (`bg-primary/80`, `bg-primary/95`) so `text-text-muted` links stay legible in light mode.
 - Add `.dark` class + `@media (prefers-color-scheme)` overrides in `globals.css` for `body` bg/text, `::selection`, scrollbar, `.glass-card`, `.shimmer`.
 ### Light-mode hazards
 - Audit the 9 `text-white` / `bg-white/10` / `from-black/60` sites per-context: white text over images/gradients and black scrims (GalleryStrip overlay, ProjectDetailModal) are fine to keep; white text on a light background (e.g., some ChatWidget/ContactForm button labels) must become theme-aware via variables.
