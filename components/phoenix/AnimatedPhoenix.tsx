@@ -124,7 +124,7 @@ export default function AnimatedPhoenix() {
 
   const phoenixSvg = (
     <motion.svg
-      width="min(22vw, 240px)"
+      width="min(17vw, 180px)"
       viewBox="0 0 640 520"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
