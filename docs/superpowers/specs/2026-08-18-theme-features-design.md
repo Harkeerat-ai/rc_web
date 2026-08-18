@@ -51,8 +51,8 @@ Add three user-facing polish features to the RCBW site, shipped as three indepen
 ### Component
 - New `components/music/MusicPlayer.tsx`, floating button fixed bottom-left (opposite chat widget bottom-right), `z-[70]`.
 - Native `<audio>` streaming a royalty-free track URL:
-  `https://www.free-stock-music.com/music/alex-productions/mp3/alex-productions-ambient-music-nature.mp3`
-  (free-stock-music.com, royalty-free with credit; URL stored in a constant, easily swappable).
+  `https://archive.org/download/alex-productions-ambient-music-nature/alex-productions-ambient-music-nature.mp3`
+  (archive.org, "Ambient Nature Music" by Alex-Productions, CC BY 3.0 with credit; URL stored in a constant, easily swappable).
 - Controls: play/pause toggle + mute + small volume slider. First interaction starts playback (autoplay blocked by browsers — subtle "♪" idle button).
 - Playback state persists across client-side navigation (App Router keeps layout mounted). Module-level state/ref keeps playing; localStorage not required for audio.
 - Pauses when the tab is hidden (`visibilitychange`) — optional nicety, include if trivial.

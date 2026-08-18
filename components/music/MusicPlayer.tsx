@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const MUSIC_URL =
-  "https://www.free-stock-music.com/music/alex-productions/mp3/alex-productions-ambient-music-nature.mp3";
+  "https://archive.org/download/alex-productions-ambient-music-nature/alex-productions-ambient-music-nature.mp3";
 
 const VOLUME_KEY = "rcbw-music-volume";
 
