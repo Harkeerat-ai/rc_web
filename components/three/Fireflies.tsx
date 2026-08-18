@@ -39,6 +39,7 @@ function FireflyField() {
 
   useFrame(({ clock }) => {
     if (!meshRef.current) return;
+    if (document.hidden) return;
     const time = clock.getElapsedTime();
     const positionsAttr = meshRef.current.geometry.attributes.position;
     const array = positionsAttr.array as Float32Array;
@@ -138,6 +139,7 @@ export default function Fireflies() {
       <Canvas
         camera={{ position: [0, 0, 6], fov: 50 }}
         gl={{ antialias: true, alpha: true }}
+        dpr={[1, 1.5]}
         style={{ position: "absolute", inset: 0 }}
       >
         <FireflyField />

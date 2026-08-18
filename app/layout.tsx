@@ -8,8 +8,7 @@ import LayoutWrapper from "@/components/layout/LayoutWrapper";
 import MainErrorBoundary from "@/components/layout/MainErrorBoundary";
 import FirefliesBackdrop from "@/components/layout/FirefliesBackdrop";
 import AnimatedPhoenix from "@/components/phoenix/AnimatedPhoenix";
-import ChatWidget from "@/components/chat/ChatWidget";
-import MusicPlayer from "@/components/music/MusicPlayer";
+import LazyWidgets from "@/components/layout/LazyWidgets";
 import CheerMarquee from "@/components/layout/CheerMarquee";
 import ThemeProvider from "@/components/providers/ThemeProvider";
 
@@ -57,8 +56,7 @@ export default function RootLayout({
         <ThemeProvider>
           <FirefliesBackdrop />
           <AnimatedPhoenix />
-          <ChatWidget />
-          <MusicPlayer />
+          <LazyWidgets />
           <Navbar />
           <CheerMarquee />
           <MainErrorBoundary>

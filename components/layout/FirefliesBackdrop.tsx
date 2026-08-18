@@ -1,8 +1,9 @@
 "use client";
 
 import { useMemo } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import dynamic from "next/dynamic";
+import { usePathname } from "next/navigation";
 
 const Fireflies = dynamic(
   () => import("@/components/three/Fireflies"),
@@ -48,6 +49,9 @@ function EmberMote({
 }
 
 export default function FirefliesBackdrop() {
+  const pathname = usePathname();
+  const reducedMotion = useReducedMotion();
+  const showCanvas = pathname === "/" && !reducedMotion;
   const embers = useMemo(() => {
     const colors = ["#E3B250", "#C85A1E", "#F0C469"];
     return Array.from({ length: 20 }, (_, i) => ({
@@ -121,7 +125,7 @@ export default function FirefliesBackdrop() {
         style={{ backgroundImage: `url("${GRAIN_SVG}")` }}
       />
 
-      <Fireflies />
+      {showCanvas && <Fireflies />}
     </div>
   );
 }
