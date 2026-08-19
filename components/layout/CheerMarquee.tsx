@@ -11,7 +11,14 @@ const PHRASES = [
   "We Are The Club Of Bombay West!",
 ];
 const BEAT_MS = 1000;
+const LAST_PHRASE_MS = 2600;
 const TOTAL_PHASES = PHRASES.length + 1;
+
+function phaseDuration(phase: number): number {
+  if (phase < PHRASES.length - 1) return BEAT_MS;
+  if (phase === PHRASES.length - 1) return LAST_PHRASE_MS;
+  return BEAT_MS;
+}
 
 const PHRASE_CLASS =
   "font-heading text-sm sm:text-base uppercase tracking-widest text-transparent bg-gradient-to-r from-gold to-rust bg-clip-text [filter:drop-shadow(0_0_8px_rgba(227,178,80,0.5))]";
@@ -22,11 +29,16 @@ export default function CheerMarquee() {
 
   useEffect(() => {
     if (reduce) return undefined;
-    const id = setInterval(
-      () => setPhase((p) => (p + 1) % TOTAL_PHASES),
-      BEAT_MS
-    );
-    return () => clearInterval(id);
+    let id: ReturnType<typeof setTimeout>;
+    const tick = () => {
+      setPhase((p) => {
+        const next = (p + 1) % TOTAL_PHASES;
+        id = setTimeout(tick, phaseDuration(next));
+        return next;
+      });
+    };
+    id = setTimeout(tick, phaseDuration(0));
+    return () => clearTimeout(id);
   }, [reduce]);
 
   const activeIndex = phase < PHRASES.length ? phase : null;
