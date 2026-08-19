@@ -69,46 +69,6 @@ export default function FirefliesBackdrop() {
       aria-hidden
       className="fixed inset-0 z-0 pointer-events-none overflow-hidden"
     >
-      <motion.div
-        animate={{
-          x: [0, 60, -20, 0],
-          y: [0, -40, 30, 0],
-          scale: [1, 1.12, 1.05, 1],
-        }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute -top-1/4 -left-1/4 w-[70%] h-[70%] rounded-full mix-blend-screen"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(227,178,80,0.22), transparent 65%)",
-        }}
-      />
-      <motion.div
-        animate={{
-          x: [0, -50, 40, 0],
-          y: [0, 50, -30, 0],
-          scale: [1, 1.1, 1.15, 1],
-        }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-[-20%] right-[-15%] w-[65%] h-[65%] rounded-full mix-blend-screen"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(200,90,30,0.2), transparent 65%)",
-        }}
-      />
-      <motion.div
-        animate={{
-          x: [0, 30, -40, 0],
-          y: [0, -25, 20, 0],
-          opacity: [0.5, 0.8, 0.5],
-        }}
-        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[35%] left-[45%] w-[55%] h-[55%] rounded-full mix-blend-screen"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(140,70,25,0.16), transparent 65%)",
-        }}
-      />
-
       {embers.map((e) => (
         <EmberMote
           key={e.id}
