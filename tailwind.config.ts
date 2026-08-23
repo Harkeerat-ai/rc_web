@@ -14,6 +14,8 @@ const config: Config = {
         surface: "rgb(var(--color-surface) / <alpha-value>)",
         gold: "rgb(var(--color-gold) / <alpha-value>)",
         rust: "rgb(var(--color-rust) / <alpha-value>)",
+        goldtext: "rgb(var(--color-gold-text) / <alpha-value>)",
+        rusttext: "rgb(var(--color-rust-text) / <alpha-value>)",
         shadowblack: "rgb(var(--color-primary) / <alpha-value>)",
         ivory: "rgb(var(--color-ivory) / <alpha-value>)",
         "text-primary": "rgb(var(--color-ivory) / <alpha-value>)",

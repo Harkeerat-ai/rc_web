@@ -43,14 +43,14 @@ export default function ProjectCard({
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full bg-gold/10 text-gold/80 border border-gold/10"
+              className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full bg-gold/10 text-goldtext/80 border border-gold/10"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <h3 className="font-heading text-sm sm:text-lg font-bold text-ivory mb-2 group-hover:text-gold transition-colors duration-300">
+        <h3 className="font-heading text-sm sm:text-lg font-bold text-ivory mb-2 group-hover:text-goldtext transition-colors duration-300">
           {project.title}
         </h3>
 
@@ -60,7 +60,7 @@ export default function ProjectCard({
 
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-          <span className="text-gold text-xs font-semibold">
+          <span className="text-goldtext text-xs font-semibold">
             {project.impact}
           </span>
         </div>

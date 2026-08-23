@@ -69,15 +69,15 @@ export default function About() {
                 </p>
                 <p>
                   Our identity dates back to{" "}
-                  <span className="text-gold font-semibold">
+                  <span className="text-goldtext font-semibold">
                     {clubStats.yearFounded}
                   </span>
                   , and since the club&apos;s revival in{" "}
-                  <span className="text-gold font-semibold">
+                  <span className="text-goldtext font-semibold">
                     {clubStats.yearRevived}
                   </span>
                   , this year&apos;s installation marks the{" "}
-                  <span className="text-gold font-semibold">
+                  <span className="text-goldtext font-semibold">
                     {clubStats.installations}
                     {clubStats.installations === 1
                       ? "st"
@@ -88,7 +88,7 @@ export default function About() {
                       : "th"}
                   </span>{" "}
                   one. Our motto has always been{" "}
-                  <span className="text-gold font-semibold">
+                  <span className="text-goldtext font-semibold">
                     &quot;Family Beyond Rotaract.&quot;
                   </span>{" "}
                   where everyone, regardless of gender, age, race, ethnicity,
@@ -96,17 +96,17 @@ export default function About() {
                 </p>
                 <p>
                   RC Bombay West is ranked{" "}
-                  <span className="text-gold font-semibold">
+                  <span className="text-goldtext font-semibold">
                     {clubStats.rank}
                     {clubStats.rank === 1 ? "st" : clubStats.rank === 2 ? "nd" : clubStats.rank === 3 ? "rd" : "th"}
                   </span>{" "}
                   amongst {clubStats.totalClubs}+ clubs, and placed as the{" "}
-                  <span className="text-gold font-semibold">
+                  <span className="text-goldtext font-semibold">
                     {clubStats.communityRank}
                     {clubStats.communityRank === 1 ? "st" : clubStats.communityRank === 2 ? "nd" : clubStats.communityRank === 3 ? "rd" : "th"}
                   </span>{" "}
                   best community-based club, across RI District{" "}
-                  <span className="text-gold font-semibold">
+                  <span className="text-goldtext font-semibold">
                     {clubStats.district}
                   </span>
                   .

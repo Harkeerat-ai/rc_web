@@ -22,9 +22,13 @@
 /RCBW-Website-master (1)
 
 # debug
+dev-server.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# session tooling artifacts
+.superpowers/
 
 # env files
 .env*

@@ -65,7 +65,7 @@ export default function ProjectDetailModal({
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-xs px-2 py-1 rounded-full bg-gold/10 text-gold/80 border border-gold/10"
+                        className="text-xs px-2 py-1 rounded-full bg-gold/10 text-goldtext/80 border border-gold/10"
                       >
                         {tag}
                       </span>
@@ -77,7 +77,7 @@ export default function ProjectDetailModal({
                 </div>
                 <button
                   onClick={onClose}
-                  className="w-8 h-8 rounded-full border border-gold/20 flex items-center justify-center text-text-muted hover:text-gold hover:border-gold/50 transition-all shrink-0 cursor-pointer"
+                  className="w-8 h-8 rounded-full border border-gold/20 flex items-center justify-center text-text-muted hover:text-goldtext hover:border-gold/50 transition-all shrink-0 cursor-pointer"
                   aria-label="Close"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -94,7 +94,7 @@ export default function ProjectDetailModal({
                 <span className="w-3 h-3 rounded-full bg-gold animate-pulse" />
                 <div>
                   <p className="text-xs text-text-muted">Impact</p>
-                  <p className="text-gold text-sm font-semibold">{project.impact}</p>
+                  <p className="text-goldtext text-sm font-semibold">{project.impact}</p>
                 </div>
               </div>
             </div>

@@ -126,6 +126,10 @@ export default function ChatWidget() {
           updateBot(botId, { content: labels.offline, streaming: false });
           return;
         }
+        if (res.status === 429) {
+          updateBot(botId, { content: labels.rateLimited, streaming: false });
+          return;
+        }
         if (!res.ok || !res.body) {
           throw new Error(`HTTP ${res.status}`);
         }
@@ -272,7 +276,7 @@ export default function ChatWidget() {
         <button
           onClick={() => setOpen(false)}
           aria-label={labels.minimize}
-          className="text-text-muted transition-colors hover:text-gold cursor-pointer"
+          className="text-text-muted transition-colors hover:text-goldtext cursor-pointer"
         >
           <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeWidth={2} d="M5 12h14" />
@@ -426,7 +430,7 @@ function BotExtras({
               href={u.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-md border border-gold/20 bg-surface/50 px-2.5 py-1 text-[11px] text-gold transition-colors hover:border-gold/50"
+                className="inline-flex items-center gap-1.5 rounded-md border border-gold/20 bg-surface/50 px-2.5 py-1 text-[11px] text-goldtext transition-colors hover:border-gold/50"
             >
               <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -448,7 +452,7 @@ function BotExtras({
           {(m.citations ?? []).length > 0 && (
             <button
               onClick={() => setShowCitations((v) => !v)}
-              className="text-[11px] text-gold underline-offset-2 hover:underline cursor-pointer"
+                className="text-[11px] text-goldtext underline-offset-2 hover:underline cursor-pointer"
             >
               {showCitations ? "Hide citations" : "View citations"}
             </button>
@@ -459,7 +463,7 @@ function BotExtras({
         <div className="mt-1.5 space-y-1.5 rounded-lg border border-gold/10 bg-surface/40 p-2.5">
           {(m.citations ?? []).map((c, i) => (
             <div key={i} className="text-[11px] leading-relaxed">
-              <span className="font-semibold text-gold">{c.source_name}:</span>{" "}
+              <span className="font-semibold text-goldtext">{c.source_name}:</span>{" "}
               <span className="text-text-muted">{c.snippet}</span>
             </div>
           ))}
@@ -468,7 +472,7 @@ function BotExtras({
       {m.messageId && (
         <div className="mt-2 flex items-center gap-1.5">
           {m.feedback === "done" ? (
-            <span className="text-[11px] text-gold">
+            <span className="text-[11px] text-goldtext">
               {labels.feedbackThanks}
             </span>
           ) : (
@@ -476,7 +480,7 @@ function BotExtras({
               <button
                 onClick={() => onFeedback(1)}
                 aria-label={labels.helpful}
-                className="flex h-6 w-6 items-center justify-center rounded-md border border-gold/20 text-text-muted transition-colors hover:border-gold/50 hover:text-gold cursor-pointer"
+                className="flex h-6 w-6 items-center justify-center rounded-md border border-gold/20 text-text-muted transition-colors hover:border-gold/50 hover:text-goldtext cursor-pointer"
               >
                 <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -490,7 +494,7 @@ function BotExtras({
               <button
                 onClick={() => onFeedback(-1)}
                 aria-label={labels.notHelpful}
-                className="flex h-6 w-6 items-center justify-center rounded-md border border-gold/20 text-text-muted transition-colors hover:border-gold/50 hover:text-gold cursor-pointer"
+                className="flex h-6 w-6 items-center justify-center rounded-md border border-gold/20 text-text-muted transition-colors hover:border-gold/50 hover:text-goldtext cursor-pointer"
               >
                 <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -511,7 +515,7 @@ function BotExtras({
             <button
               key={i}
               onClick={() => onSuggestion(s)}
-              className="rounded-full border border-gold/20 bg-surface/50 px-3 py-1 text-[11px] text-ivory transition-colors hover:border-gold/50 hover:text-gold cursor-pointer"
+              className="rounded-full border border-gold/20 bg-surface/50 px-3 py-1 text-[11px] text-ivory transition-colors hover:border-gold/50 hover:text-goldtext cursor-pointer"
             >
               {s}
             </button>

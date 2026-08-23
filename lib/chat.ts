@@ -35,6 +35,7 @@ export interface ChatLabels {
   feedbackThanks: string;
   feedbackImprove: string;
   networkError: string;
+  rateLimited: string;
   notConfigured: string;
   poweredBy: string;
   minimize: string;
@@ -53,6 +54,7 @@ const EN_LABELS: ChatLabels = {
   feedbackThanks: "Thanks for the feedback!",
   feedbackImprove: "Noted, we'll improve.",
   networkError: "Network error — please try again.",
+  rateLimited: "You're sending messages too quickly. Please wait a moment and try again.",
   notConfigured: "Chat is coming soon.",
   poweredBy: "powered by RCBW",
   minimize: "Minimize",

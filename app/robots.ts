@@ -7,5 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/chat"],
     },
+    sitemap: "https://rc-web-six.vercel.app/sitemap.xml",
   };
 }

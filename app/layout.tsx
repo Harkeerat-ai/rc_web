@@ -37,6 +37,9 @@ export const metadata: Metadata = {
     "youth leadership",
     "Mumbai",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Rotaract Club of Bombay West",
     description:
@@ -44,12 +47,19 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Rotaract Club of Bombay West — Rise Above Yourself",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rotaract Club of Bombay West | Rise Above Yourself",
+    description:
+      "A dynamic community of young leaders committed to service, growth, and transformation — RCBW, RID 3141.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -61,13 +71,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`} suppressHydrationWarning>
       <body className="font-body antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:border focus:border-gold/40 focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-goldtext"
+        >
+          Skip to main content
+        </a>
         <ThemeProvider>
           <FirefliesBackdrop />
           <LazyWidgets />
           <Navbar />
           <CheerMarquee />
           <MainErrorBoundary>
-            <main className="min-h-screen">
+            <main id="main-content" tabIndex={-1} className="min-h-screen focus:outline-none">
               <LayoutWrapper>
                 <ScrollProvider>{children}</ScrollProvider>
               </LayoutWrapper>

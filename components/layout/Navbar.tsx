@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
@@ -17,6 +18,8 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const pathname = usePathname();
 
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -33,6 +36,18 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMobileOpen(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [mobileOpen]);
+
   return (
     <nav
       className={cn(
@@ -46,7 +61,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link
             href="/"
-            className="font-heading text-gold text-lg lg:text-xl font-bold tracking-wider"
+            className="font-heading text-goldtext text-lg lg:text-xl font-bold tracking-wider"
           >
             RCBW
           </Link>
@@ -56,7 +71,8 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-body text-sm text-text-muted hover:text-gold transition-colors duration-200"
+                aria-current={pathname === link.href ? "page" : undefined}
+                className="font-body text-sm text-text-muted hover:text-goldtext transition-colors duration-200"
               >
                 {link.label}
               </Link>
@@ -64,9 +80,12 @@ export default function Navbar() {
           </div>
 
           <button
+            ref={menuButtonRef}
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden relative w-8 h-8 flex items-center justify-center cursor-pointer"
             aria-label="Toggle menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-menu"
           >
             <div className="flex flex-col gap-1.5">
               <motion.span
@@ -87,7 +106,7 @@ export default function Navbar() {
           <button
             onClick={() => setTheme(isDark ? "light" : "dark")}
             aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-            className="ml-2 w-8 h-8 flex items-center justify-center cursor-pointer text-gold hover:text-ivory transition-colors duration-200"
+            className="ml-2 w-8 h-8 flex items-center justify-center cursor-pointer text-goldtext hover:text-ivory transition-colors duration-200"
           >
             {mounted ? (
               isDark ? (
@@ -109,23 +128,25 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-primary/95 backdrop-blur-xl border-b border-gold/20 overflow-hidden"
           >
-            <div className="px-4 py-4 flex flex-col gap-3">
+            <nav aria-label="Mobile navigation" className="px-4 py-4 flex flex-col gap-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="font-body text-text-muted hover:text-gold transition-colors duration-200 py-2"
+                  aria-current={pathname === link.href ? "page" : undefined}
+                  className="font-body text-text-muted hover:text-goldtext transition-colors duration-200 py-2"
                 >
                   {link.label}
                 </Link>
               ))}
-            </div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>

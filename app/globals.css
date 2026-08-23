@@ -12,6 +12,8 @@
   --color-ivory: 46 36 27;
   --color-text-muted: 107 93 74;
   --color-glass: 200 90 30;
+  --color-gold-text: 138 100 16;
+  --color-rust-text: 163 67 18;
 }
 
 /* Dark theme */
@@ -24,6 +26,8 @@
   --color-ivory: 252 247 236;
   --color-text-muted: 201 188 168;
   --color-glass: 227 178 80;
+  --color-gold-text: 227 178 80;
+  --color-rust-text: 200 90 30;
 }
 
 html {

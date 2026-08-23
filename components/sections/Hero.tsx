@@ -57,7 +57,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-heading text-gold text-sm md:text-base lg:text-lg tracking-[0.3em] uppercase mb-4"
+          className="font-heading text-goldtext text-sm md:text-base lg:text-lg tracking-[0.3em] uppercase mb-4"
         >
           Rotaract Club of Bombay West
         </motion.p>
@@ -70,7 +70,7 @@ export default function Hero() {
         >
           Rise Above
           <br />
-          <span className="bg-gradient-to-r from-gold to-rust bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-goldtext to-rusttext bg-clip-text text-transparent">
             Yourself
           </span>
         </motion.h1>
@@ -95,7 +95,7 @@ export default function Hero() {
         >
           <a
             href="#about"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gold/10 border border-gold/30 rounded-full text-gold text-sm hover:bg-gold/20 transition-all duration-300 cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gold/10 border border-gold/30 rounded-full text-goldtext text-sm hover:bg-gold/20 transition-all duration-300 cursor-pointer"
           >
             Discover Our Story
             <svg
