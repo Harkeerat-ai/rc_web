@@ -24,7 +24,7 @@ interface ActiveMessage extends ChatMessage {
   suggestions?: string[];
 }
 
-const STREAM_URL = "/api/chat/chat/stream";
+const STREAM_URL = "/api/chat/stream";
 const FEEDBACK_URL = "/api/chat/feedback";
 
 export default function ChatWidget() {
