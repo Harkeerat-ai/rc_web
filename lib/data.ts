@@ -5,6 +5,7 @@ export interface Project {
   impact: string;
   image?: string;
   tags: string[];
+  avenue?: string;
 }
 
 export interface Newsletter {
@@ -38,6 +39,7 @@ export const projects: Project[] = [
     impact: "150+ children served",
     image: wixImage("b0eb65_b73bd8386e8e4e5e8247335b3c12e9d4~mv2.jpg"),
     tags: ["Community Service"],
+    avenue: "community-service",
   },
   {
     id: "bollyween",
@@ -47,6 +49,7 @@ export const projects: Project[] = [
     impact: "Club Service",
     image: wixImage("b0eb65_67e8df535cc94ecc8a05ac3dfeaba410~mv2.jpg"),
     tags: ["Club Service"],
+    avenue: "events-fellowship",
   },
   {
     id: "revive",
@@ -56,6 +59,7 @@ export const projects: Project[] = [
     impact: "Sports",
     image: wixImage("b0eb65_ea23b8df62b348e781518351d891de82~mv2.jpg"),
     tags: ["Sports"],
+    avenue: "sports",
   },
   {
     id: "diwali-killa-utsav",
@@ -65,6 +69,7 @@ export const projects: Project[] = [
     impact: "Cultural education through craft",
     image: wixImage("b0eb65_581689c788de4080b248eaf3fac5fbe4~mv2.jpg"),
     tags: ["Partners-in-Service"],
+    avenue: "partners-in-service",
   },
   {
     id: "rangeelo-raas",
@@ -74,6 +79,7 @@ export const projects: Project[] = [
     impact: "Club Service",
     image: wixImage("b0eb65_0da64321f32249908bfa986630f307e4~mv2.jpg"),
     tags: ["Club Service"],
+    avenue: "events-fellowship",
   },
   {
     id: "turf-fames",
@@ -83,6 +89,7 @@ export const projects: Project[] = [
     impact: "Sports",
     image: wixImage("b0eb65_b29c9f1ddbcc4fddbcbf7e1f1b55f40e~mv2.jpg"),
     tags: ["Sports"],
+    avenue: "sports",
   },
   {
     id: "fashion-extravaganza",
@@ -92,6 +99,7 @@ export const projects: Project[] = [
     impact: "Creativity showcase",
     image: wixImage("b0eb65_4d60d1a9f91a447aa1c28c6427bf35bd~mv2.jpg"),
     tags: ["Partners-in-Service"],
+    avenue: "partners-in-service",
   },
   {
     id: "racquet-rivals",
@@ -101,6 +109,7 @@ export const projects: Project[] = [
     impact: "Sports",
     image: wixImage("b0eb65_2a06d3bc8852443288d962162bff013a~mv2.jpg"),
     tags: ["Sports"],
+    avenue: "sports",
   },
   {
     id: "happy-meals",
@@ -110,6 +119,7 @@ export const projects: Project[] = [
     impact: "Community Service",
     image: wixImage("b0eb65_242ae75e66d649b28ee2433879cd4d92~mv2.jpg"),
     tags: ["Community Service"],
+    avenue: "community-service",
   },
   {
     id: "alive-at-the-drive",
@@ -119,6 +129,7 @@ export const projects: Project[] = [
     impact: "Club Service",
     image: wixImage("b0eb65_fcd0a72ee26b4fbcacae8f2a5838e444~mv2.jpg"),
     tags: ["Club Service"],
+    avenue: "events-fellowship",
   },
 ];
 
@@ -214,3 +225,6 @@ export const gallery: GalleryItem[] = [
       "https://static.wixstatic.com/media/b0eb65_581689c788de4080b248eaf3fac5fbe4~mv2.jpg/v1/fill/w_800,h_960,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b0eb65_581689c788de4080b248eaf3fac5fbe4~mv2.jpg",
   },
 ];
+
+export const projectsByAvenue = (slug: string): Project[] =>
+  projects.filter((p) => p.avenue === slug);
