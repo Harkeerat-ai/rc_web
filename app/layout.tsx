@@ -6,10 +6,8 @@ import Footer from "@/components/layout/Footer";
 import ScrollProvider from "@/components/layout/ScrollProvider";
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
 import MainErrorBoundary from "@/components/layout/MainErrorBoundary";
-import FirefliesBackdrop from "@/components/layout/FirefliesBackdrop";
 import LazyWidgets from "@/components/layout/LazyWidgets";
 import CheerMarquee from "@/components/layout/CheerMarquee";
-import ThemeProvider from "@/components/providers/ThemeProvider";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -77,20 +75,17 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <ThemeProvider>
-          <FirefliesBackdrop />
-          <LazyWidgets />
-          <Navbar />
-          <CheerMarquee />
-          <MainErrorBoundary>
-            <main id="main-content" tabIndex={-1} className="min-h-screen focus:outline-none">
-              <LayoutWrapper>
-                <ScrollProvider>{children}</ScrollProvider>
-              </LayoutWrapper>
-            </main>
-          </MainErrorBoundary>
-          <Footer />
-        </ThemeProvider>
+        <LazyWidgets />
+        <Navbar />
+        <CheerMarquee />
+        <MainErrorBoundary>
+          <main id="main-content" tabIndex={-1} className="min-h-screen focus:outline-none">
+            <LayoutWrapper>
+              <ScrollProvider>{children}</ScrollProvider>
+            </LayoutWrapper>
+          </main>
+        </MainErrorBoundary>
+        <Footer />
       </body>
     </html>
   );
