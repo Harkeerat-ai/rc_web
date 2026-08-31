@@ -109,19 +109,6 @@ export default function AnimatedPhoenix() {
         transition: { duration: 0.9, repeat: Infinity, ease: "easeInOut" },
       };
 
-  const embers = reducedMotion
-    ? []
-    : [
-        { x: 470, y: 300, size: 5, delay: 0, dur: 2.6, drift: 40 },
-        { x: 510, y: 340, size: 4, delay: 0.5, dur: 3.1, drift: -30 },
-        { x: 545, y: 370, size: 6, delay: 1, dur: 2.4, drift: 25 },
-        { x: 490, y: 260, size: 3, delay: 1.4, dur: 3.4, drift: -45 },
-        { x: 575, y: 330, size: 4, delay: 1.8, dur: 2.8, drift: 35 },
-        { x: 530, y: 410, size: 5, delay: 2.2, dur: 3.2, drift: -20 },
-        { x: 460, y: 350, size: 3, delay: 2.6, dur: 2.9, drift: 50 },
-        { x: 595, y: 395, size: 4, delay: 3, dur: 3.6, drift: -35 },
-      ];
-
   const phoenixSvg = (
     <motion.svg
       width="min(17vw, 180px)"
@@ -281,25 +268,6 @@ export default function AnimatedPhoenix() {
         d="M158 158 C 142 152, 130 150, 122 152 C 132 160, 146 164, 162 164 Z"
         fill="#F97316"
       />
-
-      {embers.map((e, i) => (
-        <motion.circle
-          key={i}
-          cx={e.x}
-          cy={e.y}
-          r={e.size}
-          fill="#F97316"
-          initial={{ opacity: 0, y: 0 }}
-          animate={{ opacity: [0, 0.9, 0], y: -70, x: e.drift }}
-          transition={{
-            duration: e.dur,
-            delay: e.delay,
-            repeat: Infinity,
-            ease: "easeOut",
-          }}
-          style={{ transformBox: "fill-box" }}
-        />
-      ))}
     </motion.svg>
   );
 

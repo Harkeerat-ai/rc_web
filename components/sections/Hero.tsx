@@ -2,27 +2,6 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import dynamic from "next/dynamic";
-import ErrorBoundary from "@/components/ErrorBoundary";
-import Skeleton from "@/components/ui/Skeleton";
-
-const HeroScene = dynamic(
-  () => import("@/components/three/HeroScene"),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="w-full h-full bg-gradient-to-b from-primary to-surface flex items-center justify-center">
-        <div className="flex flex-col items-center gap-4">
-          <Skeleton className="w-40 h-40 rounded-full" />
-          <Skeleton className="w-48 h-3" />
-          <p className="text-text-muted text-xs font-body tracking-widest uppercase">
-            Rising...
-          </p>
-        </div>
-      </div>
-    ),
-  }
-);
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -32,10 +11,8 @@ export default function Hero() {
     offset: ["start start", "end start"],
   });
 
-  const fireY = useTransform(scrollYProgress, [0, 1], [0, -40]);
   const contentY = useTransform(scrollYProgress, [0, 1], [0, -120]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const indicatorOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
 
   return (
     <section
@@ -43,11 +20,7 @@ export default function Hero() {
       ref={sectionRef}
       className="relative h-screen w-full overflow-hidden"
     >
-      <motion.div style={{ y: fireY }} className="absolute inset-0">
-        <ErrorBoundary>
-          <HeroScene />
-        </ErrorBoundary>
-      </motion.div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(227,178,80,0.12),transparent_55%)]" />
 
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
@@ -112,19 +85,6 @@ export default function Hero() {
               />
             </svg>
           </a>
-        </motion.div>
-      </motion.div>
-
-      <motion.div
-        style={{ opacity: indicatorOpacity }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-gold/30 rounded-full flex justify-center"
-        >
-          <motion.div className="w-1 h-3 bg-gold/50 rounded-full mt-2" />
         </motion.div>
       </motion.div>
     </section>

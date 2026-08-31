@@ -46,9 +46,9 @@ export const projects: Project[] = [
     title: "Bollyween: The Ultimate Prom Night",
     description:
       "Bollyween brought the best of both worlds — Bollywood glam and Halloween mischief — all under one magical prom night!",
-    impact: "Club Service",
+    impact: "A prom night to remember",
     image: wixImage("b0eb65_67e8df535cc94ecc8a05ac3dfeaba410~mv2.jpg"),
-    tags: ["Club Service"],
+    tags: ["Events and Fellowship"],
     avenue: "events-fellowship",
   },
   {
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     title: "Revive",
     description:
       "A flagship cricket tournament hosted by Rotaract Club of Bombay West, bringing together teams for spirited competition and camaraderie.",
-    impact: "Sports",
+    impact: "Spirited cricket showdown",
     image: wixImage("b0eb65_ea23b8df62b348e781518351d891de82~mv2.jpg"),
     tags: ["Sports"],
     avenue: "sports",
@@ -76,9 +76,9 @@ export const projects: Project[] = [
     title: "Rangeelo Raas",
     description:
       "Rangeelo Raas was a vibrant and playful Garba night, filled with energy, colors, and non-stop fun on the dance floor!",
-    impact: "Club Service",
+    impact: "Vibrant garba celebration",
     image: wixImage("b0eb65_0da64321f32249908bfa986630f307e4~mv2.jpg"),
-    tags: ["Club Service"],
+    tags: ["Events and Fellowship"],
     avenue: "events-fellowship",
   },
   {
@@ -86,7 +86,7 @@ export const projects: Project[] = [
     title: "Turf Fames",
     description:
       "A fun-based sporting day, filled with all the giggles of traditional, gully games — instilling nostalgia and memories of playful childhood times.",
-    impact: "Sports",
+    impact: "Nostalgic gully games",
     image: wixImage("b0eb65_b29c9f1ddbcc4fddbcbf7e1f1b55f40e~mv2.jpg"),
     tags: ["Sports"],
     avenue: "sports",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     title: "Racquet Rivals",
     description:
       "A competitive racket sports showdown that brought members together for a day of sport and friendly rivalry.",
-    impact: "Sports",
+    impact: "Competitive racket showdown",
     image: wixImage("b0eb65_2a06d3bc8852443288d962162bff013a~mv2.jpg"),
     tags: ["Sports"],
     avenue: "sports",
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     title: "Happy Meals",
     description:
       "A community service initiative spreading joy through the distribution of meals to those in need.",
-    impact: "Community Service",
+    impact: "Meals for those in need",
     image: wixImage("b0eb65_242ae75e66d649b28ee2433879cd4d92~mv2.jpg"),
     tags: ["Community Service"],
     avenue: "community-service",
@@ -125,10 +125,10 @@ export const projects: Project[] = [
     id: "alive-at-the-drive",
     title: "Alive at the Drive",
     description:
-      "A club service event that brought members together for a memorable drive of fellowship and fun.",
-    impact: "Club Service",
+      "A fellowship event that brought members together for a memorable drive of fun.",
+    impact: "Memorable drive of fun",
     image: wixImage("b0eb65_fcd0a72ee26b4fbcacae8f2a5838e444~mv2.jpg"),
-    tags: ["Club Service"],
+    tags: ["Events and Fellowship"],
     avenue: "events-fellowship",
   },
 ];
