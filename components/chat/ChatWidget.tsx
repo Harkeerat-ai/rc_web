@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import PhoenixIcon from "@/components/chat/PhoenixIcon";
 import {
@@ -57,20 +57,33 @@ export default function ChatWidget() {
     setLabels(getLabels(stored));
   }, []);
 
+  const checkHealth = useCallback(
+    (signal?: AbortSignal) => {
+      fetch("/api/chat/health", { cache: "no-store", signal })
+        .then((res) => {
+          setConfigured(res.ok);
+        })
+        .catch(() => {
+          // ignore transient failures; periodic re-check will retry
+        });
+    },
+    []
+  );
+
   useEffect(() => {
     if (!open) return;
     let cancelled = false;
-    fetch("/api/chat/health", { cache: "no-store" })
-      .then((res) => {
-        if (!cancelled) setConfigured(res.ok);
-      })
-      .catch(() => {
-        if (!cancelled) setConfigured(false);
-      });
+    const controller = new AbortController();
+    checkHealth(controller.signal);
+    const interval = window.setInterval(() => {
+      if (!cancelled) checkHealth(controller.signal);
+    }, 25000);
     return () => {
       cancelled = true;
+      controller.abort();
+      window.clearInterval(interval);
     };
-  }, [open]);
+  }, [open, checkHealth]);
 
   useEffect(() => {
     scrollEndRef.current?.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth" });
@@ -318,18 +331,25 @@ export default function ChatWidget() {
         <div ref={scrollEndRef} />
       </div>
 
+      {configured === false && (
+        <div className="flex items-center gap-2 border-t border-gold/20 bg-rust/10 px-4 py-2 text-[11px] text-goldtext">
+          <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-rust" />
+          {labels.offline}
+        </div>
+      )}
       <div className="flex items-center gap-2 border-t border-gold/20 bg-primary/60 px-3 py-3">
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+          onFocus={() => checkHealth()}
           placeholder={labels.placeholder}
-          disabled={loading || configured === false}
+          disabled={loading}
           className="min-w-0 flex-1 rounded-full border border-gold/20 bg-surface/70 px-4 py-2 text-[13px] text-ivory placeholder-text-muted/60 outline-none focus:border-gold/50 disabled:opacity-50"
         />
         <button
           onClick={() => sendMessage()}
-          disabled={loading || configured === false || !input.trim()}
+          disabled={loading || !input.trim()}
           aria-label={labels.send}
           className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold to-rust text-white transition-all hover:shadow-[0_0_20px_rgba(227,178,80,0.45)] disabled:opacity-40 cursor-pointer"
         >
@@ -338,7 +358,7 @@ export default function ChatWidget() {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={2}
-              d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+              d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
             />
           </svg>
         </button>
