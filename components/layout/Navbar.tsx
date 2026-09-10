@@ -54,20 +54,17 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link
             href="/"
-            className="flex items-center gap-2.5 shrink-0"
+            className="flex items-center shrink-0"
             aria-label="Rotaract Club of Bombay West — Home"
           >
             <Image
               src="/brand/rcbw-logo.png"
-              alt=""
-              width={110}
-              height={58}
+              alt="Rotaract Club of Bombay West, District 3141"
+              width={130}
+              height={113}
               priority
-              className="h-9 lg:h-11 w-auto select-none"
+              className="h-12 lg:h-16 w-auto select-none"
             />
-            <span className="font-heading text-goldtext text-lg lg:text-xl font-bold tracking-wider">
-              RCBW
-            </span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
