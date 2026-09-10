@@ -52,7 +52,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-                    <Link
+          <Link
             href="/"
             className="flex items-center gap-3 shrink-0"
             aria-label="Rotaract Club of Bombay West — Home"
@@ -65,7 +65,7 @@ export default function Navbar() {
               priority
               className="h-12 lg:h-16 w-auto select-none"
             />
-            <span className="hidden lg:block font-[family-name:var(--font-playfair)] text-goldtext text-lg tracking-wide leading-snug">
+            <span className="hidden lg:block font-display text-goldtext text-lg tracking-wide leading-snug">
               Rotaract Club
               <br />
               of Bombay West
