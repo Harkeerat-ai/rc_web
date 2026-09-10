@@ -73,7 +73,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`} suppressHydrationWarning>
+      <html
+        lang="en"
+        className={`${spaceGrotesk.variable} ${inter.variable} ${playfair.variable}`}
+        suppressHydrationWarning
+      >
       <body className="font-body antialiased">
         <a
           href="#main-content"
