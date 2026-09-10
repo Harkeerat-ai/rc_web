@@ -25,10 +25,21 @@ export default function MembersPage() {
               delay={i * 0.06}
               className="group glass-card p-6 sm:p-8 text-center hover:border-gold/40 transition-all duration-300"
             >
-              <div className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-gold to-rust flex items-center justify-center mb-5 shadow-lg">
-                <span className="text-white font-heading text-2xl font-bold">
-                  {member.name.charAt(0)}
-                </span>
+              <div className="w-20 h-20 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-gold to-rust flex items-center justify-center mb-5 shadow-lg">
+                {member.photo ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <span className="text-white font-heading text-2xl font-bold">
+                    {member.name.charAt(0)}
+                  </span>
+                )}
               </div>
               <h2 className="font-heading text-lg font-bold text-ivory mb-1">
                 {member.name}

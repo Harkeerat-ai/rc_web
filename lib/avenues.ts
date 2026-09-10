@@ -1,5 +1,11 @@
 export type AvenueKind = "main" | "support";
 
+export interface BoardDirector {
+  name: string;
+  role?: string;
+  photo?: string;
+}
+
 export interface Avenue {
   slug: string;
   name: string;
@@ -11,11 +17,7 @@ export interface Avenue {
   icon: string;
   tagline: string;
   mission: string[];
-  officer: {
-    name: string;
-    role: string;
-    contact?: string;
-  };
+  directors: BoardDirector[];
   banner?: string;
 }
 
@@ -35,11 +37,10 @@ export const mainAvenues: Avenue[] = [
       "Our Community Service avenue channels the club's energy into projects that directly uplift communities — from feeding programmes and health drives to educational outreach.",
       "Every initiative is an opportunity to give back, to listen, and to create measurable, lasting change for those around us.",
     ],
-    officer: {
-      name: "Avenue Chair",
-      role: "Community Service Director",
-      contact: "rtr.saniakadam.rcbw@gmail.com",
-    },
+    directors: [
+      { name: "Dhyaani Shah", role: "Community Service", photo: "/members/dhyaani-shah.jpg" },
+      { name: "Palak Deora", role: "Community Service", photo: "/members/palak-deora.jpg" },
+    ],
   },
   {
     slug: "international-service",
@@ -53,11 +54,9 @@ export const mainAvenues: Avenue[] = [
       "Our International Service avenue connects RCBW with Rotaract and Rotary clubs across the globe, fostering cross-border projects, cultural exchange, and a shared spirit of service.",
       "Through global collaborations and district partnerships, we bring the world's best practices home and share our own.",
     ],
-    officer: {
-      name: "Avenue Chair",
-      role: "International Service Director",
-      contact: "rtr.saniakadam.rcbw@gmail.com",
-    },
+    directors: [
+      { name: "Naqiya Paisawala", role: "International Service", photo: "/members/naqiya-paisawala.jpg" },
+    ],
   },
   {
     slug: "professional-development",
@@ -71,11 +70,10 @@ export const mainAvenues: Avenue[] = [
       "Our Professional Development avenue empowers members with the skills, mentorship, and networks to excel in their careers.",
       "From workshops and speaker sessions to networking and leadership training, we invest in the leaders of tomorrow.",
     ],
-    officer: {
-      name: "Avenue Chair",
-      role: "Professional Development Director",
-      contact: "rtr.saniakadam.rcbw@gmail.com",
-    },
+    directors: [
+      { name: "Ansh Manjul", role: "Professional Development" },
+      { name: "Meit Bhattad", role: "Professional Development", photo: "/members/meit-bhattad.jpg" },
+    ],
   },
   {
     slug: "events-fellowship",
@@ -89,11 +87,10 @@ export const mainAvenues: Avenue[] = [
       "Our Events and Fellowship avenue is the heartbeat of RCBW — planning the celebrations, mixers, and moments that make our club a family beyond Rotaract.",
       "From festive galas to casual get-togethers, we keep the fellowship alive and the energy high.",
     ],
-    officer: {
-      name: "Avenue Chair",
-      role: "Events & Fellowship Director",
-      contact: "rtr.saniakadam.rcbw@gmail.com",
-    },
+    directors: [
+      { name: "Naqiya Paisawala", role: "Events and Fellowship", photo: "/members/naqiya-paisawala.jpg" },
+      { name: "Saloni Kapadia", role: "Events and Fellowship", photo: "/members/saloni-kapadia.jpg" },
+    ],
   },
 ];
 
@@ -110,11 +107,9 @@ export const supportAvenues: Avenue[] = [
       "Partners in Service strengthens the bonds between RCBW and our partner clubs, Interact clubs, and like-minded organisations.",
       "Together we deliver joint projects that multiply our impact and deepen our collective service.",
     ],
-    officer: {
-      name: "Avenue Chair",
-      role: "Partners in Service Director",
-      contact: "rtr.saniakadam.rcbw@gmail.com",
-    },
+    directors: [
+      { name: "Tanisha Kadulkar", role: "Partners in Service", photo: "/members/tanisha-kadulkar.jpg" },
+    ],
   },
   {
     slug: "editorials",
@@ -128,11 +123,10 @@ export const supportAvenues: Avenue[] = [
       "Editorials captures the voice of RCBW — documenting our projects, celebrating our people, and spreading our story through newsletters, features, and publications.",
       "Our words carry the club's journey to members, partners, and the wider community.",
     ],
-    officer: {
-      name: "Avenue Chair",
-      role: "Editorials Director",
-      contact: "rtr.saniakadam.rcbw@gmail.com",
-    },
+    directors: [
+      { name: "Shelly Rai", role: "Editorials", photo: "/members/shelly-rai.jpg" },
+      { name: "Aindree Tiwari", role: "Editorials", photo: "/members/aindree-tiwari.jpg" },
+    ],
   },
   {
     slug: "smdc",
@@ -146,11 +140,11 @@ export const supportAvenues: Avenue[] = [
       "SMDC — Social Media & Digital Communications — powers RCBW's online presence, turning every event and impact into compelling stories across our digital channels.",
       "From social posts to brand identity, we keep the club visible, vibrant, and connected.",
     ],
-    officer: {
-      name: "Avenue Chair",
-      role: "SMDC Director",
-      contact: "rtr.saniakadam.rcbw@gmail.com",
-    },
+    directors: [
+      { name: "Ashish Soni", role: "SMDC", photo: "/members/ashish-soni.jpg" },
+      { name: "Siddhesh Nandoskar", role: "SMDC", photo: "/members/siddhesh-nandoskar.jpg" },
+      { name: "Bhavika Jain", role: "SMDC" },
+    ],
   },
   {
     slug: "sports",
@@ -164,29 +158,27 @@ export const supportAvenues: Avenue[] = [
       "Our Sports avenue brings members together on the field — from flagship cricket tournaments to friendly racket showdowns.",
       "Sport builds discipline, teamwork, and lifelong friendships across the club.",
     ],
-    officer: {
-      name: "Avenue Chair",
-      role: "Sports Director",
-      contact: "rtr.saniakadam.rcbw@gmail.com",
-    },
+    directors: [
+      { name: "Jiyan Shah", role: "Sports", photo: "/members/jiyan-shah.jpg" },
+      { name: "Ved", role: "Sports" },
+    ],
   },
   {
-    slug: "educational-development",
-    name: "Educational Development",
+    slug: "entrepreneurial-development",
+    name: "Entrepreneurial Development",
     kind: "support",
     gradient: "from-cyan-700 to-teal-600",
     accent: "cyan",
-    icon: "book",
-    tagline: "Lighting the path to knowledge.",
+    icon: "rocket",
+    tagline: "Build ideas, build futures.",
     mission: [
-      "Our Educational Development avenue focuses on learning at every level — mentoring students, supporting schools, and building opportunities for young minds.",
-      "Education is the most powerful catalyst for change, and we put it at the heart of our service.",
+      "Our Entrepreneurial Development avenue nurtures the founders and innovators of tomorrow — mentoring young entrepreneurs, hosting pitch sessions, and building ventures that create real impact.",
+      "Beyond startups, we grow the entrepreneurial mindset: initiative, resilience, and the drive to turn ideas into action.",
     ],
-    officer: {
-      name: "Avenue Chair",
-      role: "Educational Development Director",
-      contact: "rtr.saniakadam.rcbw@gmail.com",
-    },
+    directors: [
+      { name: "Ansh Manjul", role: "Entrepreneurial Development" },
+      { name: "Meit Bhattad", role: "Entrepreneurial Development", photo: "/members/meit-bhattad.jpg" },
+    ],
   },
 ];
 

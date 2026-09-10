@@ -21,6 +21,9 @@
 # stray duplicate project
 /RCBW-Website-master (1)
 
+# raw member/board photo source files (zip + untouched originals)
+/images/
+
 # debug
 dev-server.log
 npm-debug.log*
