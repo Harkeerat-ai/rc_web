@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -53,9 +54,20 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link
             href="/"
-            className="font-heading text-goldtext text-lg lg:text-xl font-bold tracking-wider"
+            className="flex items-center gap-2.5 shrink-0"
+            aria-label="Rotaract Club of Bombay West — Home"
           >
-            RCBW
+            <Image
+              src="/brand/rcbw-logo.png"
+              alt=""
+              width={110}
+              height={58}
+              priority
+              className="h-9 lg:h-11 w-auto select-none"
+            />
+            <span className="font-heading text-goldtext text-lg lg:text-xl font-bold tracking-wider">
+              RCBW
+            </span>
           </Link>
 
           <div className="hidden md:flex items-center gap-8">
