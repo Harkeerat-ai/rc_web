@@ -29,13 +29,6 @@ export const board: BoardMember[] = [
     photo: "/members/sania-kadam.jpg",
   },
   {
-    id: "tanaya-kadam",
-    name: "Tanaya Kadam",
-    role: "Joint Secretary",
-    description: "Assisting the Secretary in driving day-to-day operations.",
-    photo: "/members/tanaya-kadam.jpg",
-  },
-  {
     id: "diya-khandelwal",
     name: "Diya Khandelwal",
     role: "Joint Secretary and Vice President",
