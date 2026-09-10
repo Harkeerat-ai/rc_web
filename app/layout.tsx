@@ -8,6 +8,7 @@ import LayoutWrapper from "@/components/layout/LayoutWrapper";
 import MainErrorBoundary from "@/components/layout/MainErrorBoundary";
 import LazyWidgets from "@/components/layout/LazyWidgets";
 import CheerMarquee from "@/components/layout/CheerMarquee";
+import { Space_Grotesk, Inter, Playfair_Display } from "next/font/google";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -21,6 +22,11 @@ const inter = Inter({
   display: "swap",
 });
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+});
 export const metadata: Metadata = {
   metadataBase: new URL("https://rc-web-six.vercel.app"),
   title: "Rotaract Club of Bombay West | Rise Above Yourself",
