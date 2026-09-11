@@ -37,6 +37,11 @@ export default function AvenueOfficer({ avenue }: { avenue: Avenue }) {
                   loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover object-top"
+                  style={
+                    director.objectPosition
+                      ? { objectPosition: director.objectPosition }
+                      : undefined
+                  }
                 />
               ) : (
                 <span className="text-white font-heading text-5xl font-bold">

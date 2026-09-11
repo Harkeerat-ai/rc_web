@@ -39,8 +39,8 @@ export const mainAvenues: Avenue[] = [
       "We strongly believe in giving back to society, and the Community Services Team, being the crux of the organisation, works profusely towards uplifting the different strata of society, bringing about awareness on various issues that affect our surroundings, building multiple volunteering opportunities and associating with NGOs and other public servants to contribute towards the community's welfare.",
     ],
     directors: [
-      { name: "Dhyaani Shah", role: "Community Service", photo: "/members/dhyaani-shah.jpg" },
-      { name: "Palak Deora", role: "Community Service", photo: "/members/palak-deora.jpg" },
+      { name: "Rtr. Dhyaani Shah", role: "Community Service", photo: "/members/dhyaani-shah.jpg" },
+      { name: "Rtr. Palak Deora", role: "Community Service", photo: "/members/palak-deora.jpg" },
     ],
   },
   {
@@ -56,8 +56,8 @@ export const mainAvenues: Avenue[] = [
       "Responsible for getting the members to know each other well and bond like a family, Events and Fellowship aims at building strong bondings by conducting fun games, parties, outings and other recreational activities!",
     ],
     directors: [
-      { name: "Naqiya Paisawala", role: "Events and Fellowship", photo: "/members/naqiya-paisawala.jpg" },
-      { name: "Saloni Kapadia", role: "Events and Fellowship", photo: "/members/saloni-kapadia.jpg", objectPosition: "50% 45%" },
+      { name: "Rtr. Naqiya Paisawala", role: "Events and Fellowship", photo: "/members/naqiya-paisawala.jpg" },
+      { name: "Rtr. Saloni Kapadia", role: "Events and Fellowship", photo: "/members/saloni-kapadia.jpg", objectPosition: "50% 45%" },
     ],
   },
   {
@@ -73,7 +73,7 @@ export const mainAvenues: Avenue[] = [
       "Team International Services celebrates the different cultures across India and the World, recognising various UN International Days and does events to acknowledge and celebrate them. They also conduct Inter Club Youth Exchange Programme wherein the club members can travel to different places where they are hosted by the fellow Rotaractors.",
     ],
     directors: [
-      { name: "Naqiya Paisawala", role: "International Service", photo: "/members/naqiya-paisawala.jpg" },
+      { name: "Rtr. Naqiya Paisawala", role: "International Service", photo: "/members/naqiya-paisawala.jpg" },
     ],
   },
   {
@@ -89,8 +89,8 @@ export const mainAvenues: Avenue[] = [
       "The avenue nurtures the spirit of learning, and helps one to be better equipped to face the world by conducting workshops which can help them improve themselves and learn new things.",
     ],
     directors: [
-      { name: "Ansh Manjul", role: "Professional Development" },
-      { name: "Meit Bhattad", role: "Professional Development", photo: "/members/meit-bhattad.jpg" },
+      { name: "Rtr. Ansh Manjul", role: "Professional Development" },
+      { name: "Rtr. Meit Bhattad", role: "Professional Development", photo: "/members/meit-bhattad.jpg" },
     ],
   },
 ];
@@ -109,7 +109,7 @@ export const supportAvenues: Avenue[] = [
       "The avenue stands responsible to the partners, in terms of communication and coordination, and undertakes initiatives and projects to keep the partners connected and satisfied with the services.",
     ],
     directors: [
-      { name: "Tanisha Kadulkar", role: "Partners in Service", photo: "/members/tanisha-kadulkar.jpg" },
+      { name: "Rtr. Tanisha Kadulkar", role: "Partners in Service", photo: "/members/tanisha-kadulkar.jpg" },
     ],
   },
   {
@@ -125,8 +125,8 @@ export const supportAvenues: Avenue[] = [
       "They create interesting content around varied topics giving people an insight about various things that are trending worldwide. It also aims at fostering communication skills of the members through events and initiative, thereby instilling the basics of literary activities in the minds of people.",
     ],
     directors: [
-      { name: "Shelly Rai", role: "Editorials", photo: "/members/shelly-rai.jpg" },
-      { name: "Aindree Tiwari", role: "Editorials", photo: "/members/aindree-tiwari.jpg" },
+      { name: "Rtr. Shelly Rai", role: "Editorials", photo: "/members/shelly-rai.jpg" },
+      { name: "Rtr. Aindree Tiwari", role: "Editorials", photo: "/members/aindree-tiwari.jpg" },
     ],
   },
   {
@@ -142,9 +142,9 @@ export const supportAvenues: Avenue[] = [
       "The team looks after the graphic designing and the social media strategies, to make sure that all the club events and activities are covered online. Majorly conducting online events, the events undertaken by this avenue revolve around the digital space.",
     ],
     directors: [
-      { name: "Ashish Soni", role: "Social Media", photo: "/members/ashish-soni.jpg" },
-      { name: "Siddhesh Nandoskar", role: "Social Media", photo: "/members/siddhesh-nandoskar.jpg" },
-      { name: "Bhavika Jain", role: "Social Media" },
+      { name: "Rtr. Ashish Soni", role: "Social Media", photo: "/members/ashish-soni.jpg" },
+      { name: "Rtr. Siddhesh Nandoskar", role: "Social Media", photo: "/members/siddhesh-nandoskar.jpg" },
+      { name: "Rtr. Bhavika Jain", role: "Social Media" },
     ],
   },
   {
@@ -160,7 +160,7 @@ export const supportAvenues: Avenue[] = [
       "All the publicity activities, media coverage, event permissions and maintaining relations with the club's participants and associates are under the purview of PR. Marketing involves closing sponsorships for the various activities of the club - helping raise funds and procure benefits for the club and its members.",
     ],
     directors: [
-      { name: "Ved", role: "Public Relations & Marketing" },
+      { name: "Rtr. Ved Masurkar", role: "Public Relations & Marketing", photo: "/members/ved.jpg" },
     ],
   },
   {
@@ -175,8 +175,8 @@ export const supportAvenues: Avenue[] = [
       "Sports caters to the need of the people for fitness and sportsmanship. The avenue stands responsible for taking initiatives that are all sports, and may involve conducting different sporting tournaments, athletic events, workshops and the likes for not only our members but also outsiders.",
     ],
     directors: [
-      { name: "Jiyan Shah", role: "Sports", photo: "/members/jiyan-shah.jpg" },
-      { name: "Ved", role: "Sports" },
+      { name: "Rtr. Jiyan Shah", role: "Sports", photo: "/members/jiyan-shah.jpg" },
+      { name: "Rtr. Ved Masurkar", role: "Sports", photo: "/members/ved.jpg" },
     ],
   },
   {
@@ -192,8 +192,8 @@ export const supportAvenues: Avenue[] = [
       "Entrepreneurship Development looks after the entrepreneurial spirit of the members, guiding and preparing them to take up steps towards a successful business.",
     ],
     directors: [
-      { name: "Ansh Manjul", role: "Entrepreneurship Development" },
-      { name: "Meit Bhattad", role: "Entrepreneurship Development", photo: "/members/meit-bhattad.jpg" },
+      { name: "Rtr. Ansh Manjul", role: "Entrepreneurship Development" },
+      { name: "Rtr. Meit Bhattad", role: "Entrepreneurship Development", photo: "/members/meit-bhattad.jpg" },
     ],
   },
 ];
