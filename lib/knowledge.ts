@@ -11,21 +11,21 @@ export interface KnowledgeAnswer {
 const stripRtr = (name: string) => name.replace(/^Rtr\.\s*/i, "");
 
 const presentBoard: Record<string, BoardMember | undefined> = {
-  president: board.find((b) => /president/.test(b.role) && !/vice/.test(b.role)),
-  "vice president": board.find((b) => /vice president/.test(b.role)),
-  secretary: board.find((b) => /secretary/.test(b.role) && !/joint/.test(b.role)),
-  "joint secretary": board.find((b) => /joint secretary/.test(b.role)),
-  treasurer: board.find((b) => /treasurer/.test(b.role)),
-  ipp: board.find((b) => /ipp|past president/.test(b.role)),
-  saa: board.find((b) => /sergeant|saa/.test(b.role)),
-  prm: board.find((b) => /chairman prm|prm/.test(b.role)),
+  president: board.find((b) => /president/i.test(b.role) && !/vice/i.test(b.role)),
+  "vice president": board.find((b) => /vice president/i.test(b.role)),
+  secretary: board.find((b) => /secretary/i.test(b.role) && !/joint/i.test(b.role)),
+  "joint secretary": board.find((b) => /joint secretary/i.test(b.role)),
+  treasurer: board.find((b) => /treasurer/i.test(b.role)),
+  ipp: board.find((b) => /ipp|past president/i.test(b.role)),
+  saa: board.find((b) => /sergeant|saa/i.test(b.role)),
+  prm: board.find((b) => /chairman prm|prm/i.test(b.role)),
 };
 
 function roleAnswer(keywords: string[], role: string) {
   for (const key of keywords) {
     const member = presentBoard[key];
     if (!member) continue;
-    const extra = member.description ? ` ${stripRtr(member.name)} ${member.description}` : "";
+    const extra = member.description ? ` — ${member.description}` : "";
     return {
       answer: `The current ${role} of RCBW is ${member.name}.${extra}`,
       sources: ["Site data — Members page"],
@@ -41,12 +41,12 @@ export function getKnowledgeAnswer(message: string): KnowledgeAnswer | null {
   if (
     /who is|tell me about|what is|about.*(rcbw|rotaract|club)|who are you|introduce|founder|host club/.test(q)
   ) {
-    if (/president/.test(q)) return roleAnswer(["president"], "President");
-    if (/treasurer/.test(q)) return roleAnswer(["treasurer"], "Treasurer");
-    if (/secretary/.test(q)) return roleAnswer(["secretary"], "Secretary");
     if (/vice president/.test(q)) return roleAnswer(["vice president"], "Vice President");
     if (/joint secretary/.test(q)) return roleAnswer(["joint secretary"], "Joint Secretary");
     if (/past president|ipp\b/.test(q)) return roleAnswer(["ipp"], "Immediate Past President");
+    if (/president/.test(q) && !/vice/.test(q)) return roleAnswer(["president"], "President");
+    if (/secretary/.test(q) && !/joint/.test(q)) return roleAnswer(["secretary"], "Secretary");
+    if (/treasurer/.test(q)) return roleAnswer(["treasurer"], "Treasurer");
     if (/sergeant|saa\b/.test(q)) return roleAnswer(["saa"], "Sergeant at Arms");
     if (/prm|public relations|marketing chairman/.test(q)) return roleAnswer(["prm"], "Chairman PRM");
   }
