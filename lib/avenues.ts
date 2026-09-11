@@ -144,7 +144,7 @@ export const supportAvenues: Avenue[] = [
     directors: [
       { name: "Rtr. Ashish Soni", role: "Social Media", photo: "/members/ashish-soni.jpg", objectPosition: "50% 1%" },
       { name: "Rtr. Siddhesh Nandoskar", role: "Social Media", photo: "/members/siddhesh-nandoskar.jpg", objectPosition: "50% 87%" },
-      { name: "Rtr. Bhavika Jain", role: "Social Media", photo: "/members/bhavika-jain.jpg", objectPosition: "50% 1%" },
+      { name: "Rtr. Bhavika Jain", role: "Social Media", photo: "/members/bhavika-jain.jpg", objectPosition: "50% 80%" },
     ],
   },
   {
