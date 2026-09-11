@@ -2,6 +2,13 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { clubStats } from "@/lib/data";
+
+const heroChips = [
+  `${clubStats.yearFounded} · Chartered`,
+  `RID ${clubStats.district}`,
+  clubStats.motto,
+];
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -22,18 +29,31 @@ export default function Hero() {
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(227,178,80,0.12),transparent_55%)]" />
 
+      <div
+        aria-hidden
+        className="absolute inset-0 flex items-center justify-center"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/brand/rcbw-logo-full.png"
+          alt=""
+          className="h-[74vh] w-auto opacity-[0.05]"
+        />
+      </div>
+
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4"
+        className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4"
       >
-        <motion.p
+        <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-heading text-goldtext text-sm md:text-base lg:text-lg tracking-[0.3em] uppercase mb-4"
+          transition={{ duration: 0.8, delay: 0.15 }}
+          className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/25 bg-gold/10 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.28em] text-goldtext"
         >
-          Rotaract Club of Bombay West
-        </motion.p>
+          <span className="h-1.5 w-1.5 rounded-full bg-rust shadow-[0_0_8px_rgba(200,90,30,0.9)]" />
+          Est. 1969 · Rotaract District 3141
+        </motion.span>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -86,7 +106,46 @@ export default function Hero() {
             </svg>
           </a>
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="mt-12 flex flex-wrap items-center justify-center gap-3"
+        >
+          {heroChips.map((chip) => (
+            <span
+              key={chip}
+              className="rounded-full border border-gold/15 bg-surface/50 px-4 py-2 text-xs font-medium tracking-wide text-text-muted backdrop-blur-sm"
+            >
+              {chip}
+            </span>
+          ))}
+        </motion.div>
       </motion.div>
+
+      <motion.a
+        href="#about"
+        aria-label="Scroll to about"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1.4 }}
+        className="absolute bottom-7 left-1/2 z-10 flex -translate-x-1/2 items-center justify-center text-text-muted transition-colors hover:text-goldtext cursor-pointer"
+      >
+        <svg
+          className="h-6 w-6 animate-bounce"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
+      </motion.a>
     </section>
   );
 }

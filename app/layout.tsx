@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Space_Grotesk, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -8,7 +8,8 @@ import LayoutWrapper from "@/components/layout/LayoutWrapper";
 import MainErrorBoundary from "@/components/layout/MainErrorBoundary";
 import LazyWidgets from "@/components/layout/LazyWidgets";
 import CheerMarquee from "@/components/layout/CheerMarquee";
-import { Space_Grotesk, Inter, Playfair_Display } from "next/font/google";
+import AvenueMarquee from "@/components/layout/AvenueMarquee";
+import Backdrop from "@/components/layout/Backdrop";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
   display: "swap",
 });
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://rc-web-six.vercel.app"),
   title: "Rotaract Club of Bombay West | Rise Above Yourself",
@@ -74,12 +76,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-      <html
-        lang="en"
-        className={`${spaceGrotesk.variable} ${inter.variable} ${playfair.variable}`}
-        suppressHydrationWarning
-      >
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${inter.variable} ${playfair.variable}`}
+      suppressHydrationWarning
+    >
       <body className="font-body antialiased">
+        <Backdrop />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:border focus:border-gold/40 focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-goldtext"
@@ -89,6 +92,7 @@ export default function RootLayout({
         <LazyWidgets />
         <Navbar />
         <CheerMarquee />
+        <AvenueMarquee />
         <MainErrorBoundary>
           <main id="main-content" tabIndex={-1} className="min-h-screen focus:outline-none">
             <LayoutWrapper>

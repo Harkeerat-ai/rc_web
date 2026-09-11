@@ -2,7 +2,6 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import PhoenixIcon from "@/components/chat/PhoenixIcon";
 import {
   ChatMessage,
   ChatLabels,
@@ -262,8 +261,15 @@ export default function ChatWidget() {
       dir={isRtl(lang) ? "rtl" : "ltr"}
     >
       <div className="flex items-center gap-3 border-b border-gold/20 bg-primary/60 px-4 py-3">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-gold/30 to-rust/30 border border-gold/40">
-          <PhoenixIcon className="h-7 w-7" />
+        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/40 bg-white/90">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/brand/rcbw-logo-full.png"
+            alt="RCBW"
+            width={64}
+            height={56}
+            className="h-8 w-auto object-contain"
+          />
         </div>
         <div className="min-w-0 flex-1">
           <p className="font-heading text-sm font-bold text-ivory">
@@ -408,7 +414,16 @@ export default function ChatWidget() {
         aria-label={open ? labels.minimize : labels.open}
         className="fixed bottom-5 right-5 z-[70] flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-gold to-rust shadow-[0_0_25px_rgba(227,178,80,0.45)] transition-shadow hover:shadow-[0_0_35px_rgba(227,178,80,0.6)] cursor-pointer"
       >
-        <PhoenixIcon className="h-8 w-8" />
+        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/95 shadow-inner">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/brand/rcbw-logo-full.png"
+            alt="RCBW"
+            width={64}
+            height={56}
+            className="h-9 w-auto object-contain"
+          />
+        </span>
       </motion.button>
     </div>
   );

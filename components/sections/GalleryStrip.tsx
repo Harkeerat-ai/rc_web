@@ -1,24 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Parallax from "@/components/motion/Parallax";
-import ImageWithSkeleton from "@/components/ui/ImageWithSkeleton";
+import PhotoCollage from "@/components/sections/PhotoCollage";
 import { gallery } from "@/lib/data";
 
 export default function GalleryStrip() {
   return (
-    <section className="relative py-16 lg:py-24 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 mb-8 lg:mb-12 flex justify-between items-end gap-6">
+    <section className="relative overflow-hidden py-16 lg:py-24">
+      <div className="mx-auto mb-10 flex max-w-6xl items-end justify-between gap-6 px-4 sm:px-6 lg:mb-14 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          <p className="mb-2 text-xs font-medium uppercase tracking-[0.28em] text-goldtext">
+            Glimpse of our
+          </p>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-3">
-            Moments of{" "}
+            Incredible{" "}
             <span className="bg-gradient-to-r from-gold to-rust bg-clip-text text-transparent">
-              Impact
+              Family
             </span>
           </h2>
           <p className="text-text-muted text-sm md:text-base">
@@ -27,31 +29,7 @@ export default function GalleryStrip() {
         </motion.div>
       </div>
 
-      <Parallax speed={24} className="flex gap-4 px-4 sm:px-6 lg:px-8 overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar">
-        {gallery.map((item) => (
-          <motion.figure
-            key={item.id}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.08 }}
-            className="flex-none w-80 h-96 rounded-xl overflow-hidden snap-center relative group glass-card hover:shadow-[0_12px_40px_rgba(0,0,0,0.14)] transition-all duration-300"
-          >
-            <ImageWithSkeleton
-              src={item.image}
-              alt={item.title}
-              aspect="aspect-[4/5]"
-              skeletonClassName="rounded-none"
-              imgClassName="transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-              <span className="text-white font-heading text-sm font-semibold">
-                {item.title}
-              </span>
-            </div>
-          </motion.figure>
-        ))}
-      </Parallax>
+      <PhotoCollage items={gallery} />
     </section>
   );
 }

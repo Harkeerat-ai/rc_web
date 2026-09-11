@@ -48,8 +48,8 @@ export const projects: Project[] = [
       "Bollyween brought the best of both worlds — Bollywood glam and Halloween mischief — all under one magical prom night!",
     impact: "A prom night to remember",
     image: wixImage("b0eb65_67e8df535cc94ecc8a05ac3dfeaba410~mv2.jpg"),
-    tags: ["Events and Fellowship"],
-    avenue: "events-fellowship",
+    tags: ["Club Service"],
+    avenue: "club-service",
   },
   {
     id: "revive",
@@ -78,8 +78,8 @@ export const projects: Project[] = [
       "Rangeelo Raas was a vibrant and playful Garba night, filled with energy, colors, and non-stop fun on the dance floor!",
     impact: "Vibrant garba celebration",
     image: wixImage("b0eb65_0da64321f32249908bfa986630f307e4~mv2.jpg"),
-    tags: ["Events and Fellowship"],
-    avenue: "events-fellowship",
+    tags: ["Club Service"],
+    avenue: "club-service",
   },
   {
     id: "turf-fames",
@@ -128,8 +128,8 @@ export const projects: Project[] = [
       "A fellowship event that brought members together for a memorable drive of fun.",
     impact: "Memorable drive of fun",
     image: wixImage("b0eb65_fcd0a72ee26b4fbcacae8f2a5838e444~mv2.jpg"),
-    tags: ["Events and Fellowship"],
-    avenue: "events-fellowship",
+    tags: ["Club Service"],
+    avenue: "club-service",
   },
 ];
 

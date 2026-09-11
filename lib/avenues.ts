@@ -34,12 +34,28 @@ export const mainAvenues: Avenue[] = [
     icon: "heart",
     tagline: "Service that touches lives.",
     mission: [
-      "Our Community Service avenue channels the club's energy into projects that directly uplift communities — from feeding programmes and health drives to educational outreach.",
-      "Every initiative is an opportunity to give back, to listen, and to create measurable, lasting change for those around us.",
+      "We strongly believe in giving back to society, and the Community Services Team, being the crux of the organisation, works profusely towards uplifting the different strata of society, bringing about awareness on various issues that affect our surroundings, building multiple volunteering opportunities and associating with NGOs and other public servants to contribute towards the community's welfare.",
     ],
     directors: [
       { name: "Dhyaani Shah", role: "Community Service", photo: "/members/dhyaani-shah.jpg" },
       { name: "Palak Deora", role: "Community Service", photo: "/members/palak-deora.jpg" },
+    ],
+  },
+  {
+    slug: "club-service",
+    name: "Club Service",
+    kind: "main",
+    gradient: "from-rose-700 to-pink-600",
+    accent: "rose",
+    icon: "sparkles",
+    tagline: "Where memories are made.",
+    mission: [
+      "The team needs to stand together as one, and the Club Service Team, with its highly contagious energy, brings this feeling to the forefront.",
+      "Responsible for getting the members to know each other well and bond like a family, Club Service aims at building strong bondings by conducting fun games, parties, outings and other recreational activities!",
+    ],
+    directors: [
+      { name: "Naqiya Paisawala", role: "Club Service", photo: "/members/naqiya-paisawala.jpg" },
+      { name: "Saloni Kapadia", role: "Club Service", photo: "/members/saloni-kapadia.jpg" },
     ],
   },
   {
@@ -51,8 +67,8 @@ export const mainAvenues: Avenue[] = [
     icon: "globe",
     tagline: "Better world, closer together.",
     mission: [
-      "Our International Service avenue connects RCBW with Rotaract and Rotary clubs across the globe, fostering cross-border projects, cultural exchange, and a shared spirit of service.",
-      "Through global collaborations and district partnerships, we bring the world's best practices home and share our own.",
+      "Rotaract being a worldwide organisation, allows members to connect with Rotaractors around the globe, nurturing new relationships and creating opportunities.",
+      "Team International Services celebrates the different cultures across India and the World, recognising various UN International Days and does events to acknowledge and celebrate them. They also conduct Inter Club Youth Exchange Programme wherein the club members can travel to different places where they are hosted by the fellow Rotaractors.",
     ],
     directors: [
       { name: "Naqiya Paisawala", role: "International Service", photo: "/members/naqiya-paisawala.jpg" },
@@ -67,29 +83,12 @@ export const mainAvenues: Avenue[] = [
     icon: "briefcase",
     tagline: "Grow skills, build futures.",
     mission: [
-      "Our Professional Development avenue empowers members with the skills, mentorship, and networks to excel in their careers.",
-      "From workshops and speaker sessions to networking and leadership training, we invest in the leaders of tomorrow.",
+      "Empowering the youth and creating leaders is what Rotaract aims to do. The Professional Development Team is responsible for shaping young minds and preparing them to step into the Professional world.",
+      "The avenue nurtures the spirit of learning, and helps one to be better equipped to face the world by conducting workshops which can help them improve themselves and learn new things.",
     ],
     directors: [
       { name: "Ansh Manjul", role: "Professional Development" },
       { name: "Meit Bhattad", role: "Professional Development", photo: "/members/meit-bhattad.jpg" },
-    ],
-  },
-  {
-    slug: "events-fellowship",
-    name: "Events and Fellowship",
-    kind: "main",
-    gradient: "from-rose-700 to-pink-600",
-    accent: "rose",
-    icon: "sparkles",
-    tagline: "Where memories are made.",
-    mission: [
-      "Our Events and Fellowship avenue is the heartbeat of RCBW — planning the celebrations, mixers, and moments that make our club a family beyond Rotaract.",
-      "From festive galas to casual get-togethers, we keep the fellowship alive and the energy high.",
-    ],
-    directors: [
-      { name: "Naqiya Paisawala", role: "Events and Fellowship", photo: "/members/naqiya-paisawala.jpg" },
-      { name: "Saloni Kapadia", role: "Events and Fellowship", photo: "/members/saloni-kapadia.jpg" },
     ],
   },
 ];
@@ -104,8 +103,8 @@ export const supportAvenues: Avenue[] = [
     icon: "handshake",
     tagline: "Stronger together.",
     mission: [
-      "Partners in Service strengthens the bonds between RCBW and our partner clubs, Interact clubs, and like-minded organisations.",
-      "Together we deliver joint projects that multiply our impact and deepen our collective service.",
+      "The avenue of Partners-In-Service, as the name itself says, looks after building and maintaining relations with the club's partners, namely - Rotary Club, Interact Club, Club Alumni, Inner Wheel Clubs and Sponsors.",
+      "The avenue stands responsible to the partners, in terms of communication and coordination, and undertakes initiatives and projects to keep the partners connected and satisfied with the services.",
     ],
     directors: [
       { name: "Tanisha Kadulkar", role: "Partners in Service", photo: "/members/tanisha-kadulkar.jpg" },
@@ -120,8 +119,8 @@ export const supportAvenues: Avenue[] = [
     icon: "pen",
     tagline: "Telling our story.",
     mission: [
-      "Editorials captures the voice of RCBW — documenting our projects, celebrating our people, and spreading our story through newsletters, features, and publications.",
-      "Our words carry the club's journey to members, partners, and the wider community.",
+      "Editorials is the avenue which focuses on literary activities. They are the writers of the club, using their words to highlight the work of the club and the movement.",
+      "They create interesting content around varied topics giving people an insight about various things that are trending worldwide. It also aims at fostering communication skills of the members through events and initiative, thereby instilling the basics of literary activities in the minds of people.",
     ],
     directors: [
       { name: "Shelly Rai", role: "Editorials", photo: "/members/shelly-rai.jpg" },
@@ -130,20 +129,35 @@ export const supportAvenues: Avenue[] = [
   },
   {
     slug: "smdc",
-    name: "SMDC",
+    name: "Social Media & Digital Communications",
     kind: "support",
     gradient: "from-purple-700 to-fuchsia-600",
     accent: "purple",
     icon: "megaphone",
-    tagline: "Shares, media & digital.",
+    tagline: "Digital first, always connected.",
     mission: [
-      "SMDC — Social Media & Digital Communications — powers RCBW's online presence, turning every event and impact into compelling stories across our digital channels.",
-      "From social posts to brand identity, we keep the club visible, vibrant, and connected.",
+      "We understand the rising importance of digital presence and ensure that we do our part to leverage its potential. The Digital Communication Avenue takes responsibility for the club's digital media, ensuring a strong online presence for the club.",
+      "The team looks after the graphic designing and the social media strategies, to make sure that all the club events and activities are covered online. Majorly conducting online events, the events undertaken by this avenue revolve around the digital space.",
     ],
     directors: [
-      { name: "Ashish Soni", role: "SMDC", photo: "/members/ashish-soni.jpg" },
-      { name: "Siddhesh Nandoskar", role: "SMDC", photo: "/members/siddhesh-nandoskar.jpg" },
-      { name: "Bhavika Jain", role: "SMDC" },
+      { name: "Ashish Soni", role: "Social Media", photo: "/members/ashish-soni.jpg" },
+      { name: "Siddhesh Nandoskar", role: "Social Media", photo: "/members/siddhesh-nandoskar.jpg" },
+    ],
+  },
+  {
+    slug: "pr-marketing",
+    name: "Public Relations & Marketing",
+    kind: "support",
+    gradient: "from-lime-600 to-green-600",
+    accent: "lime",
+    icon: "megaphone",
+    tagline: "The face of RCBW.",
+    mission: [
+      "Public Relations and Marketing is the image creator of the club, and as the name suggests, stands responsible for the PR and Marketing of the club.",
+      "All the publicity activities, media coverage, event permissions and maintaining relations with the club's participants and associates are under the purview of PR. Marketing involves closing sponsorships for the various activities of the club - helping raise funds and procure benefits for the club and its members.",
+    ],
+    directors: [
+      { name: "Bhavika Jain", role: "Public Relations & Marketing" },
     ],
   },
   {
@@ -155,8 +169,7 @@ export const supportAvenues: Avenue[] = [
     icon: "trophy",
     tagline: "Play hard, bond harder.",
     mission: [
-      "Our Sports avenue brings members together on the field — from flagship cricket tournaments to friendly racket showdowns.",
-      "Sport builds discipline, teamwork, and lifelong friendships across the club.",
+      "Sports caters to the need of the people for fitness and sportsmanship. The avenue stands responsible for taking initiatives that are all sports, and may involve conducting different sporting tournaments, athletic events, workshops and the likes for not only our members but also outsiders.",
     ],
     directors: [
       { name: "Jiyan Shah", role: "Sports", photo: "/members/jiyan-shah.jpg" },
@@ -165,19 +178,19 @@ export const supportAvenues: Avenue[] = [
   },
   {
     slug: "entrepreneurial-development",
-    name: "Entrepreneurial Development",
+    name: "Entrepreneurship Development",
     kind: "support",
     gradient: "from-cyan-700 to-teal-600",
     accent: "cyan",
     icon: "rocket",
     tagline: "Build ideas, build futures.",
     mission: [
-      "Our Entrepreneurial Development avenue nurtures the founders and innovators of tomorrow — mentoring young entrepreneurs, hosting pitch sessions, and building ventures that create real impact.",
-      "Beyond startups, we grow the entrepreneurial mindset: initiative, resilience, and the drive to turn ideas into action.",
+      "With the entrepreneurial wave rising, we want to ensure that the youth is empowered and well-versed with the challenges that may come in their journey.",
+      "Entrepreneurship Development looks after the entrepreneurial spirit of the members, guiding and preparing them to take up steps towards a successful business.",
     ],
     directors: [
-      { name: "Ansh Manjul", role: "Entrepreneurial Development" },
-      { name: "Meit Bhattad", role: "Entrepreneurial Development", photo: "/members/meit-bhattad.jpg" },
+      { name: "Ansh Manjul", role: "Entrepreneurship Development" },
+      { name: "Meit Bhattad", role: "Entrepreneurship Development", photo: "/members/meit-bhattad.jpg" },
     ],
   },
 ];

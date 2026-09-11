@@ -51,6 +51,10 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <Parallax speed={30}>
+              <p className="mb-3 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.28em] text-goldtext">
+                <span className="inline-block h-px w-8 bg-gold/60" />
+                Est. 1969 · RID 3141
+              </p>
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
                 One of the Oldest Clubs
                 <br />
@@ -133,23 +137,29 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <Parallax speed={-30}>
-              <div className="grid grid-cols-2 gap-4 sm:gap-6">
-                <AnimatedCounter
-                  value={clubStats.yearFounded}
-                  label="Identity Since"
+              <div className="relative">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute -inset-8 -z-10 rounded-full bg-[radial-gradient(circle,rgba(227,178,80,0.14),transparent_62%)] blur-2xl"
                 />
-                <AnimatedCounter
-                  value={clubStats.yearRevived}
-                  label="Revival Year"
-                />
-                <AnimatedCounter
-                  value={clubStats.installations}
-                  label="Installations"
-                />
-                <AnimatedCounter
-                  value={clubStats.rank}
-                  label={`Rank of ${clubStats.totalClubs}+ Clubs`}
-                />
+                <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                  <AnimatedCounter
+                    value={clubStats.yearFounded}
+                    label="Identity Since"
+                  />
+                  <AnimatedCounter
+                    value={clubStats.yearRevived}
+                    label="Revival Year"
+                  />
+                  <AnimatedCounter
+                    value={clubStats.installations}
+                    label="Installations"
+                  />
+                  <AnimatedCounter
+                    value={clubStats.rank}
+                    label={`Rank of ${clubStats.totalClubs}+ Clubs`}
+                  />
+                </div>
               </div>
             </Parallax>
           </motion.div>
