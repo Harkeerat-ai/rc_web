@@ -160,7 +160,7 @@ export const supportAvenues: Avenue[] = [
       "All the publicity activities, media coverage, event permissions and maintaining relations with the club's participants and associates are under the purview of PR. Marketing involves closing sponsorships for the various activities of the club - helping raise funds and procure benefits for the club and its members.",
     ],
     directors: [
-      { name: "Rtr. Ved Masurkar", role: "Public Relations & Marketing", photo: "/members/ved.jpg" },
+      { name: "Rtr. Meit Bhattad", role: "Public Relations & Marketing", photo: "/members/meit-bhattad.jpg" },
     ],
   },
   {
