@@ -32,7 +32,7 @@ const config: Config = {
         float: "float 6s ease-in-out infinite",
         glow: "glow 2s ease-in-out infinite alternate",
         ember: "ember 3s ease-out infinite",
-        marquee: "marquee 22s linear infinite",
+        marquee: "marquee 35s linear infinite",
       },
       keyframes: {
         float: {
