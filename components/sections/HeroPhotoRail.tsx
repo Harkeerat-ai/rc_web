@@ -35,14 +35,27 @@ export default function HeroPhotoRail({
                 ROTS[i % ROTS.length]
               )}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={photo.src}
-                alt=""
-                loading="lazy"
-                decoding="async"
-                className="aspect-square w-full object-cover opacity-60 blur-[2px] md:opacity-100 md:blur-0"
-              />
+              {photo.video ? (
+                <video
+                  src={photo.video}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  aria-hidden
+                  className="aspect-square w-full object-cover opacity-60 blur-[2px] md:opacity-100 md:blur-0"
+                />
+              ) : (
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img
+                  src={photo.src}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-square w-full object-cover opacity-60 blur-[2px] md:opacity-100 md:blur-0"
+                />
+              )}
             </figure>
           ))}
         </div>

@@ -112,22 +112,12 @@ export const projects: Project[] = [
     avenue: "sports",
   },
   {
-    id: "happy-meals",
-    title: "Happy Meals",
-    description:
-      "A community service initiative spreading joy through the distribution of meals to those in need.",
-    impact: "Meals for those in need",
-    image: wixImage("b0eb65_242ae75e66d649b28ee2433879cd4d92~mv2.jpg"),
-    tags: ["Community Service"],
-    avenue: "community-service",
-  },
-  {
     id: "alive-at-the-drive",
     title: "Alive at the Drive",
     description:
       "A fellowship event that brought members together for a memorable drive of fun.",
     impact: "Memorable drive of fun",
-    image: wixImage("b0eb65_fcd0a72ee26b4fbcacae8f2a5838e444~mv2.jpg"),
+    image: wixImage("b0eb65_242ae75e66d649b28ee2433879cd4d92~mv2.jpg"),
     tags: ["Events and Fellowship"],
     avenue: "club-service",
   },
@@ -196,7 +186,7 @@ export const gallery: GalleryItem[] = [
   },
   {
     id: "3",
-    title: "Feminine Focus",
+    title: "My Pink Pledge",
     image:
       "https://static.wixstatic.com/media/b0eb65_62992abd9397490d9ff73b93b924567e~mv2.jpg/v1/fill/w_800,h_960,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/b0eb65_62992abd9397490d9ff73b93b924567e~mv2.jpg",
   },
