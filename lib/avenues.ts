@@ -4,6 +4,8 @@ export interface BoardDirector {
   name: string;
   role?: string;
   photo?: string;
+  /** CSS object-position override for the avatar crop, e.g. "50% 45%" */
+  objectPosition?: string;
 }
 
 export interface Avenue {
@@ -55,7 +57,7 @@ export const mainAvenues: Avenue[] = [
     ],
     directors: [
       { name: "Naqiya Paisawala", role: "Events and Fellowship", photo: "/members/naqiya-paisawala.jpg" },
-      { name: "Saloni Kapadia", role: "Events and Fellowship", photo: "/members/saloni-kapadia.jpg" },
+      { name: "Saloni Kapadia", role: "Events and Fellowship", photo: "/members/saloni-kapadia.jpg", objectPosition: "50% 45%" },
     ],
   },
   {
@@ -142,6 +144,7 @@ export const supportAvenues: Avenue[] = [
     directors: [
       { name: "Ashish Soni", role: "Social Media", photo: "/members/ashish-soni.jpg" },
       { name: "Siddhesh Nandoskar", role: "Social Media", photo: "/members/siddhesh-nandoskar.jpg" },
+      { name: "Bhavika Jain", role: "Social Media" },
     ],
   },
   {
@@ -157,7 +160,7 @@ export const supportAvenues: Avenue[] = [
       "All the publicity activities, media coverage, event permissions and maintaining relations with the club's participants and associates are under the purview of PR. Marketing involves closing sponsorships for the various activities of the club - helping raise funds and procure benefits for the club and its members.",
     ],
     directors: [
-      { name: "Bhavika Jain", role: "Public Relations & Marketing" },
+      { name: "Ved", role: "Public Relations & Marketing" },
     ],
   },
   {
