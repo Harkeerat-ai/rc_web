@@ -43,19 +43,19 @@ export const mainAvenues: Avenue[] = [
   },
   {
     slug: "club-service",
-    name: "Club Service",
+    name: "Events and Fellowship",
     kind: "main",
     gradient: "from-rose-700 to-pink-600",
     accent: "rose",
     icon: "sparkles",
     tagline: "Where memories are made.",
     mission: [
-      "The team needs to stand together as one, and the Club Service Team, with its highly contagious energy, brings this feeling to the forefront.",
-      "Responsible for getting the members to know each other well and bond like a family, Club Service aims at building strong bondings by conducting fun games, parties, outings and other recreational activities!",
+      "The team needs to stand together as one, and the Events and Fellowship Team, with its highly contagious energy, brings this feeling to the forefront.",
+      "Responsible for getting the members to know each other well and bond like a family, Events and Fellowship aims at building strong bondings by conducting fun games, parties, outings and other recreational activities!",
     ],
     directors: [
-      { name: "Naqiya Paisawala", role: "Club Service", photo: "/members/naqiya-paisawala.jpg" },
-      { name: "Saloni Kapadia", role: "Club Service", photo: "/members/saloni-kapadia.jpg" },
+      { name: "Naqiya Paisawala", role: "Events and Fellowship", photo: "/members/naqiya-paisawala.jpg" },
+      { name: "Saloni Kapadia", role: "Events and Fellowship", photo: "/members/saloni-kapadia.jpg" },
     ],
   },
   {

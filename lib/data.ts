@@ -48,7 +48,7 @@ export const projects: Project[] = [
       "Bollyween brought the best of both worlds — Bollywood glam and Halloween mischief — all under one magical prom night!",
     impact: "A prom night to remember",
     image: wixImage("b0eb65_67e8df535cc94ecc8a05ac3dfeaba410~mv2.jpg"),
-    tags: ["Club Service"],
+    tags: ["Events and Fellowship"],
     avenue: "club-service",
   },
   {
@@ -78,7 +78,7 @@ export const projects: Project[] = [
       "Rangeelo Raas was a vibrant and playful Garba night, filled with energy, colors, and non-stop fun on the dance floor!",
     impact: "Vibrant garba celebration",
     image: wixImage("b0eb65_0da64321f32249908bfa986630f307e4~mv2.jpg"),
-    tags: ["Club Service"],
+    tags: ["Events and Fellowship"],
     avenue: "club-service",
   },
   {
@@ -128,7 +128,7 @@ export const projects: Project[] = [
       "A fellowship event that brought members together for a memorable drive of fun.",
     impact: "Memorable drive of fun",
     image: wixImage("b0eb65_fcd0a72ee26b4fbcacae8f2a5838e444~mv2.jpg"),
-    tags: ["Club Service"],
+    tags: ["Events and Fellowship"],
     avenue: "club-service",
   },
 ];
@@ -164,9 +164,9 @@ export const socialLinks: SocialLink[] = [
 export const clubStats = {
   yearFounded: 1969,
   yearRevived: 2016,
-  installations: 9,
+  installations: 10,
   district: "3141",
-  rank: 21,
+  rank: 13,
   totalClubs: 130,
   communityRank: 9,
   parentClub: "Rotary Club of Bombay West",
@@ -174,9 +174,9 @@ export const clubStats = {
 };
 
 export const contactInfo = {
-  phone1: "+91 98203 04620",
-  phone2: "+91 79775 22662",
-  email: "rtr.saniakadam.rcbw@gmail.com",
+  phone1: "+91 93217 42990",
+  phone2: "+91 74999 55397",
+  email: "rtr.mohithande.rcbw@gmail.com",
   joinFormUrl:
     "https://docs.google.com/forms/d/1lpc4zqX9qqP887wGD7E_piusMYOgoWNM-kiuWAvwLoA/viewform",
 };

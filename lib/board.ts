@@ -29,20 +29,6 @@ export const board: BoardMember[] = [
     photo: "/members/sania-kadam.jpg",
   },
   {
-    id: "diya-khandelwal",
-    name: "Diya Khandelwal",
-    role: "Joint Secretary and Vice President",
-    description: "Assisting the Secretary and supporting the President in steering the club.",
-    photo: "/members/diya-khandelwal.jpg",
-  },
-  {
-    id: "manan-shah",
-    name: "Manan Shah",
-    role: "Sergeant at Arms (SAA)",
-    description: "Keeping our meetings and events running smoothly.",
-    photo: "/members/manan-shah.jpg",
-  },
-  {
     id: "harkeerat-bhasin",
     name: "Harkeerat Bhasin",
     role: "Vice President",
@@ -50,9 +36,23 @@ export const board: BoardMember[] = [
     photo: "/members/harkeerat-bhasin.jpg",
   },
   {
+    id: "diya-khandelwal",
+    name: "Diya Khandelwal",
+    role: "Vice President and Joint Secretary",
+    description: "Assisting the Secretary and supporting the President in steering the club.",
+    photo: "/members/diya-khandelwal.jpg",
+  },
+  {
     id: "jash-bhatia",
     name: "Jash Bhatia",
     role: "Treasurer",
     description: "Managing the club's finances with transparency and care.",
+  },
+  {
+    id: "manan-shah",
+    name: "Manan Shah",
+    role: "Sergeant at Arms (SAA) & Chairman PRM",
+    description: "Keeping our meetings and events running smoothly.",
+    photo: "/members/manan-shah.jpg",
   },
 ];

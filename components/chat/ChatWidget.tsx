@@ -412,18 +412,16 @@ export default function ChatWidget() {
           setOpen((v) => !v);
         }}
         aria-label={open ? labels.minimize : labels.open}
-        className="fixed bottom-5 right-5 z-[70] flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-gold to-rust shadow-[0_0_25px_rgba(227,178,80,0.45)] transition-shadow hover:shadow-[0_0_35px_rgba(227,178,80,0.6)] cursor-pointer"
+        className="fixed bottom-5 right-5 z-[70] flex h-16 w-16 items-center justify-center rounded-full cursor-pointer"
       >
-        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/95 shadow-inner">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/brand/rcbw-logo-full.png"
-            alt="RCBW"
-            width={64}
-            height={56}
-            className="h-9 w-auto object-contain"
-          />
-        </span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/brand/rcbw-logo-full.png"
+          alt="RCBW"
+          width={64}
+          height={56}
+          className="h-14 w-auto object-contain drop-shadow-[0_2px_12px_rgba(200,90,30,0.35)]"
+        />
       </motion.button>
     </div>
   );
