@@ -15,6 +15,7 @@ export const board: BoardMember[] = [
     role: "President",
     description: "Leading the club with vision, service, and fellowship.",
     photo: "/members/mohit-hande.jpg",
+    objectPosition: "50% 18%",
   },
   {
     id: "manasvi-thakkar",
@@ -22,6 +23,7 @@ export const board: BoardMember[] = [
     role: "Secretary",
     description: "Keeping the club organised, connected, and moving forward.",
     photo: "/members/manasvi-thakkar.jpg",
+    objectPosition: "50% 18%",
   },
   {
     id: "sania-kadam",
@@ -29,6 +31,7 @@ export const board: BoardMember[] = [
     role: "IPP (Immediate Past President)",
     description: "Guiding the board with experience and institutional memory.",
     photo: "/members/sania-kadam.jpg",
+    objectPosition: "50% 0%",
   },
   {
     id: "harkeerat-bhasin",
@@ -36,7 +39,7 @@ export const board: BoardMember[] = [
     role: "Vice President",
     description: "Supporting the President and guiding our avenues forward.",
     photo: "/members/harkeerat-bhasin.jpg",
-    objectPosition: "50% 18%",
+    objectPosition: "50% 30%",
   },
   {
     id: "diya-khandelwal",
@@ -44,12 +47,15 @@ export const board: BoardMember[] = [
     role: "Vice President and Joint Secretary",
     description: "Assisting the Secretary and supporting the President in steering the club.",
     photo: "/members/diya-khandelwal.jpg",
+    objectPosition: "50% 18%",
   },
   {
     id: "jash-bhatia",
     name: "Rtr. Jash Bhatia",
     role: "Treasurer",
     description: "Managing the club's finances with transparency and care.",
+    photo: "/members/jash.jpg",
+    objectPosition: "50% 34%",
   },
   {
     id: "manan-shah",
@@ -57,5 +63,6 @@ export const board: BoardMember[] = [
     role: "Sergeant at Arms (SAA) & Chairman PRM",
     description: "Keeping our meetings and events running smoothly.",
     photo: "/members/manan-shah.jpg",
+    objectPosition: "50% 50%",
   },
 ];

@@ -89,7 +89,7 @@ export const mainAvenues: Avenue[] = [
       "The avenue nurtures the spirit of learning, and helps one to be better equipped to face the world by conducting workshops which can help them improve themselves and learn new things.",
     ],
     directors: [
-      { name: "Rtr. Ansh Manjul", role: "Professional Development" },
+      { name: "Rtr. Ansh Manjul", role: "Professional Development", photo: "/members/ansh.jpg", objectPosition: "50% 71%" },
       { name: "Rtr. Meit Bhattad", role: "Professional Development", photo: "/members/meit-bhattad.jpg" },
     ],
   },
@@ -192,7 +192,7 @@ export const supportAvenues: Avenue[] = [
       "Entrepreneurship Development looks after the entrepreneurial spirit of the members, guiding and preparing them to take up steps towards a successful business.",
     ],
     directors: [
-      { name: "Rtr. Ansh Manjul", role: "Entrepreneurship Development" },
+      { name: "Rtr. Ansh Manjul", role: "Entrepreneurship Development", photo: "/members/ansh.jpg", objectPosition: "50% 71%" },
       { name: "Rtr. Meit Bhattad", role: "Entrepreneurship Development", photo: "/members/meit-bhattad.jpg" },
     ],
   },
