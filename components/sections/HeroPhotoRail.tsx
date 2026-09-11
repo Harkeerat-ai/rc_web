@@ -3,12 +3,6 @@
 import { cn } from "@/lib/utils";
 import type { RailPhoto } from "@/lib/photoRail";
 
-const BLOBS = [
-  "rounded-[42%_58%_58%_42%/42%_42%_58%_58%]",
-  "rounded-[58%_42%_42%_58%/48%_52%_52%_48%]",
-  "rounded-[44%_56%_54%_46%/56%_44%_58%_42%]",
-];
-
 const ROTS = ["-rotate-2", "rotate-2", "-rotate-1", "rotate-1"];
 
 export default function HeroPhotoRail({
@@ -25,7 +19,7 @@ export default function HeroPhotoRail({
     <div
       aria-hidden
       className={cn(
-        "pointer-events-none absolute inset-y-0 z-0 w-12 px-2 md:w-24 md:px-3 lg:w-28",
+        "pointer-events-none absolute inset-y-0 z-0 w-16 px-2 md:w-36 md:px-4 lg:w-44 lg:px-6",
         side === "left" ? "left-0" : "right-0"
       )}
     >
@@ -41,8 +35,7 @@ export default function HeroPhotoRail({
             <figure
               key={i}
               className={cn(
-                "mb-4 w-full shrink-0 overflow-hidden bg-surface ring-1 ring-gold/15 shadow-[0_16px_38px_rgba(46,36,27,0.16)]",
-                BLOBS[i % BLOBS.length],
+                "mb-4 w-full shrink-0 overflow-hidden bg-surface shadow-[0_16px_38px_rgba(46,36,27,0.16)] ring-1 ring-gold/15",
                 ROTS[i % ROTS.length]
               )}
             >
@@ -52,7 +45,7 @@ export default function HeroPhotoRail({
                 alt=""
                 loading="lazy"
                 decoding="async"
-                className="aspect-[2/3] w-full object-cover opacity-60 blur-[2px] md:opacity-100 md:blur-0"
+                className="aspect-square w-full object-cover opacity-60 blur-[2px] md:opacity-100 md:blur-0"
               />
             </figure>
           ))}
