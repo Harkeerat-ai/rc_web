@@ -4,6 +4,8 @@ export interface BoardMember {
   role: string;
   description?: string;
   photo?: string;
+  /** CSS object-position override for the avatar crop, e.g. "50% 18%" */
+  objectPosition?: string;
 }
 
 export const board: BoardMember[] = [
@@ -34,6 +36,7 @@ export const board: BoardMember[] = [
     role: "Vice President",
     description: "Supporting the President and guiding our avenues forward.",
     photo: "/members/harkeerat-bhasin.jpg",
+    objectPosition: "50% 18%",
   },
   {
     id: "diya-khandelwal",

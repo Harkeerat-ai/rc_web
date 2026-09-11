@@ -34,6 +34,11 @@ export default function MembersPage() {
                     loading="lazy"
                     decoding="async"
                     className="w-full h-full object-cover object-top"
+                    style={
+                      member.objectPosition
+                        ? { objectPosition: member.objectPosition }
+                        : undefined
+                    }
                   />
                 ) : (
                   <span className="text-white font-heading text-2xl font-bold">
