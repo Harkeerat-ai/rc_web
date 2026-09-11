@@ -3,6 +3,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { clubStats } from "@/lib/data";
+import HeroPhotoRail from "@/components/sections/HeroPhotoRail";
+import { heroRailLeft, heroRailRight } from "@/lib/photoRail";
 
 const heroChips = [
   `${clubStats.yearFounded} · Chartered`,
@@ -28,6 +30,9 @@ export default function Hero() {
       className="relative h-screen w-full overflow-hidden"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(227,178,80,0.12),transparent_55%)]" />
+
+      <HeroPhotoRail items={heroRailLeft} direction="up" side="left" />
+      <HeroPhotoRail items={heroRailRight} direction="down" side="right" />
 
       <div
         aria-hidden

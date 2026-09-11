@@ -126,4 +126,30 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  .animate-rail-up {
+    animation: rail-up 48s linear infinite;
+  }
+
+  .animate-rail-down {
+    animation: rail-down 48s linear infinite;
+  }
+}
+
+@keyframes rail-up {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@keyframes rail-down {
+  from {
+    transform: translate3d(0, -50%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
