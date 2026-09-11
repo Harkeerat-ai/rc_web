@@ -58,7 +58,7 @@ export default function Navbar() {
             aria-label="Rotaract Club of Bombay West — Home"
           >
             <Image
-              src="/brand/rcbw-logo.png"
+              src="/brand/rcbw-logo-full.png"
               alt="Rotaract Club of Bombay West, District 3141"
               width={130}
               height={113}
