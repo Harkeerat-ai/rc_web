@@ -16,6 +16,7 @@ import {
   isRtl,
   storeLanguage,
 } from "@/lib/chat";
+import { getKnowledgeAnswer } from "@/lib/knowledge";
 
 interface ActiveMessage extends ChatMessage {
   streaming?: boolean;
@@ -117,6 +118,17 @@ export default function ChatWidget() {
       createdAt: Date.now(),
     };
     setMessages((prev) => [...prev, botMsg]);
+
+    const known = getKnowledgeAnswer(content);
+    if (known) {
+      updateBot(botId, {
+        content: known.answer,
+        streaming: false,
+        sources: known.sources,
+      });
+      setLoading(false);
+      return;
+    }
 
     const controller = new AbortController();
     abortRef.current = controller;
