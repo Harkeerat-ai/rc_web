@@ -9,20 +9,16 @@ export default function HeroPhotoRail({
   items,
   direction = "up",
   side,
+  className,
 }: {
   items: RailPhoto[];
   direction?: "up" | "down";
   side: "left" | "right";
+  className?: string;
 }) {
   const loop = [...items, ...items];
   return (
-    <div
-      aria-hidden
-      className={cn(
-        "pointer-events-none absolute inset-y-0 z-0 w-16 px-2 md:w-36 md:px-4 lg:w-44 lg:px-6",
-        side === "left" ? "left-0" : "right-0"
-      )}
-    >
+    <div aria-hidden className={cn("pointer-events-none", className)}>
       <div className="group relative h-full w-full overflow-hidden">
         <div
           className={cn(

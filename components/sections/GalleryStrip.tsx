@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import PhotoCollage from "@/components/sections/PhotoCollage";
-import { gallery } from "@/lib/data";
+import HeroPhotoRail from "@/components/sections/HeroPhotoRail";
+import { heroRailLeft, heroRailRight } from "@/lib/photoRail";
 
 export default function GalleryStrip() {
   return (
@@ -29,7 +29,21 @@ export default function GalleryStrip() {
         </motion.div>
       </div>
 
-      <PhotoCollage items={gallery} />
+      <div className="relative mx-auto flex max-w-6xl items-stretch justify-center gap-8 px-4 sm:gap-12 sm:px-6 lg:gap-20 lg:px-8">
+        <div className="absolute left-1/2 top-1/2 -z-10 h-96 w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(227,178,80,0.14),transparent_65%)] blur-2xl" />
+        <HeroPhotoRail
+          className="h-[34rem] shrink-0 w-24 px-3 md:h-[38rem] md:w-44 md:px-4 lg:h-[42rem] lg:w-56 lg:px-5"
+          items={heroRailLeft}
+          direction="up"
+          side="left"
+        />
+        <HeroPhotoRail
+          className="h-[34rem] shrink-0 w-24 px-3 md:h-[38rem] md:w-44 md:px-4 lg:h-[42rem] lg:w-56 lg:px-5"
+          items={heroRailRight}
+          direction="down"
+          side="right"
+        />
+      </div>
     </section>
   );
 }

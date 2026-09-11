@@ -31,8 +31,18 @@ export default function Hero() {
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(227,178,80,0.12),transparent_55%)]" />
 
-      <HeroPhotoRail items={heroRailLeft} direction="up" side="left" />
-      <HeroPhotoRail items={heroRailRight} direction="down" side="right" />
+      <HeroPhotoRail
+        items={heroRailLeft}
+        direction="up"
+        side="left"
+        className="absolute inset-y-0 left-0 z-0 w-16 px-2 md:w-36 md:px-4 lg:w-44 lg:px-6"
+      />
+      <HeroPhotoRail
+        items={heroRailRight}
+        direction="down"
+        side="right"
+        className="absolute inset-y-0 right-0 z-0 w-16 px-2 md:w-36 md:px-4 lg:w-44 lg:px-6"
+      />
 
       <div
         aria-hidden
