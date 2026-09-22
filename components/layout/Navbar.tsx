@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "Avenues", href: "/avenues" },
   { label: "Projects", href: "/projects" },
-  { label: "Members", href: "/members" },
+  { label: "Core", href: "/members" },
   { label: "Rotary", href: "/rotary" },
   { label: "Newsletter", href: "/newsletter" },
   { label: "Contact", href: "/contact" },
