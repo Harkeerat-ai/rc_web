@@ -80,6 +80,15 @@ export default function AvenueIcon({
           <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
         </svg>
       );
+    case "hashtag":
+      return (
+        <svg {...common}>
+          <line x1="5" y1="9" x2="21" y2="9" />
+          <line x1="4" y1="15" x2="20" y2="15" />
+          <line x1="10" y1="3" x2="7" y2="21" />
+          <line x1="17" y1="3" x2="14" y2="21" />
+        </svg>
+      );
     case "rocket":
       return (
         <svg {...common}>

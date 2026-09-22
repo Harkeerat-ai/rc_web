@@ -80,8 +80,8 @@ export const mainAvenues: Avenue[] = [
     slug: "professional-development",
     name: "Professional Development",
     kind: "main",
-    gradient: "from-indigo-700 to-violet-600",
-    accent: "indigo",
+    gradient: "from-blue-700 to-cyan-600",
+    accent: "blue",
     icon: "briefcase",
     tagline: "Grow skills, build futures.",
     mission: [
@@ -133,9 +133,9 @@ export const supportAvenues: Avenue[] = [
     slug: "smdc",
     name: "Social Media & Digital Communications",
     kind: "support",
-    gradient: "from-purple-700 to-fuchsia-600",
-    accent: "purple",
-    icon: "megaphone",
+    gradient: "from-pink-600 to-rose-500",
+    accent: "pink",
+    icon: "hashtag",
     tagline: "Digital first, always connected.",
     mission: [
       "We understand the rising importance of digital presence and ensure that we do our part to leverage its potential. The Digital Communication Avenue takes responsibility for the club's digital media, ensuring a strong online presence for the club.",
