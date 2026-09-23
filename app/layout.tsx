@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { socialLinks, clubStats, contactInfo } from "@/lib/data";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollProvider from "@/components/layout/ScrollProvider";
@@ -70,6 +71,26 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  name: "Rotaract Club of Bombay West",
+  alternateName: "RCBW",
+  url: "https://rc-web-six.vercel.app",
+  logo: "https://rc-web-six.vercel.app/brand/rcbw-logo-full.png",
+  foundingDate: String(clubStats.yearFounded),
+  slogan: clubStats.motto,
+  email: contactInfo.email,
+  telephone: contactInfo.phone1,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Mumbai",
+    addressRegion: "Maharashtra",
+    addressCountry: "IN",
+  },
+  sameAs: socialLinks.map((link) => link.url),
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -82,6 +103,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="font-body antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <Backdrop />
         <a
           href="#main-content"

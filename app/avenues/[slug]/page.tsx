@@ -19,9 +19,25 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: PageProps): Metadata {
   const avenue = avenueBySlug(params.slug);
   if (!avenue) return {};
+  const title = `${avenue.name} | Rotaract Club of Bombay West`;
+  const description = `${avenue.tagline} ${avenue.mission[0]}`.slice(0, 300);
   return {
-    title: `${avenue.name} | Rotaract Club of Bombay West`,
-    description: avenue.tagline,
+    title,
+    description,
+    alternates: {
+      canonical: `/avenues/${avenue.slug}`,
+    },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      url: `/avenues/${avenue.slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 

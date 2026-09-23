@@ -75,12 +75,12 @@ export default function ContactForm() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Join Us &{" "}
             <span className="bg-gradient-to-r from-goldtext to-rusttext bg-clip-text text-transparent">
               Connect
             </span>
-          </h2>
+          </h1>
           <p className="text-text-muted max-w-md mx-auto text-sm md:text-base">
             Have any questions or want to join our club? Reach out to us
             through the form below, and we&apos;ll get back to you as soon as
@@ -90,9 +90,9 @@ export default function ContactForm() {
 
         <div className="grid lg:grid-cols-[auto_1fr] gap-8 lg:gap-12 items-start">
           <div className="space-y-4">
-            <h3 className="font-heading text-xl font-bold">
+            <h2 className="font-heading text-xl font-bold">
               Reach Out to Us
-            </h3>
+            </h2>
             <a
               href={`tel:${contactInfo.phone1.replace(/\s/g, "")}`}
               className="flex items-center gap-3 text-text-muted hover:text-goldtext transition-colors duration-200"
@@ -178,13 +178,13 @@ export default function ContactForm() {
                   />
                 </svg>
               </div>
-              <h3
+              <h2
                 ref={successRef}
                 tabIndex={-1}
                 className="font-heading text-2xl font-bold mb-2 focus:outline-none"
               >
                 Message Sent!
-              </h3>
+              </h2>
               <p className="text-text-muted text-sm mb-6">
                 Thank you for reaching out. We&apos;ll get back to you soon.
               </p>

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { avenues } from "@/lib/avenues";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://rc-web-six.vercel.app";
@@ -12,10 +13,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: `${base}/avenues`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    ...avenues.map((avenue) => ({
+      url: `${base}/avenues/${avenue.slug}`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    {
       url: `${base}/projects`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${base}/members`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${base}/newsletter`,
