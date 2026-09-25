@@ -216,43 +216,50 @@ const district = {
 };
 
 const districtLeadership = {
-  drr: "PHF. Rtr. Shreehari Nair",
-  ipdrr: "Rtr. Yashwardhan Chauhan",
-  secretary: "Rtr. Afzal Qureshi",
+  drr: { name: "PHF. Rtr. Shreehari Nair", email: "drrshreenair@gmail.com" },
+  ipdrr: { name: "Rtr. Yashwardhan Chauhan", email: "drryashwardhanchauhan@gmail.com" },
+  secretary: { name: "Rtr. Afzal Qureshi", email: "drsafzalqureshi@gmail.com" },
 };
 
 /** RCBW members who also serve on the District 3141 team this Rotaract year. */
-const districtCrossover = { name: "Rtr. Jash Bhatia", role: "Zone Rotaract Representative (ZRR), Zone 1" };
+const districtCrossover = {
+  name: "Rtr. Jash Bhatia",
+  role: "Zone Rotaract Representative (ZRR), Zone 1",
+  email: "rotaract.jash@gmail.com",
+};
 
 function districtAnswer(q: string): KnowledgeAnswer | null {
   if (!/\bdistrict\b|\b3141\b|\bdrr\b|\bipdrr\b|\bzrr\b/.test(q)) return null;
-  // Contact details live with the backend, not in this file.
-  if (/\b(email|e-mail|phone|mobile|whatsapp|contact|reach)\b/.test(q)) return null;
+  // Emails are shared below for named district officers, but phone numbers stay private.
+  if (/\b(phone|mobile|whatsapp)\b/.test(q)) return null;
 
   if (/\bipdrr\b|immediate past.*district|past.*drr/.test(q)) {
+    const p = districtLeadership.ipdrr;
     return {
-      answer: `The Immediate Past District Rotaract Representative (IPDRR) of District 3141 is ${districtLeadership.ipdrr}.`,
+      answer: `The Immediate Past District Rotaract Representative (IPDRR) of District 3141 is ${p.name} (${p.email}).`,
       sources: DISTRICT_SOURCES,
     };
   }
 
   if (/district (rotaract )?secretary/.test(q)) {
+    const p = districtLeadership.secretary;
     return {
-      answer: `The District Rotaract Secretary of District 3141 is ${districtLeadership.secretary}.`,
+      answer: `The District Rotaract Secretary of District 3141 is ${p.name} (${p.email}).`,
       sources: DISTRICT_SOURCES,
     };
   }
 
   if (/\bdrr\b|district rotaract representative/.test(q)) {
+    const p = districtLeadership.drr;
     return {
-      answer: `The District Rotaract Representative (DRR) of District 3141 for ${district.drrYear} is ${districtLeadership.drr}.`,
+      answer: `The District Rotaract Representative (DRR) of District 3141 for ${district.drrYear} is ${p.name} (${p.email}).`,
       sources: DISTRICT_SOURCES,
     };
   }
 
   if (/\bzrr\b|\bzone\b/.test(q) || /rcbw.*(district team|district level)|district team.*rcbw/.test(q)) {
     return {
-      answer: `${stripRtr(districtCrossover.name)} represents RCBW at the district level, serving as ${districtCrossover.role} for Rotaract District 3141.`,
+      answer: `${stripRtr(districtCrossover.name)} represents RCBW at the district level, serving as ${districtCrossover.role} for Rotaract District 3141 (${districtCrossover.email}).`,
       sources: DISTRICT_SOURCES,
     };
   }
@@ -289,7 +296,7 @@ function districtAnswer(q: string): KnowledgeAnswer | null {
 
   if (/\b(what|about|tell|describe|explain|who)\b/.test(q)) {
     return {
-      answer: `Rotaract District 3141 is the Rotaract district covering ${district.location}, under which RCBW operates. Its vision: "${district.vision}" The current DRR (${district.drrYear}) is ${districtLeadership.drr}.`,
+      answer: `Rotaract District 3141 is the Rotaract district covering ${district.location}, under which RCBW operates. Its vision: "${district.vision}" The current DRR (${district.drrYear}) is ${districtLeadership.drr.name}.`,
       sources: DISTRICT_SOURCES,
     };
   }
