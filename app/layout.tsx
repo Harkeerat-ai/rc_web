@@ -48,6 +48,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "RkBxlQllKUyJDhhpGH8Kk3Z1rh-DUJXDUa0BvjjLHtk",
+  },
   openGraph: {
     title: "Rotaract Club of Bombay West",
     description:
