@@ -189,12 +189,123 @@ function avenueAnswer(q: string): KnowledgeAnswer | null {
   };
 }
 
+const DISTRICT_SOURCES = ["Rotaract District 3141 website (rotaractdistrict3141.org)"];
+
+/** Facts scraped from https://www.rotaractdistrict3141.org/ — leadership is for the 2026–27 Rotaract year. */
+const district = {
+  name: "Rotaract District 3141",
+  location: "Mumbai, Maharashtra, India",
+  visionLine: "A District Built Around People",
+  vision: "Creating Leaders. Building Communities. Inspiring Change.",
+  programs: [
+    "Community Service",
+    "Professional Development",
+    "Club Service",
+    "International Service",
+    "Public Relations",
+  ],
+  stats: {
+    yearsActive: "11+",
+    events: "250+",
+    participants: "8,000+",
+    livesTouched: "500+",
+    communityReach: "200,000+",
+    rotaractors: "50,000+",
+  },
+  drrYear: "2026–27",
+};
+
+const districtLeadership = {
+  drr: "PHF. Rtr. Shreehari Nair",
+  ipdrr: "Rtr. Yashwardhan Chauhan",
+  secretary: "Rtr. Afzal Qureshi",
+};
+
+/** RCBW members who also serve on the District 3141 team this Rotaract year. */
+const districtCrossover = { name: "Rtr. Jash Bhatia", role: "Zone Rotaract Representative (ZRR), Zone 1" };
+
+function districtAnswer(q: string): KnowledgeAnswer | null {
+  if (!/\bdistrict\b|\b3141\b|\bdrr\b|\bipdrr\b|\bzrr\b/.test(q)) return null;
+  // Contact details live with the backend, not in this file.
+  if (/\b(email|e-mail|phone|mobile|whatsapp|contact|reach)\b/.test(q)) return null;
+
+  if (/\bipdrr\b|immediate past.*district|past.*drr/.test(q)) {
+    return {
+      answer: `The Immediate Past District Rotaract Representative (IPDRR) of District 3141 is ${districtLeadership.ipdrr}.`,
+      sources: DISTRICT_SOURCES,
+    };
+  }
+
+  if (/district (rotaract )?secretary/.test(q)) {
+    return {
+      answer: `The District Rotaract Secretary of District 3141 is ${districtLeadership.secretary}.`,
+      sources: DISTRICT_SOURCES,
+    };
+  }
+
+  if (/\bdrr\b|district rotaract representative/.test(q)) {
+    return {
+      answer: `The District Rotaract Representative (DRR) of District 3141 for ${district.drrYear} is ${districtLeadership.drr}.`,
+      sources: DISTRICT_SOURCES,
+    };
+  }
+
+  if (/\bzrr\b|\bzone\b/.test(q) || /rcbw.*(district team|district level)|district team.*rcbw/.test(q)) {
+    return {
+      answer: `${stripRtr(districtCrossover.name)} represents RCBW at the district level, serving as ${districtCrossover.role} for Rotaract District 3141.`,
+      sources: DISTRICT_SOURCES,
+    };
+  }
+
+  if (/\b(program|programs|focus area|focus areas)\b/.test(q)) {
+    return {
+      answer: `Rotaract District 3141 organizes its work into ${district.programs.length} programs: ${district.programs.join(", ")}.`,
+      sources: DISTRICT_SOURCES,
+    };
+  }
+
+  if (/\b(vision|mission|motto|tagline)\b/.test(q)) {
+    return {
+      answer: `Rotaract District 3141's vision is "${district.visionLine}" — "${district.vision}"`,
+      sources: DISTRICT_SOURCES,
+    };
+  }
+
+  if (/\b(impact|stats|statistics|how many events|events organi[sz]ed|participants|lives touched|reach|rotaractors)\b/.test(q)) {
+    const s = district.stats;
+    return {
+      answer: `Per its own site, Rotaract District 3141 has run for ${s.yearsActive} years, organized ${s.events} events with ${s.participants} participants, touched ${s.livesTouched} lives directly, reached ${s.communityReach} people in the community, and counts ${s.rotaractors} Rotaractors district-wide.`,
+      sources: DISTRICT_SOURCES,
+    };
+  }
+
+  if (/\b(fundrais|crowdfund|donat)\w*\b/.test(q)) {
+    return {
+      answer:
+        "Rotaract District 3141 runs a two-tier crowdfunding platform — smaller club-level drives and larger district-wide campaigns — with donations mapped to specific, trackable district projects.",
+      sources: DISTRICT_SOURCES,
+    };
+  }
+
+  if (/\b(what|about|tell|describe|explain|who)\b/.test(q)) {
+    return {
+      answer: `Rotaract District 3141 is the Rotaract district covering ${district.location}, under which RCBW operates. Its vision: "${district.vision}" The current DRR (${district.drrYear}) is ${districtLeadership.drr}.`,
+      sources: DISTRICT_SOURCES,
+    };
+  }
+
+  return null;
+}
+
 export function getKnowledgeAnswer(message: string): KnowledgeAnswer | null {
   const q = message.toLowerCase().trim();
   if (!q) return null;
 
   const avenue = avenueAnswer(q);
   if (avenue) return avenue;
+
+  const districtAns = districtAnswer(q);
+  if (districtAns) return districtAns;
 
   // Contact details live with the backend, not in this file — a question asking for
   // one should not be answered with the name of whoever holds the role.
