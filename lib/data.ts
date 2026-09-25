@@ -136,7 +136,7 @@ export const newsletters: Newsletter[] = [
 export const socialLinks: SocialLink[] = [
   {
     name: "Instagram",
-    url: "https://www.instagram.com/rotaractbombaywest/",
+    url: "https://www.instagram.com/rc_bombaywest/",
     icon: "instagram",
   },
   {
@@ -146,7 +146,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/rotaract-club-of-bombay-west-106ba7289/",
+    url: "https://in.linkedin.com/company/rcbw",
     icon: "linkedin",
   },
 ];
