@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { gallery } from "@/lib/data";
 
 export default function GalleryStrip() {
@@ -38,12 +39,12 @@ export default function GalleryStrip() {
             transition={{ duration: 0.6, delay: 0.08 }}
             className="group relative h-96 w-80 flex-none overflow-hidden rounded-xl border border-gold/10 bg-surface/50 shadow-[0_4px_24px_rgba(0,0,0,0.08)] transition-all duration-300 hover:shadow-[0_12px_40px_rgba(0,0,0,0.14)] snap-center"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={item.image}
               alt={item.title}
-              loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              fill
+              sizes="320px"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
               <span className="font-heading text-sm font-semibold text-white">

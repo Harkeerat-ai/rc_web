@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import type { RailPhoto } from "@/lib/photoRail";
 
@@ -31,7 +32,7 @@ export default function HeroPhotoRail({
             <figure
               key={i}
               className={cn(
-                "mb-4 w-full shrink-0 overflow-hidden bg-surface shadow-[0_16px_38px_rgba(46,36,27,0.16)] ring-1 ring-gold/15",
+                "relative aspect-square mb-4 w-full shrink-0 overflow-hidden bg-surface shadow-[0_16px_38px_rgba(46,36,27,0.16)] ring-1 ring-gold/15",
                 ROTS[i % ROTS.length]
               )}
             >
@@ -44,16 +45,15 @@ export default function HeroPhotoRail({
                   playsInline
                   preload="auto"
                   aria-hidden
-                  className="aspect-square w-full object-cover opacity-60 blur-[2px] md:opacity-100 md:blur-0"
+                  className="h-full w-full object-cover opacity-60 blur-[2px] md:opacity-100 md:blur-0"
                 />
               ) : (
-                /* eslint-disable-next-line @next/next/no-img-element */
-                <img
+                <Image
                   src={photo.src}
                   alt=""
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-square w-full object-cover opacity-60 blur-[2px] md:opacity-100 md:blur-0"
+                  fill
+                  sizes="(min-width: 1024px) 176px, (min-width: 768px) 144px, 64px"
+                  className="object-cover opacity-60 blur-[2px] md:opacity-100 md:blur-0"
                 />
               )}
             </figure>
