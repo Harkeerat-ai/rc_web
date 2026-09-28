@@ -141,7 +141,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "Facebook",
-    url: "https://www.facebook.com/RotaractBombayWest/",
+    url: "https://www.facebook.com/share/1DpFYQUvky/",
     icon: "facebook",
   },
   {

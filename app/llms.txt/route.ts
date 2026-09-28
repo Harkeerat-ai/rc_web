@@ -21,7 +21,7 @@ RCBW is a youth-led service and leadership club. It is ranked #${clubStats.rank}
 
 - [Home](${base}/): Club overview
 - [Avenues](${base}/avenues): The club's areas of work
-- [Projects](${base}/projects): Flagship projects and events
+- [Projects](${base}/projects): Projects and events
 - [Members](${base}/members): Current board
 - [Newsletter](${base}/newsletter): Club newsletters
 - [Rotary](${base}/rotary): Parent Rotary club

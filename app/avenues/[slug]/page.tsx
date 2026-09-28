@@ -74,7 +74,7 @@ export default function AvenuePage({ params }: PageProps) {
               href="/projects"
               className="text-goldtext text-sm hover:underline"
             >
-              View all flagships
+              View all projects
             </Link>
           </div>
           <AvenueProjects projects={projects} />

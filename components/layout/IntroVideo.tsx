@@ -65,7 +65,7 @@ export default function IntroVideo() {
             preload="auto"
             onEnded={close}
             onError={close}
-            className="h-full w-full object-contain"
+            className="h-full w-full object-contain portrait:scale-[1.45]"
           />
           <button
             type="button"
