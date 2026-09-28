@@ -38,6 +38,10 @@
   filter: invert(1) hue-rotate(180deg);
 }
 
+:root[data-intro="skip"] .intro-overlay {
+  display: none;
+}
+
 html {
   scroll-behavior: smooth;
 }

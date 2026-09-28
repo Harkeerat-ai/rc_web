@@ -11,6 +11,7 @@ import LazyWidgets from "@/components/layout/LazyWidgets";
 import CheerMarquee from "@/components/layout/CheerMarquee";
 import AvenueMarquee from "@/components/layout/AvenueMarquee";
 import Backdrop from "@/components/layout/Backdrop";
+import IntroVideo from "@/components/layout/IntroVideo";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -108,7 +109,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem("theme");if(t!=="dark"&&t!=="light")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}`,
+            __html: `try{var t=localStorage.getItem("theme");if(t!=="dark"&&t!=="light")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}try{if(sessionStorage.getItem("introSeen")||location.pathname!=="/"||matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.dataset.intro="skip"}catch(e){}`,
           }}
         />
         <script
@@ -116,6 +117,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
         <Backdrop />
+        <IntroVideo />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded-md focus:border focus:border-gold/40 focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-goldtext"
