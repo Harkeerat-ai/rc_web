@@ -33,7 +33,6 @@ export const heroRailRight: RailPhoto[] = [
   { src: "/pics/hero-rail/rail-new-08.webp", alt: "Club Moments" },
   {
     src: "/pics/hero-rail/rail-right-02.jpg",
-    video: "/pics/hero-rail/clip-right-01.mp4",
     alt: "Pasport to Possibilities",
   },
   { src: "/pics/hero-rail/rail-new-09.webp", alt: "Club Moments" },

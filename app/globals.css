@@ -16,6 +16,18 @@
   --color-rust-text: 163 67 18;
 }
 
+/* Dark theme: same brand, warm charcoal instead of cream */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-primary: 22 18 14;
+  --color-surface: 34 28 22;
+  --color-ivory: 245 236 220;
+  --color-text-muted: 184 170 148;
+  --color-rust: 214 104 44;
+  --color-gold-text: 236 190 100;
+  --color-rust-text: 236 140 84;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -93,6 +105,146 @@ body {
     .animate-float {
       animation: none;
     }
+  }
+}
+
+/* Day/night switch. Driven by html[data-theme] so it never flashes on load. */
+.theme-switch {
+  --w: 5.25em;
+  --h: 2.4em;
+  --knob: 1.9em;
+  --pad: 0.25em;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  width: var(--w);
+  height: var(--h);
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.theme-switch__checkbox {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.theme-switch__container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f7d78c, #eba63f);
+  box-shadow:
+    inset 0 0.15em 0.35em rgb(0 0 0 / 0.25),
+    0 0 0 1px rgb(var(--color-gold) / 0.45);
+  transition: background 0.5s ease;
+}
+
+.theme-switch__checkbox:focus-visible + .theme-switch__container {
+  outline: 2px solid rgb(var(--color-gold-text));
+  outline-offset: 3px;
+}
+
+.theme-switch__knob {
+  position: absolute;
+  top: var(--pad);
+  left: var(--pad);
+  width: var(--knob);
+  height: var(--knob);
+  border-radius: 50%;
+  background: #f4c542;
+  box-shadow:
+    0 0 0 0.3em rgb(255 255 255 / 0.18),
+    0 0 0.9em rgb(255 214 102 / 0.8),
+    inset -0.15em -0.15em 0.3em rgb(200 90 30 / 0.45);
+  overflow: hidden;
+  transition:
+    transform 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.theme-switch__spot {
+  position: absolute;
+  border-radius: 50%;
+  background: #b9ab90;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.theme-switch__spot:nth-child(1) { top: 0.35em; left: 0.9em; width: 0.6em; height: 0.6em; }
+.theme-switch__spot:nth-child(2) { top: 1.05em; left: 0.3em; width: 0.45em; height: 0.45em; }
+.theme-switch__spot:nth-child(3) { top: 1.2em; left: 1.1em; width: 0.35em; height: 0.35em; }
+
+.theme-switch__clouds {
+  position: absolute;
+  right: 0.5em;
+  bottom: -0.25em;
+  width: 1.6em;
+  height: 1em;
+  border-radius: 999px;
+  background: #fffdf6;
+  box-shadow:
+    -0.9em 0.15em 0 -0.1em #fff3d6,
+    -0.3em -0.35em 0 -0.15em #fffdf6;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+.theme-switch__stars {
+  position: absolute;
+  top: 0.6em;
+  left: 0.7em;
+  width: 0.2em;
+  height: 0.2em;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0.9em 0.5em 0 0 #fff,
+    1.6em -0.1em 0 0 rgb(255 232 170),
+    2.3em 0.9em 0 -0.03em #fff,
+    2.9em 0.2em 0 0 rgb(255 232 170),
+    1.3em 1.2em 0 -0.05em #fff;
+  opacity: 0;
+  transform: translateY(-0.6em);
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+}
+
+:root[data-theme="dark"] .theme-switch__container {
+  background: linear-gradient(180deg, #2b2119, #15100c);
+}
+:root[data-theme="dark"] .theme-switch__knob {
+  transform: translateX(calc(var(--w) - var(--knob) - var(--pad) * 2));
+  background: #ebe1cb;
+  box-shadow:
+    0 0 0 0.3em rgb(255 255 255 / 0.06),
+    0 0 0.8em rgb(235 225 203 / 0.35),
+    inset -0.15em -0.15em 0.3em rgb(0 0 0 / 0.25);
+}
+:root[data-theme="dark"] .theme-switch__spot {
+  opacity: 1;
+}
+:root[data-theme="dark"] .theme-switch__clouds {
+  transform: translateY(1.5em);
+  opacity: 0;
+}
+:root[data-theme="dark"] .theme-switch__stars {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-switch__container,
+  .theme-switch__knob,
+  .theme-switch__spot,
+  .theme-switch__clouds,
+  .theme-switch__stars {
+    transition: none;
   }
 }
 

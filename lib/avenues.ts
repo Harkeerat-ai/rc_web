@@ -102,7 +102,7 @@ export const supportAvenues: Avenue[] = [
     kind: "support",
     gradient: "from-amber-600 to-yellow-500",
     accent: "amber",
-    icon: "handshake",
+    icon: "users",
     tagline: "Stronger together.",
     mission: [
       "The avenue of Partners-In-Service, as the name itself says, looks after building and maintaining relations with the club's partners, namely - Rotary Club, Interact Club, Club Alumni, Inner Wheel Clubs and Sponsors.",

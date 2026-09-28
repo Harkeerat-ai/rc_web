@@ -18,20 +18,20 @@ export const board: BoardMember[] = [
     objectPosition: "50% 18%",
   },
   {
-    id: "manasvi-thakkar",
-    name: "Rtr. Manasvi Thakkar",
-    role: "Secretary",
-    description: "Keeping the club organised, connected, and moving forward.",
-    photo: "/members/manasvi-thakkar.jpg",
-    objectPosition: "50% 18%",
-  },
-  {
     id: "sania-kadam",
     name: "Rtr. Sania Kadam",
     role: "IPP (Immediate Past President)",
     description: "Guiding the board with experience and institutional memory.",
     photo: "/members/sania-kadam.jpg",
     objectPosition: "50% 0%",
+  },
+  {
+    id: "manasvi-thakkar",
+    name: "Rtr. Manasvi Thakkar",
+    role: "Secretary",
+    description: "Keeping the club organised, connected, and moving forward.",
+    photo: "/members/manasvi-thakkar.jpg",
+    objectPosition: "50% 18%",
   },
   {
     id: "harkeerat-bhasin",

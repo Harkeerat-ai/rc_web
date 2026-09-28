@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -85,6 +86,8 @@ export default function Navbar() {
             ))}
           </div>
 
+          <div className="flex items-center gap-4">
+            <ThemeToggle />
           <button
             ref={menuButtonRef}
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -108,6 +111,7 @@ export default function Navbar() {
               />
             </div>
           </button>
+          </div>
         </div>
       </div>
 

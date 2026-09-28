@@ -55,7 +55,7 @@ export const projects: Project[] = [
     id: "revive",
     title: "Revive",
     description:
-      "A flagship cricket tournament hosted by Rotaract Club of Bombay West, bringing together teams for spirited competition and camaraderie.",
+      "A yearly cricket tournament hosted by Rotaract Club of Bombay West, bringing together teams for spirited competition and camaraderie.",
     impact: "Spirited cricket showdown",
     image: wixImage("b0eb65_ea23b8df62b348e781518351d891de82~mv2.jpg"),
     tags: ["Sports"],
@@ -77,7 +77,7 @@ export const projects: Project[] = [
     description:
       "Rangeelo Raas was a vibrant and playful Garba night, filled with energy, colors, and non-stop fun on the dance floor!",
     impact: "Vibrant garba celebration",
-    image: wixImage("b0eb65_0da64321f32249908bfa986630f307e4~mv2.jpg"),
+    image: "/pics/projects/rangeelo-raas.webp",
     tags: ["Events and Fellowship"],
     avenue: "club-service",
   },
@@ -102,11 +102,11 @@ export const projects: Project[] = [
     avenue: "partners-in-service",
   },
   {
-    id: "racquet-rivals",
-    title: "Racquet Rivals",
+    id: "happy-meals",
+    title: "Happy Meals",
     description:
-      "A competitive racket sports showdown that brought members together for a day of sport and friendly rivalry.",
-    impact: "Competitive racket showdown",
+      "A heartwarming initiative that brought members together to share meals and smiles.",
+    impact: "Meals and smiles shared",
     image: wixImage("b0eb65_2a06d3bc8852443288d962162bff013a~mv2.jpg"),
     tags: ["Sports"],
     avenue: "sports",

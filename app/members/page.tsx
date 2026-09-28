@@ -23,7 +23,11 @@ export default function MembersPage() {
             <Reveal
               key={member.id}
               delay={i * 0.06}
-              className="group glass-card p-6 sm:p-8 text-center hover:border-gold/40 transition-all duration-300"
+              className={`group glass-card p-6 sm:p-8 text-center hover:border-gold/40 transition-all duration-300${
+                i === board.length - 1 && board.length % 3 === 1
+                  ? " lg:col-start-2"
+                  : ""
+              }`}
             >
               <div className="w-20 h-20 mx-auto rounded-full overflow-hidden bg-gradient-to-br from-gold to-rust flex items-center justify-center mb-5 shadow-lg">
                 {member.photo ? (
