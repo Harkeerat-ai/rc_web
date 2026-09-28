@@ -108,8 +108,8 @@ export const projects: Project[] = [
       "A heartwarming initiative that brought members together to share meals and smiles.",
     impact: "Meals and smiles shared",
     image: wixImage("b0eb65_2a06d3bc8852443288d962162bff013a~mv2.jpg"),
-    tags: ["Sports"],
-    avenue: "sports",
+    tags: ["Community Service"],
+    avenue: "community-service",
   },
   {
     id: "alive-at-the-drive",
