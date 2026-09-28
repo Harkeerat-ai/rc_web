@@ -44,18 +44,6 @@ export default function Hero() {
         className="absolute inset-y-0 right-0 z-0 w-16 px-2 md:w-36 md:px-4 lg:w-44 lg:px-6"
       />
 
-      <div
-        aria-hidden
-        className="absolute inset-0 flex items-center justify-center"
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/brand/rcbw-logo-full.png"
-          alt=""
-          className="h-[74vh] w-auto opacity-[0.05]"
-        />
-      </div>
-
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
         className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4"
