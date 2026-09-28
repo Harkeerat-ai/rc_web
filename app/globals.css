@@ -14,7 +14,10 @@
   --color-glass: 200 90 30;
   --color-gold-text: 138 100 16;
   --color-rust-text: 163 67 18;
-  --phoenix-opacity: 0.07;
+}
+
+.hero-logo {
+  opacity: 0.05;
 }
 
 /* Dark theme: same brand, warm charcoal instead of cream */
@@ -27,8 +30,12 @@
   --color-rust: 214 104 44;
   --color-gold-text: 236 190 100;
   --color-rust-text: 236 140 84;
-  /* orange phoenix nearly vanishes on charcoal at the light-mode strength */
-  --phoenix-opacity: 0.18;
+}
+
+/* logo text is black: flip lightness (hue kept) so it reads on charcoal */
+:root[data-theme="dark"] .hero-logo {
+  opacity: 0.1;
+  filter: invert(1) hue-rotate(180deg);
 }
 
 html {
