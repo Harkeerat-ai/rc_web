@@ -109,7 +109,7 @@ export default function RootLayout({
       <body className="font-body antialiased">
         <script
           dangerouslySetInnerHTML={{
-            __html: `try{var t=localStorage.getItem("theme");if(t!=="dark"&&t!=="light")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}try{if(sessionStorage.getItem("introSeen")||location.pathname!=="/"||matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.dataset.intro="skip"}catch(e){}`,
+            __html: `try{var t=localStorage.getItem("theme");if(t!=="dark"&&t!=="light")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}try{if(sessionStorage.getItem("introSeen")||location.pathname!=="/"||matchMedia("(prefers-reduced-motion: reduce)").matches||(navigator.connection&&navigator.connection.saveData))document.documentElement.dataset.intro="skip"}catch(e){}`,
           }}
         />
         <script

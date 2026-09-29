@@ -58,15 +58,17 @@ export default function IntroVideo() {
         >
           <video
             ref={videoRef}
-            src="/intro/intro.mp4"
             autoPlay
             muted={muted}
             playsInline
             preload="auto"
             onEnded={close}
-            onError={close}
-            className="h-full w-full object-contain portrait:scale-[1.45]"
-          />
+            className="h-full w-full object-contain"
+          >
+            {/* Portrait: pre-cropped centre 704x496 (no letterbox), ~30% lighter. */}
+            <source src="/intro/intro-portrait.mp4" type="video/mp4" media="(orientation: portrait)" />
+            <source src="/intro/intro.mp4" type="video/mp4" onError={close} />
+          </video>
           <button
             type="button"
             onClick={() => setMuted((m) => !m)}
